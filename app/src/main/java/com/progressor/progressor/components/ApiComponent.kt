@@ -1,6 +1,7 @@
-package com.progressor.progressor.Services
+package com.progressor.progressor.components
 
 import com.progressor.progressor.MainActivity
+import com.progressor.progressor.modules.ApiModule
 import dagger.Component
 import javax.inject.Singleton
 

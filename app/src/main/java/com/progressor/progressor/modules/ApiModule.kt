@@ -1,22 +1,23 @@
-package com.progressor.progressor.Services
+package com.progressor.progressor.modules
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.progressor.progressor.interfaces.ApiInterface
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 open class ApiModule {
+
     @Provides
     @Singleton
-    fun provideGson(): Gson {
+    fun buildGson(): Gson {
         val gsonBuilder = GsonBuilder()
         gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         return gsonBuilder.create()
@@ -24,16 +25,14 @@ open class ApiModule {
 
     @Provides
     @Singleton
-    @Named("rocketOkHttp")
-    fun provideRocketOkHttpClient(): OkHttpClient {
+    fun buildOkHttpClient(): OkHttpClient {
         val okHttpClientBuilder = OkHttpClient().newBuilder()
         return okHttpClientBuilder.build()
     }
 
     @Provides
     @Singleton
-    @Named("retroRocketHq")
-    fun provideRetrofitRocketHq(gson: Gson, @Named("rocketOkHttp") okHttpClient: OkHttpClient): Retrofit {
+    fun createRetrofitBuilder(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .baseUrl("https://en.wikipedia.org/w/")
                 .client(okHttpClient)
@@ -44,8 +43,7 @@ open class ApiModule {
 
     @Provides
     @Singleton
-    @Named("rocketHq")
-    fun provideRetrofitEndPointServiceRocketHq(@Named("retroRocketHq") retrofit: Retrofit): ApiInterface {
+    fun createRetrofitInterface(retrofit: Retrofit): ApiInterface {
         return retrofit.create(ApiInterface::class.java)
     }
 }

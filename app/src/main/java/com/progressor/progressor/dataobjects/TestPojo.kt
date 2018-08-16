@@ -1,4 +1,4 @@
-package com.progressor.progressor.Model
+package com.progressor.progressor.dataobjects
 
 import java.io.Serializable
 

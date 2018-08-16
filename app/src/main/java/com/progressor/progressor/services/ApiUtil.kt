@@ -1,18 +1,18 @@
-package com.progressor.progressor.Services
+package com.progressor.progressor.services
 
-import com.progressor.progressor.Model.Model
+import com.progressor.progressor.dataobjects.Model
+import com.progressor.progressor.interfaces.ApiInterface
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
-import javax.inject.Named
 
 class ApiUtil @Inject constructor() {
 
-    @field:[Inject Named("rocketHq")]
+    @field:Inject
     lateinit var rocketHqEndPoints: ApiInterface
 
-    fun getHitCount() : Observable<Model.Result>{
+    fun getHitCount() : Observable<Model.Result> {
         return rocketHqEndPoints.hitCountCheck("query", "json", "search", "pogba")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())

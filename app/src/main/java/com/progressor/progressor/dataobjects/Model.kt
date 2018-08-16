@@ -1,4 +1,4 @@
-package com.progressor.progressor.Model
+package com.progressor.progressor.dataobjects
 
 object Model {
     data class Result(val query: Query)

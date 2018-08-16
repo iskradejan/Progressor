@@ -2,7 +2,7 @@ package com.progressor.progressor
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.progressor.progressor.Model.TestPojo
+import com.progressor.progressor.dataobjects.TestPojo
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.progressor.progressor.Model
+package com.progressor.progressor.dataobjects
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
