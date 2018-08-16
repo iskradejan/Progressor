@@ -3,23 +3,21 @@ package com.progressor.progressor
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.progressor.progressor.Model.Model
-import com.progressor.progressor.Services.SOServiceInterface
+import com.progressor.progressor.Services.*
 import kotlinx.android.synthetic.main.activity_main.*
-import io.reactivex.schedulers.Schedulers
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
 import java.util.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-    private var disposable: Disposable? = null
-
-    private val sOServiceInterface by lazy {
-        SOServiceInterface.create()
-    }
+    @Inject
+    lateinit var apiUtil: ApiUtil
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        DaggerApiComponent.create().inject(this)
+//        ApiComponent.create().poke(this)
 
         mainHeader.text = "DEJAN IS THE BEST"
 
@@ -30,13 +28,16 @@ class MainActivity : AppCompatActivity() {
 //            intent.putExtra("Object", testPojo)
 //            startActivity(intent)
 
-            test()
+            apiUtil.getHitCount().subscribe(
+                    { response -> successProcessor(response) },
+                    { error -> errorProcessor(error) }
+            )
         }
     }
 
     private fun successProcessor(response: Model.Result) {
         this.mainHeader.text = String.format(Locale.US, Integer.toString(response.query.searchinfo.totalhits))
-        println(Integer.toString(response.query.searchinfo.totalhits))
+        println("IT WORKS: " + Integer.toString(response.query.searchinfo.totalhits))
     }
 
     private fun errorProcessor(error: Throwable?) {
@@ -45,13 +46,4 @@ class MainActivity : AppCompatActivity() {
         println(error?.message)
     }
 
-    private fun test(){
-        sOServiceInterface.hitCountCheck("query", "json", "search", "pogba")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        { result -> successProcessor(result) },
-                        { error -> errorProcessor(error) }
-                )
-    }
 }
