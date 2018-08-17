@@ -10,10 +10,10 @@ import javax.inject.Inject
 class HitFetcher @Inject constructor() {
 
     @field:Inject
-    lateinit var rocketHqEndPoints: ApiInterface
+    lateinit var apiInterface: ApiInterface
 
     fun fetch(): Observable<Model.Result> {
-        return rocketHqEndPoints.xxx("query", "json", "search", "pogba")
+        return apiInterface.hitCountCheck2("query", "json", "search", "pogba")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
     }

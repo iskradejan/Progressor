@@ -10,10 +10,10 @@ import javax.inject.Inject
 class ApiUtil @Inject constructor() {
 
     @field:Inject
-    lateinit var rocketHqEndPoints: ApiInterface
+    lateinit var apiInterface: ApiInterface
 
     fun getHitCount() : Observable<Model.Result> {
-        return rocketHqEndPoints.hitCountCheck("query", "json", "search", "pogba")
+        return apiInterface.hitCountCheck("query", "json", "search", "pogba")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
     }

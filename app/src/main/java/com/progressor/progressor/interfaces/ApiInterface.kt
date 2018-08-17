@@ -16,7 +16,7 @@ interface ApiInterface {
     ): Observable<Model.Result>
 
     @GET("api.php")
-    fun xxx(
+    fun hitCountCheck2(
             @Query("action") action: String,
             @Query("format") format: String,
             @Query("list") list: String,
