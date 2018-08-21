@@ -7,6 +7,7 @@ import android.os.Bundle
 import com.progressor.progressor.components.DaggerApiComponent
 import com.progressor.progressor.dataobjects.Model
 import com.progressor.progressor.dataobjects.account.*
+import com.progressor.progressor.modules.ApiModule
 import com.progressor.progressor.services.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDateTime
@@ -25,7 +26,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        DaggerApiComponent.create().inject(this)
+
+        DaggerApiComponent.builder().apiModule(ApiModule(this)).build().inject(this)
 
         if(sharedPreferences.getBoolean("firstTime", false)) {
             println("NOT firstTime")
