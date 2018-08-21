@@ -1,13 +1,16 @@
 package com.progressor.progressor
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.progressor.progressor.components.DaggerApiComponent
-import com.progressor.progressor.dataobjects.Dejan
 import com.progressor.progressor.dataobjects.Model
+import com.progressor.progressor.dataobjects.account.*
 import com.progressor.progressor.services.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.time.LocalDateTime
+import java.time.Month
 import java.util.*
 import javax.inject.Inject
 
@@ -16,18 +19,20 @@ class MainActivity : AppCompatActivity() {
     lateinit var apiUtil: ApiUtil
     @Inject
     lateinit var hitFetcher: HitFetcher
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         DaggerApiComponent.create().inject(this)
 
-        // TODO: Experimenting with Singleton
-        println("weight 1 ..... " + MainActivity.name.weight)
-        val dejan = Dejan(100)
-        MainActivity.name = dejan
-        println("weight 2 ..... " + MainActivity.name.weight)
-        // end
+        if(sharedPreferences.getBoolean("firstTime", false)) {
+            println("NOT firstTime")
+        } else {
+            sharedPreferences.edit().putBoolean("firstTime", true).apply()
+            println("IS firstTime")
+        }
 
         mainHeader.text = "DEJAN IS THE BEST"
 
@@ -52,10 +57,22 @@ class MainActivity : AppCompatActivity() {
     // TODO: this is how you create global object/value
     companion object Singleton {
         init {
-            println("Singleton class invoked.")
+            println("Faked User Object")
         }
 
-        var name = Dejan(188)
+        private val workout = Workout(1,"Burn Baby Burn", LocalDateTime.now())
+        private val body = Body(180,30, 40, 30, LocalDateTime.now())
+        private val workoutList: MutableList<Workout> = arrayListOf<Workout>(workout)
+        private val bodyHistoryList: MutableList<Body> = arrayListOf<Body>(body)
+
+        var user = User(
+                Person("Dejan", "Iskra", 1, LocalDateTime.of(1990, Month.DECEMBER, 16, 10, 10, 30), 72, 1, LocalDateTime.now()),
+                Profile(
+                        workouts = workoutList,
+                        bodyHistory = bodyHistoryList
+                ),
+                true
+                )
     }
     // end
 

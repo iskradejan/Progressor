@@ -15,12 +15,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // TODO: this is how you access Singleton from MainActivity
-        println("xxxxxxxxxxxxxxxxxxxxxxx")
-        println("Splash Activity: " + MainActivity.name.weight)
-        // end
-
-
         splashHeader.text = intent.getStringExtra(SPLASH_HEADER)
         splashSubHeader.text = intent.getStringExtra(SPLASH_SUB_HEADER)
     }

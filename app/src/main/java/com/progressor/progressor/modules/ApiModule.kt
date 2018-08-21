@@ -1,8 +1,11 @@
 package com.progressor.progressor.modules
 
+import android.content.Context
+import android.content.SharedPreferences
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.progressor.progressor.MainActivity
 import com.progressor.progressor.interfaces.ApiInterface
 import dagger.Module
 import dagger.Provides
@@ -13,7 +16,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-open class ApiModule {
+open class ApiModule(private val mainActivity: MainActivity) {
+
+    @Provides
+    @Singleton
+    fun getSharedPreferences(): SharedPreferences {
+        return mainActivity.baseContext.getSharedPreferences("progressorSharedPreferences", Context.MODE_PRIVATE)
+    }
 
     @Provides
     @Singleton
