@@ -16,12 +16,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-open class ApiModule(private val mainActivity: MainActivity) {
+open class ApiModule(private val context: Context) {
 
     @Provides
     @Singleton
     fun getSharedPreferences(): SharedPreferences {
-        return mainActivity.baseContext.getSharedPreferences("progressorSharedPreferences", Context.MODE_PRIVATE)
+        return context.getSharedPreferences("progressorSharedPreferences", Context.MODE_PRIVATE)
     }
 
     @Provides

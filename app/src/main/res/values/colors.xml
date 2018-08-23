@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- Foundational -->
+    <color name="white">#ffffff</color>
+
+    <!-- Base -->
+    <color name="baseGrey">#556270</color>
+    <color name="baseTeal">#4ECDC4</color>
+    <color name="baseLime">#C7F464</color>
+    <color name="basePeach">#FF6B6B</color>
+    <color name="baseMaroon">#C44D58</color>
+
+    <!-- Login Screen -->
+    <color name="loginPlaceholder">#e6e6e6</color>
 </resources>

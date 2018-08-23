@@ -4,24 +4,21 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.progressor.progressor.components.DaggerApiComponent
-import com.progressor.progressor.dataobjects.Model
 import com.progressor.progressor.dataobjects.account.*
 import com.progressor.progressor.modules.ApiModule
-import com.progressor.progressor.services.*
-import kotlinx.android.synthetic.main.activity_main.*
 import java.time.LocalDateTime
 import java.time.Month
-import java.util.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     @Inject
-    lateinit var apiUtil: ApiUtil
-    @Inject
-    lateinit var hitFetcher: HitFetcher
-    @Inject
     lateinit var sharedPreferences: SharedPreferences
+
+    override fun onBackPressed() {
+        Toast.makeText(baseContext, "Nice try... you are stuck forever!", Toast.LENGTH_LONG).show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,30 +26,11 @@ class MainActivity : AppCompatActivity() {
 
         DaggerApiComponent.builder().apiModule(ApiModule(this)).build().inject(this)
 
-        if(sharedPreferences.getBoolean("firstTime", false)) {
-            println("NOT firstTime")
+        if(sharedPreferences.getBoolean("firstTime", true)) {
+            val splashIntent = Intent(this, SplashActivity::class.java)
+            startActivity(splashIntent)
         } else {
-            sharedPreferences.edit().putBoolean("firstTime", true).apply()
-            println("IS firstTime")
-        }
-
-        mainHeader.text = "DEJAN IS THE BEST"
-
-        mainButton.setOnClickListener {
-            val intent = Intent(this, SplashActivity::class.java)
-            intent.putExtra(SplashActivity.SPLASH_HEADER, "GLORY GLORY!")
-            startActivity(intent)
-
-            // individual service
-//            hitFetcher.fetch().subscribe(
-//                    { response -> successProcessor(response) },
-//                    { error -> errorProcessor(error) }
-//            )
-            // standard api util
-//            apiUtil.getHitCount().subscribe(
-//                    { response -> successProcessor(response) },
-//                    { error -> errorProcessor(error) }
-//            )
+            println("IS NOT firstTime")
         }
     }
 
@@ -77,16 +55,4 @@ class MainActivity : AppCompatActivity() {
                 )
     }
     // end
-
-    private fun successProcessor(response: Model.Result) {
-        this.mainHeader.text = String.format(Locale.US, Integer.toString(response.query.searchinfo.totalhits))
-        println("IT WORKS: " + Integer.toString(response.query.searchinfo.totalhits))
-    }
-
-    private fun errorProcessor(error: Throwable?) {
-        println("ERROR: ")
-        println(error?.localizedMessage)
-        println(error?.message)
-    }
-
 }

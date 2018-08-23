@@ -4,29 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/baseGrey"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/mainHeader"
+    <EditText
+        android:id="@+id/mainEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/mainButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/mainButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/baseLime"
+        android:ems="14"
+        android:hint="@string/login_emailPlaceholder"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/baseLime"
+        android:textColorHint="@color/loginPlaceholder"
+        app:layout_constraintBottom_toTopOf="@+id/mainPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/mainPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/baseLime"
+        android:ems="14"
+        android:hint="@string/login_passwordPlaceholder"
+        android:inputType="textPassword"
+        android:textColor="@color/baseLime"
+        android:textColorHint="@color/loginPlaceholder"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/basePeach"
+        android:ems="12"
+        android:text="@string/login_signIn"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/mainPassword"
+        app:layout_constraintStart_toStartOf="@+id/mainPassword" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/login_logoDescription"
+        app:layout_constraintBottom_toTopOf="@+id/mainEmail"
+        app:layout_constraintEnd_toEndOf="@+id/mainEmail"
+        app:layout_constraintStart_toStartOf="@+id/mainEmail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </android.support.constraint.ConstraintLayout>

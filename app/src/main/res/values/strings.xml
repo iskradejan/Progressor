@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Progressor</string>
+    <!-- Login Screen -->
+    <string name="login_emailPlaceholder">email</string>
+    <string name="login_passwordPlaceholder">password</string>
+    <string name="login_signIn">Sign in</string>
+    <string name="login_logoDescription">Progressor Logo</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_header">Splash Header</string>
+    <string name="splash_subHeader">Splash Sub Header</string>
+    <string name="splash_login">Login</string>
 </resources>
