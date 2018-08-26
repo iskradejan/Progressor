@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Progressor</string>
     <!-- Login Screen -->
-    <string name="login_emailPlaceholder">email</string>
-    <string name="login_passwordPlaceholder">password</string>
+    <string name="login_emailPlaceholder">&#160;email</string>
+    <string name="login_passwordPlaceholder">&#160;password</string>
     <string name="login_signIn">Sign in</string>
     <string name="login_logoDescription">Progressor Logo</string>
     <string name="loing_progressor">Progressor</string>
