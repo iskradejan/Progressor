@@ -15,6 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:backgroundTint="@color/baseLime"
+        android:fontFamily="@font/adequate"
         android:ems="14"
         android:hint="@string/login_emailPlaceholder"
         android:inputType="textEmailAddress"
@@ -33,6 +34,7 @@
         android:layout_marginStart="8dp"
         android:backgroundTint="@color/baseLime"
         android:ems="14"
+        android:fontFamily="@font/adequate"
         android:hint="@string/login_passwordPlaceholder"
         android:inputType="textPassword"
         android:textColor="@color/baseLime"
@@ -48,6 +50,7 @@
         android:layout_marginBottom="60dp"
         android:background="@color/basePeach"
         android:ems="12"
+        android:fontFamily="@font/adequate"
         android:text="@string/login_signIn"
         android:textColor="@color/white"
         android:textAllCaps="false"
@@ -55,16 +58,21 @@
         app:layout_constraintEnd_toEndOf="@+id/mainPassword"
         app:layout_constraintStart_toStartOf="@+id/mainPassword" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/login_logoDescription"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/adequate"
+        android:text="@string/loing_progressor"
+        android:textColor="@color/white"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/mainEmail"
-        app:layout_constraintEnd_toEndOf="@+id/mainEmail"
-        app:layout_constraintStart_toStartOf="@+id/mainEmail"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

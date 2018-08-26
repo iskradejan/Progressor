@@ -5,6 +5,7 @@
     <string name="login_passwordPlaceholder">password</string>
     <string name="login_signIn">Sign in</string>
     <string name="login_logoDescription">Progressor Logo</string>
+    <string name="loing_progressor">Progressor</string>
 
     <!-- Splash Screen -->
     <string name="splash_header">Splash Header</string>
