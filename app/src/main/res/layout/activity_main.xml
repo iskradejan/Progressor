@@ -41,12 +41,12 @@
         android:textColor="@color/baseGrey"
         android:textColorHint="@color/loginPlaceholder"
         android:textCursorDrawable="@color/baseCursor"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/mainSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.v7.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/mainSignIn"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginBottom="60dp"

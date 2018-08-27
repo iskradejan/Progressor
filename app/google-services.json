@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "345503780552",
+    "firebase_url": "https://progressor-fd927.firebaseio.com",
+    "project_id": "progressor-fd927",
+    "storage_bucket": "progressor-fd927.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345503780552:android:37599dc79c1050ad",
+        "android_client_info": {
+          "package_name": "com.progressor.progressor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345503780552-n72ftv6fbngjns15bl98esn99k716ob2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP_S-sU9s-tXpUkWYmBWpz2pMZvCrvEcc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

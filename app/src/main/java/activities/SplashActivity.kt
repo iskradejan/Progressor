@@ -1,10 +1,12 @@
-package com.progressor.progressor
+package activities
 
 import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.progressor.progressor.MainActivity
+import com.progressor.progressor.R
 import com.progressor.progressor.components.DaggerApiComponent
 import com.progressor.progressor.modules.ApiModule
 import kotlinx.android.synthetic.main.activity_splash.*

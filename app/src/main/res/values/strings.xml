@@ -11,4 +11,8 @@
     <string name="splash_header">Splash Header</string>
     <string name="splash_subHeader">Splash Sub Header</string>
     <string name="splash_login">Login</string>
+
+    <!-- Dashboard Screen -->
+    <string name="dashboard_welcome">Welcome,</string>
+    <string name="dashboard_emailAddress">placeholder@gmail.com</string>
 </resources>

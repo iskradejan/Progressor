@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -41,8 +43,8 @@ repositories {
     }
 }
 dependencies {
-//    Spring
-    implementation 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-auth:16.0.3'
 
 //    Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'

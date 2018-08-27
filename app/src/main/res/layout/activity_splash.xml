@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/baseGrey"
-    tools:context=".SplashActivity">
+    android:background="@color/white"
+    tools:context="activities.SplashActivity">
 
     <TextView
         android:id="@+id/splashHeader"
@@ -18,8 +17,8 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/adequate"
         android:text="@string/splash_header"
+        android:textColor="@color/baseGrey"
         android:textSize="30sp"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +33,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/adequate"
         android:text="@string/splash_subHeader"
-        android:textColor="@color/white"
+        android:textColor="@color/baseGrey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splashHeader" />
@@ -48,7 +47,7 @@
         android:layout_marginStart="8dp"
         android:fontFamily="@font/adequate"
         android:text="@string/splash_login"
-        android:textColor="@color/white"
+        android:textColor="@color/baseGrey"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
