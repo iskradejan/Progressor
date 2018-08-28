@@ -1,6 +1,6 @@
 package com.progressor.progressor
 
-import activities.DashboardActivity
+import com.progressor.progressor.activities.DashboardActivity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import android.text.TextUtils
 import kotlinx.android.synthetic.main.activity_main.*
-import activities.SplashActivity
+import com.progressor.progressor.activities.SplashActivity
 
 class MainActivity : AppCompatActivity() {
     @Inject
