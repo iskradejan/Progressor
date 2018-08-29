@@ -15,14 +15,33 @@ import javax.inject.Inject
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import android.text.TextUtils
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 import com.progressor.progressor.activities.SplashActivity
+import com.progressor.progressor.presenters.MainActivityPresenter
 
-class MainActivity : AppCompatActivity() {
-    @Inject
-    lateinit var sharedPreferences: SharedPreferences
+class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
+
+    @Inject lateinit var presenter: MainActivityPresenter
+    @Inject lateinit var sharedPreferences: SharedPreferences
     private var firebaseAuth: FirebaseAuth? = null
     private var firebaseUser: FirebaseUser? = null
+
+    override fun getEmail(): EditText {
+        return mainEmail
+    }
+
+    override fun getPassword(): EditText {
+        return mainPassword
+    }
+
+    override fun getFirebaseAuth(): FirebaseAuth? {
+        return firebaseAuth
+    }
+
+    override fun isFormValid(): Boolean {
+        return !TextUtils.isEmpty(mainEmail.text.toString()) && !TextUtils.isEmpty(mainPassword.text.toString())
+    }
 
     override fun onBackPressed() {
         Toast.makeText(baseContext, "Nice try... you are stuck forever!", Toast.LENGTH_LONG).show()
@@ -31,6 +50,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter.setPresenter(this)
 
         DaggerApiComponent.builder().apiModule(ApiModule(this)).build().inject(this)
         firebaseAuth = FirebaseAuth.getInstance();
@@ -43,57 +63,57 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainSignIn.setOnClickListener {
-            signIn(mainEmail.getText().toString(), mainPassword.getText().toString());
+            presenter.login(mainEmail.text.toString(), mainPassword.text.toString())
         }
     }
 
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
         firebaseUser = firebaseAuth?.getCurrentUser()
-//        updateUI(currentUser)
     }
 
-    private fun validateForm(): Boolean {
-        var valid = true
+//    private fun validateForm(): Boolean {
+//        var valid = true
+//
+//        val email = mainEmail.getText().toString()
+//        if (TextUtils.isEmpty(email)) {
+//            mainEmail.setError("Required.")
+//            valid = false
+//        } else {
+//            mainEmail.setError(null)
+//        }
+//
+//        val password = mainPassword.getText().toString()
+//        if (TextUtils.isEmpty(password)) {
+//            mainPassword.setError("Required.")
+//            valid = false
+//        } else {
+//            mainPassword.setError(null)
+//        }
+//
+//        return valid
+//    }
+//
+//    fun signIn(email: String, password: String) {
+//        println("signIn:$email")
+//        if (!validateForm()) {
+//            return
+//        }
+//
+//        firebaseAuth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(this) { task ->
+//                    if (task.isSuccessful) {
+//                        firebaseUser = firebaseAuth?.getCurrentUser()
+//                        MainActivity.user.login?.email = firebaseUser?.email
+//                        val dashboardIntent = Intent(this, DashboardActivity::class.java)
+//                        startActivity(dashboardIntent)
+//                    } else {
+//                        println("Authentication failed:\n" + task.exception)
+//                        Toast.makeText(baseContext, "Authentication failed...", Toast.LENGTH_LONG).show()
+//                    }
+//                }
+//    }
 
-        val email = mainEmail.getText().toString()
-        if (TextUtils.isEmpty(email)) {
-            mainEmail.setError("Required.")
-            valid = false
-        } else {
-            mainEmail.setError(null)
-        }
 
-        val password = mainPassword.getText().toString()
-        if (TextUtils.isEmpty(password)) {
-            mainPassword.setError("Required.")
-            valid = false
-        } else {
-            mainPassword.setError(null)
-        }
-
-        return valid
-    }
-
-    private fun signIn(email: String, password: String) {
-        println("signIn:$email")
-        if (!validateForm()) {
-            return
-        }
-
-        firebaseAuth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        firebaseUser = firebaseAuth?.getCurrentUser()
-                        MainActivity.user.login?.email = firebaseUser?.email
-                        val dashboardIntent = Intent(this, DashboardActivity::class.java)
-                        startActivity(dashboardIntent)
-                    } else {
-                        println("Authentication failed:\n" + task.exception)
-                        Toast.makeText(baseContext, "Authentication failed...", Toast.LENGTH_LONG).show()
-                    }
-                }
-    }
 
     // TODO: this is how you create global object/value
     companion object Singleton {
