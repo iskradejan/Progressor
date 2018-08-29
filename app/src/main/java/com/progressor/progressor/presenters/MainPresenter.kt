@@ -1,7 +1,6 @@
 package com.progressor.progressor.presenters
 
 import android.content.Intent
-import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.progressor.progressor.MainActivity
@@ -15,8 +14,6 @@ class MainActivityPresenter @Inject constructor(){
 
     interface View {
         // function defined here means it must be implemented inside the activity || if you need to use it, you have to reference it from the view... view.function
-        fun getEmail(): EditText
-        fun getPassword(): EditText
         fun getFirebaseAuth(): FirebaseAuth?
         fun isFormValid(): Boolean
     }

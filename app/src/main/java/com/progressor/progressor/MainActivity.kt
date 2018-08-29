@@ -1,6 +1,5 @@
 package com.progressor.progressor
 
-import com.progressor.progressor.activities.DashboardActivity
 import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
@@ -15,7 +14,6 @@ import javax.inject.Inject
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import android.text.TextUtils
-import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 import com.progressor.progressor.activities.SplashActivity
 import com.progressor.progressor.presenters.MainActivityPresenter
@@ -27,39 +25,18 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
     private var firebaseAuth: FirebaseAuth? = null
     private var firebaseUser: FirebaseUser? = null
 
-    override fun getEmail(): EditText {
-        return mainEmail
-    }
-
-    override fun getPassword(): EditText {
-        return mainPassword
-    }
-
-    override fun getFirebaseAuth(): FirebaseAuth? {
-        return firebaseAuth
-    }
-
-    override fun isFormValid(): Boolean {
-        return !TextUtils.isEmpty(mainEmail.text.toString()) && !TextUtils.isEmpty(mainPassword.text.toString())
-    }
-
-    override fun onBackPressed() {
-        Toast.makeText(baseContext, "Nice try... you are stuck forever!", Toast.LENGTH_LONG).show()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.setPresenter(this)
 
         DaggerApiComponent.builder().apiModule(ApiModule(this)).build().inject(this)
+        presenter.setPresenter(this)
+
         firebaseAuth = FirebaseAuth.getInstance();
 
         if(sharedPreferences.getBoolean("firstTime", true)) {
             val splashIntent = Intent(this, SplashActivity::class.java)
             startActivity(splashIntent)
-        } else {
-            println("IS NOT firstTime")
         }
 
         mainSignIn.setOnClickListener {
@@ -72,47 +49,33 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         firebaseUser = firebaseAuth?.getCurrentUser()
     }
 
-//    private fun validateForm(): Boolean {
-//        var valid = true
-//
-//        val email = mainEmail.getText().toString()
-//        if (TextUtils.isEmpty(email)) {
-//            mainEmail.setError("Required.")
-//            valid = false
-//        } else {
-//            mainEmail.setError(null)
-//        }
-//
-//        val password = mainPassword.getText().toString()
-//        if (TextUtils.isEmpty(password)) {
-//            mainPassword.setError("Required.")
-//            valid = false
-//        } else {
-//            mainPassword.setError(null)
-//        }
-//
-//        return valid
-//    }
-//
-//    fun signIn(email: String, password: String) {
-//        println("signIn:$email")
-//        if (!validateForm()) {
-//            return
-//        }
-//
-//        firebaseAuth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(this) { task ->
-//                    if (task.isSuccessful) {
-//                        firebaseUser = firebaseAuth?.getCurrentUser()
-//                        MainActivity.user.login?.email = firebaseUser?.email
-//                        val dashboardIntent = Intent(this, DashboardActivity::class.java)
-//                        startActivity(dashboardIntent)
-//                    } else {
-//                        println("Authentication failed:\n" + task.exception)
-//                        Toast.makeText(baseContext, "Authentication failed...", Toast.LENGTH_LONG).show()
-//                    }
-//                }
-//    }
+    override fun onBackPressed() {
+        Toast.makeText(baseContext, "Nice try... you are stuck forever!", Toast.LENGTH_LONG).show()
+    }
 
+    override fun getFirebaseAuth(): FirebaseAuth? {
+        return firebaseAuth
+    }
+
+    override fun isFormValid(): Boolean {
+        var valid = true
+
+        if (TextUtils.isEmpty(mainEmail.getText().toString())) {
+            mainEmail.setError("Required.")
+            valid = false
+        } else {
+            mainEmail.setError(null)
+        }
+
+        if (TextUtils.isEmpty(mainPassword.getText().toString())) {
+            mainPassword.setError("Required.")
+            valid = false
+        } else {
+            mainPassword.setError(null)
+        }
+
+        return valid
+    }
 
 
     // TODO: this is how you create global object/value
@@ -127,7 +90,7 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         private val bodyHistoryList: MutableList<Body> = arrayListOf<Body>(body)
 
         var user = User(
-                Login("xxx"),
+                Login("diskra70@gmail.com"),
                 Person("Dejan", "Iskra", 1, LocalDateTime.of(1990, Month.DECEMBER, 16, 10, 10, 30), 72, 1, LocalDateTime.now()),
                 Profile(
                         workouts = workoutList,
