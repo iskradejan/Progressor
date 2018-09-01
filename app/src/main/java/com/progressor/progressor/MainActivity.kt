@@ -15,13 +15,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import android.text.TextUtils
 import kotlinx.android.synthetic.main.activity_main.*
-import com.progressor.progressor.activities.SplashActivity
-import com.progressor.progressor.presenters.MainActivityPresenter
+import com.progressor.progressor.views.activity.SplashActivity
+import com.progressor.progressor.views.activity.presenter.MainActivityPresenter
 
 class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
 
     @Inject lateinit var presenter: MainActivityPresenter
     @Inject lateinit var sharedPreferences: SharedPreferences
+
     private var firebaseAuth: FirebaseAuth? = null
     private var firebaseUser: FirebaseUser? = null
 

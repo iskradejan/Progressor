@@ -1,4 +1,4 @@
-package com.progressor.progressor.activities
+package com.progressor.progressor.views.activity
 
 import android.content.Intent
 import android.content.SharedPreferences

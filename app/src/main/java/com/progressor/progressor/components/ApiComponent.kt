@@ -1,7 +1,7 @@
 package com.progressor.progressor.components
 
 import com.progressor.progressor.MainActivity
-import com.progressor.progressor.activities.SplashActivity
+import com.progressor.progressor.views.activity.SplashActivity
 import com.progressor.progressor.modules.ApiModule
 import dagger.Component
 import javax.inject.Singleton

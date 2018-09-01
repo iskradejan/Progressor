@@ -1,10 +1,10 @@
-package com.progressor.progressor.presenters
+package com.progressor.progressor.views.activity.presenter
 
 import android.content.Intent
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.progressor.progressor.MainActivity
-import com.progressor.progressor.activities.DashboardActivity
+import com.progressor.progressor.views.activity.DashboardActivity
 import javax.inject.Inject
 
 class MainActivityPresenter @Inject constructor(){

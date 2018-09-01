@@ -21,11 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.progressor.progressor.activities.SplashActivity"
+            android:name="com.progressor.progressor.views.activity.SplashActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.progressor.progressor.activities.DashboardActivity"
+            android:name="com.progressor.progressor.views.activity.DashboardActivity"
             android:screenOrientation="portrait" />
     </application>
 
