@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.progressor.progressor.components.DaggerApiComponent
+import com.progressor.progressor.components.DaggerComponent
 import com.progressor.progressor.dataobjects.account.*
 import com.progressor.progressor.modules.ApiModule
 import java.time.LocalDateTime
@@ -14,6 +14,8 @@ import javax.inject.Inject
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import android.text.TextUtils
+import com.progressor.progressor.modules.FragmentModule
+import com.progressor.progressor.services.FragmentNavigator
 import kotlinx.android.synthetic.main.activity_main.*
 import com.progressor.progressor.views.activity.SplashActivity
 import com.progressor.progressor.views.activity.presenter.MainActivityPresenter
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
 
     @Inject lateinit var presenter: MainActivityPresenter
     @Inject lateinit var sharedPreferences: SharedPreferences
+    @Inject lateinit var fragmentNavigator: FragmentNavigator
 
     private var firebaseAuth: FirebaseAuth? = null
     private var firebaseUser: FirebaseUser? = null
@@ -30,7 +33,8 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DaggerApiComponent.builder().apiModule(ApiModule(this)).build().inject(this)
+        DaggerComponent.builder().apiModule(ApiModule(this)).build().inject(this)
+        DaggerComponent.builder().fragmentModule(FragmentModule(this)).build().inject(this)
         presenter.setPresenter(this)
 
         firebaseAuth = FirebaseAuth.getInstance();

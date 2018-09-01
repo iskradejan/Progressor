@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.progressor.progressor.MainActivity
 import com.progressor.progressor.R
-import com.progressor.progressor.components.DaggerApiComponent
+import com.progressor.progressor.components.DaggerComponent
 import com.progressor.progressor.modules.ApiModule
 import kotlinx.android.synthetic.main.activity_splash.*
 import javax.inject.Inject
@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        DaggerApiComponent.builder().apiModule(ApiModule(this)).build().inject(this)
+        DaggerComponent.builder().apiModule(ApiModule(this)).build().inject(this)
 
         splashHeader.text = MainActivity.user.person?.firstName ?: "none"
         splashSubHeader.text = MainActivity.user.person?.lastName ?: "none"

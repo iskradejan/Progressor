@@ -5,7 +5,6 @@ import android.content.SharedPreferences
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.progressor.progressor.MainActivity
 import com.progressor.progressor.interfaces.ApiInterface
 import dagger.Module
 import dagger.Provides
