@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
         println("THIS IS HOTFIXXXXX")
         if (sharedPreferences.getBoolean("firstTime", true)) {
             println("FIRST TIME, SENDING TO SPLASH FRAGMENT")
+            println("Normal work goes on")
             fragmentNavigator.navigate(SplashFragment())
         } else {
             fragmentNavigator.navigate(LoginFragment())
