@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
             println("Normal work goes on")
             fragmentNavigator.navigate(SplashFragment())
         } else {
+            println("NORMAL WORK GOES ON 2")
             fragmentNavigator.navigate(LoginFragment())
         }
     }
