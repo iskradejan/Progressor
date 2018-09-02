@@ -9,9 +9,10 @@ import com.progressor.progressor.views.presenter.DashboardPresenter
 import kotlinx.android.synthetic.main.layout_dashboard.*
 import javax.inject.Inject
 
-class DashboardFragment: BaseFragment(), DashboardPresenter.View {
+class DashboardFragment : BaseFragment(), DashboardPresenter.View {
 
-    @Inject lateinit var presenter: DashboardPresenter
+    @Inject
+    lateinit var presenter: DashboardPresenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

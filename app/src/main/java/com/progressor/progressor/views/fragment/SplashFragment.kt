@@ -10,10 +10,12 @@ import com.progressor.progressor.views.presenter.SplashPresenter
 import kotlinx.android.synthetic.main.layout_splash.*
 import javax.inject.Inject
 
-class SplashFragment: BaseFragment(), SplashPresenter.View {
+class SplashFragment : BaseFragment(), SplashPresenter.View {
 
-    @Inject lateinit var presenter: SplashPresenter
-    @Inject lateinit var sharedPreferences: SharedPreferences
+    @Inject
+    lateinit var presenter: SplashPresenter
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

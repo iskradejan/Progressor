@@ -14,7 +14,7 @@ open class FragmentModule(private val mainActivity: MainActivity) {
 
     @Provides
     @Singleton
-    fun getFragmentNavigator() : FragmentNavigator {
+    fun getFragmentNavigator(): FragmentNavigator {
         return FragmentNavigator(fragmentManager)
     }
 }

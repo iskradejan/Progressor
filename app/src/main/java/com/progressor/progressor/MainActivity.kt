@@ -3,7 +3,6 @@ package com.progressor.progressor
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.progressor.progressor.components.DaggerUtilComponent
 import com.progressor.progressor.dataobjects.account.*
 import com.progressor.progressor.modules.ApiModule
@@ -20,24 +19,22 @@ import com.progressor.progressor.views.fragment.SplashFragment
 class MainActivity : AppCompatActivity(), MainComponentInterface {
     private var utilComponent: UtilComponent? = null
 
-    @Inject lateinit var sharedPreferences: SharedPreferences
-    @Inject lateinit var fragmentNavigator: FragmentNavigator
+    @Inject
+    lateinit var sharedPreferences: SharedPreferences
+    @Inject
+    lateinit var fragmentNavigator: FragmentNavigator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_main)
         injectDependencies()
 
-        if(sharedPreferences.getBoolean("firstTime", true)) {
+        if (sharedPreferences.getBoolean("firstTime", true)) {
             println("FIRST TIME, SENDING TO SPLASH FRAGMENT")
             fragmentNavigator.navigate(SplashFragment())
         } else {
             fragmentNavigator.navigate(LoginFragment())
         }
-    }
-
-    override fun onBackPressed() {
-        Toast.makeText(baseContext, "Nice try... you are stuck forever!", Toast.LENGTH_LONG).show()
     }
 
     override fun getMainComponent(): UtilComponent? {
@@ -62,8 +59,8 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
             println("Faked User Object")
         }
 
-        private val workout = Workout(1,"Burn Baby Burn", LocalDateTime.now())
-        private val body = Body(180,30, 40, 30, LocalDateTime.now())
+        private val workout = Workout(1, "Burn Baby Burn", LocalDateTime.now())
+        private val body = Body(180, 30, 40, 30, LocalDateTime.now())
         private val workoutList: MutableList<Workout> = arrayListOf<Workout>(workout)
         private val bodyHistoryList: MutableList<Body> = arrayListOf<Body>(body)
 
