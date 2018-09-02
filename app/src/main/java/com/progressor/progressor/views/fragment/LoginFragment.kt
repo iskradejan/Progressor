@@ -1,6 +1,5 @@
 package com.progressor.progressor.views.fragment
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -18,7 +17,6 @@ class LoginFragment: BaseFragment(), LoginPresenter.View {
     private var firebaseAuth: FirebaseAuth? = null
 
     @Inject lateinit var presenter: LoginPresenter
-    @Inject lateinit var sharedPreferences: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,11 +35,6 @@ class LoginFragment: BaseFragment(), LoginPresenter.View {
 
     fun initialize() {
         firebaseAuth = FirebaseAuth.getInstance();
-
-        if(sharedPreferences.getBoolean("firstTime", true)) {
-            println("FIRST TIME, SENDING TO SPLASH FRAGMENT")
-            fragmentNavigator.navigate(SplashFragment())
-        }
 
         mainSignIn.setOnClickListener {
             presenter.login(mainEmail.text.toString(), mainPassword.text.toString())
