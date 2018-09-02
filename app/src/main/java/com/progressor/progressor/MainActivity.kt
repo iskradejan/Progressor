@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
         setContentView(R.layout.layout_main)
         injectDependencies()
 
+        println("THIS IS HOTFIXXXXX")
         if (sharedPreferences.getBoolean("firstTime", true)) {
             println("FIRST TIME, SENDING TO SPLASH FRAGMENT")
             println("Normal work goes on")
