@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/mainEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/baseMaroon"
+            android:ems="12"
+            android:fontFamily="@font/alex"
+            android:hint="@string/login_emailPlaceholder"
+            android:inputType="textEmailAddress"
+            android:text="dejiskra@gmail.com"
+            android:textColor="@color/baseGrey"
+            android:textColorHint="@color/loginPlaceholder"
+            android:textCursorDrawable="@color/baseCursor"
+            app:layout_constraintBottom_toTopOf="@+id/mainPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/mainPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/baseMaroon"
+            android:ems="12"
+            android:fontFamily="@font/alex"
+            android:hint="@string/login_passwordPlaceholder"
+            android:inputType="textPassword"
+            android:text="lol101010"
+            android:textColor="@color/baseGrey"
+            android:textColorHint="@color/loginPlaceholder"
+            android:textCursorDrawable="@color/baseCursor"
+            app:layout_constraintBottom_toTopOf="@+id/mainSignIn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/mainSignIn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="60dp"
+            android:background="@color/baseMaroon"
+            android:ems="12"
+            android:fontFamily="@font/alex"
+            android:stateListAnimator="@null"
+            android:text="@string/login_signIn"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/mainPassword"
+            app:layout_constraintStart_toStartOf="@+id/mainPassword" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/adequate"
+            android:text="@string/loing_progressor"
+            android:textColor="@color/baseGrey"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/mainEmail"
+            app:layout_constraintEnd_toEndOf="@+id/mainEmail"
+            app:layout_constraintStart_toStartOf="@+id/mainEmail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:srcCompat="@drawable/logo" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

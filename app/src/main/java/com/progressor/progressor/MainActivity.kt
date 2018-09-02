@@ -1,87 +1,60 @@
 package com.progressor.progressor
 
-import android.content.Intent
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.progressor.progressor.components.DaggerComponent
+import com.progressor.progressor.components.DaggerUtilComponent
 import com.progressor.progressor.dataobjects.account.*
 import com.progressor.progressor.modules.ApiModule
 import java.time.LocalDateTime
 import java.time.Month
 import javax.inject.Inject
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import android.text.TextUtils
+import com.progressor.progressor.components.MainComponentInterface
+import com.progressor.progressor.components.UtilComponent
 import com.progressor.progressor.modules.FragmentModule
 import com.progressor.progressor.services.FragmentNavigator
-import kotlinx.android.synthetic.main.activity_main.*
-import com.progressor.progressor.views.activity.SplashActivity
-import com.progressor.progressor.views.activity.presenter.MainActivityPresenter
+import com.progressor.progressor.views.fragment.LoginFragment
+import com.progressor.progressor.views.fragment.SplashFragment
 
-class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
+class MainActivity : AppCompatActivity(), MainComponentInterface {
+    private var utilComponent: UtilComponent? = null
 
-    @Inject lateinit var presenter: MainActivityPresenter
     @Inject lateinit var sharedPreferences: SharedPreferences
     @Inject lateinit var fragmentNavigator: FragmentNavigator
 
-    private var firebaseAuth: FirebaseAuth? = null
-    private var firebaseUser: FirebaseUser? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        DaggerComponent.builder().apiModule(ApiModule(this)).build().inject(this)
-        DaggerComponent.builder().fragmentModule(FragmentModule(this)).build().inject(this)
-        presenter.setPresenter(this)
-
-        firebaseAuth = FirebaseAuth.getInstance();
+        setContentView(R.layout.layout_main)
+        injectDependencies()
 
         if(sharedPreferences.getBoolean("firstTime", true)) {
-            val splashIntent = Intent(this, SplashActivity::class.java)
-            startActivity(splashIntent)
+            println("FIRST TIME, SENDING TO SPLASH FRAGMENT")
+            fragmentNavigator.navigate(SplashFragment())
+        } else {
+            fragmentNavigator.navigate(LoginFragment())
         }
-
-        mainSignIn.setOnClickListener {
-            presenter.login(mainEmail.text.toString(), mainPassword.text.toString())
-        }
-    }
-
-    public override fun onStart() {
-        super.onStart()
-        firebaseUser = firebaseAuth?.getCurrentUser()
     }
 
     override fun onBackPressed() {
         Toast.makeText(baseContext, "Nice try... you are stuck forever!", Toast.LENGTH_LONG).show()
     }
 
-    override fun getFirebaseAuth(): FirebaseAuth? {
-        return firebaseAuth
+    override fun getMainComponent(): UtilComponent? {
+        utilComponent?.let { return it }
+
+        utilComponent = DaggerUtilComponent
+                .builder()
+                .apiModule(ApiModule(this))
+                .fragmentModule(FragmentModule(this))
+                .build()
+
+        return utilComponent
     }
 
-    override fun isFormValid(): Boolean {
-        var valid = true
-
-        if (TextUtils.isEmpty(mainEmail.getText().toString())) {
-            mainEmail.setError("Required.")
-            valid = false
-        } else {
-            mainEmail.setError(null)
-        }
-
-        if (TextUtils.isEmpty(mainPassword.getText().toString())) {
-            mainPassword.setError("Required.")
-            valid = false
-        } else {
-            mainPassword.setError(null)
-        }
-
-        return valid
+    private fun injectDependencies() {
+        mainComponent?.inject(this)
     }
-
 
     // TODO: this is how you create global object/value
     companion object Singleton {
@@ -102,7 +75,7 @@ class MainActivity : AppCompatActivity(), MainActivityPresenter.View {
                         bodyHistory = bodyHistoryList
                 ),
                 true
-                )
+        )
     }
     // end
 }
