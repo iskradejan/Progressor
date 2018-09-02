@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
 
         if (sharedPreferences.getBoolean("firstTime", true)) {
             println("FIRST TIME, SENDING TO SPLASH FRAGMENT")
+            println("Normal work goes on")
             fragmentNavigator.navigate(SplashFragment())
         } else {
             fragmentNavigator.navigate(LoginFragment())
