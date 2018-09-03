@@ -8,14 +8,9 @@ import android.content.Context
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.views.fragment.DashboardFragment
 
-class LoginPresenter @Inject constructor() {
+class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigator, var authenticationManager: AuthenticationManager) {
     private lateinit var view: View
     private var context: Context? = null
-
-    @Inject
-    lateinit var fragmentNavigator: FragmentNavigator
-    @Inject
-    lateinit var authenticationManager: AuthenticationManager
 
     interface View {
         fun isFormValid(): Boolean
@@ -29,7 +24,6 @@ class LoginPresenter @Inject constructor() {
 
     private fun initialize() {
         if (authenticationManager.isLoggedIn()) {
-            println("Already logged in, go to Dashboard")
             fragmentNavigator.navigate(DashboardFragment())
         }
     }

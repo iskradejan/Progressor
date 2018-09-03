@@ -5,7 +5,9 @@ import android.content.SharedPreferences
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.progressor.progressor.MainActivity
 import com.progressor.progressor.interfaces.ApiInterface
+import com.progressor.progressor.services.AuthenticationManager
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -15,7 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-open class ApiModule(private val context: Context) {
+open class ApiModule(private val mainActivity: MainActivity) {
+    private val context: Context = mainActivity.baseContext
 
     @Provides
     @Singleton
@@ -53,5 +56,11 @@ open class ApiModule(private val context: Context) {
     @Singleton
     fun createRetrofitInterface(retrofit: Retrofit): ApiInterface {
         return retrofit.create(ApiInterface::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun authenticationManager() : AuthenticationManager {
+        return AuthenticationManager(mainActivity)
     }
 }

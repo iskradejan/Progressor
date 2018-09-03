@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.progressor.progressor.components.MainComponentInterface
 import com.progressor.progressor.services.ApiRequestor
+import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
 import javax.inject.Inject
 
@@ -16,6 +17,8 @@ abstract class BaseFragment : Fragment() {
     protected lateinit var apiRequestor: ApiRequestor
     @Inject
     protected lateinit var fragmentNavigator: FragmentNavigator
+    @Inject
+    protected lateinit var authenticationManager: AuthenticationManager
 
     protected abstract fun getFragmentLayout(): Int
     protected abstract fun injectDependencies()

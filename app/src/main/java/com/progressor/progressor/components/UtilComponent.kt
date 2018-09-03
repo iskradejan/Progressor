@@ -23,7 +23,6 @@ interface UtilComponent {
 
     // Services
     fun inject(apiRequestor: ApiRequestor)
-
     fun inject(fragmentNavigator: FragmentNavigator)
     fun inject(authenticationManager: AuthenticationManager)
 }

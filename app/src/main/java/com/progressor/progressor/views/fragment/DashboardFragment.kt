@@ -2,7 +2,6 @@ package com.progressor.progressor.views.fragment
 
 import android.os.Bundle
 import android.view.View
-import com.progressor.progressor.MainActivity
 import com.progressor.progressor.R
 import com.progressor.progressor.components.MainComponentInterface
 import com.progressor.progressor.views.presenter.DashboardPresenter
@@ -30,6 +29,6 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
     }
 
     private fun initialize() {
-        dashboardUserEmail.text = MainActivity.user.login?.email
+        dashboardUserEmail.text = authenticationManager.firebaseUser?.email
     }
 }
