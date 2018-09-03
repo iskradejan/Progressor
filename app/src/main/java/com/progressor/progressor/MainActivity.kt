@@ -15,6 +15,8 @@ import com.progressor.progressor.modules.FragmentModule
 import com.progressor.progressor.services.FragmentNavigator
 import com.progressor.progressor.views.fragment.LoginFragment
 import com.progressor.progressor.views.fragment.SplashFragment
+import kotlinx.android.synthetic.main.layout_main.*
+import android.graphics.Color
 
 class MainActivity : AppCompatActivity(), MainComponentInterface {
     private var utilComponent: UtilComponent? = null
@@ -28,14 +30,10 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_main)
         injectDependencies()
-
-        println("THIS IS HOTFIXXXXX")
+//        slidingPane.setSliderFadeColor(Color.TRANSPARENT)
         if (sharedPreferences.getBoolean("firstTime", true)) {
-            println("FIRST TIME, SENDING TO SPLASH FRAGMENT")
-            println("Normal work goes on")
             fragmentNavigator.navigate(SplashFragment())
         } else {
-            println("NORMAL WORK GOES ON 2")
             fragmentNavigator.navigate(LoginFragment())
         }
     }

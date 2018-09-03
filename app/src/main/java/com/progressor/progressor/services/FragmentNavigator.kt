@@ -13,11 +13,11 @@ class FragmentNavigator constructor(private val fragmentManager: FragmentManager
         if (fragment is LoginFragment || fragment is DashboardFragment) {
             fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
             fragmentTransaction
-                    .replace(R.id.fragmentContainer, fragment, fragment::class.java.simpleName)
+                    .replace(R.id.mainFragmentContainer, fragment, fragment::class.java.simpleName)
                     .commit()
         } else {
             fragmentTransaction
-                    .replace(R.id.fragmentContainer, fragment, fragment::class.java.simpleName)
+                    .replace(R.id.mainFragmentContainer, fragment, fragment::class.java.simpleName)
                     .addToBackStack(null)
                     .commit()
             fragmentManager.executePendingTransactions()

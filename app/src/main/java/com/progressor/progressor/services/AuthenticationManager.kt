@@ -32,8 +32,11 @@ class AuthenticationManager @Inject constructor() {
     }
 
     fun signOut() {
-        firebaseUser = null
-        fragmentNavigator.clearBackStack()
+        if(firebaseAuth != null) {
+            firebaseAuth?.signOut()
+            firebaseUser = null
+            fragmentNavigator.clearBackStack()
+        }
     }
 
     fun isLoggedIn(): Boolean {

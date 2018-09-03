@@ -6,10 +6,23 @@
     android:theme="@android:style/Theme.Translucent.NoTitleBar"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/mainActivityLayout"
-        layout="@layout/layout_fragment_base"
+    <android.support.v4.widget.SlidingPaneLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/slidingPane"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/sliderLayout"
+            layout="@layout/layout_slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/mainFragmentLayout"
+            layout="@layout/layout_main_fragment_base"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SlidingPaneLayout>
 
 </RelativeLayout>

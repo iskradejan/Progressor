@@ -6,10 +6,7 @@ import com.progressor.progressor.modules.FragmentModule
 import com.progressor.progressor.services.ApiRequestor
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.views.fragment.BaseFragment
-import com.progressor.progressor.views.fragment.DashboardFragment
-import com.progressor.progressor.views.fragment.LoginFragment
-import com.progressor.progressor.views.fragment.SplashFragment
+import com.progressor.progressor.views.fragment.*
 import dagger.Component
 import javax.inject.Singleton
 
