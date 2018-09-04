@@ -22,7 +22,7 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         (mainActivity as MainComponentInterface).mainComponent?.inject(this)
     }
 
-    fun createAccount(email: String, password: String) {
+    fun createAccount(context:Context, email: String, password: String) {
         if(isLoggedIn()) {
             println("navigating to dashboard cause you are logged in , cant create acount")
             fragmentNavigator.navigate(DashboardFragment())
@@ -30,10 +30,12 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        firebaseAuth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener { task ->
+        firebaseAuth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(context as Activity) { task ->
             if(task.isSuccessful) {
                 println("account created successfully")
                 firebaseUser = firebaseAuth?.currentUser
+                authenticated = true
+                fragmentNavigator.navigate(DashboardFragment())
             } else {
                 println("account create failed")
                 val exception = task.exception as FirebaseAuthException
@@ -46,6 +48,7 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
                         println("caught error: weak password")
                     }
                 }
+                Toast.makeText(context, "Registration failed...", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -79,6 +82,7 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         if(firebaseUser != null) {
             firebaseAuth?.signOut()
             firebaseUser = null
+            authenticated = false
             fragmentNavigator.clearBackStack()
         }
     }

@@ -41,5 +41,9 @@ class SplashFragment : BaseFragment(), SplashPresenter.View {
         splashLogin.setOnClickListener {
             fragmentNavigator.navigate(LoginFragment())
         }
+
+        splashRegister.setOnClickListener {
+            fragmentNavigator.navigate(AccountCreateFragment())
+        }
     }
 }

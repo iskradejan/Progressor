@@ -5,14 +5,14 @@ import android.text.TextUtils
 import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.components.MainComponentInterface
-import com.progressor.progressor.views.presenter.LoginPresenter
+import com.progressor.progressor.views.presenter.AccountCreatePresenter
+import kotlinx.android.synthetic.main.layout_account_create.*
 import kotlinx.android.synthetic.main.layout_login.*
 import javax.inject.Inject
 
-class LoginFragment : BaseFragment(), LoginPresenter.View {
-
+class AccountCreateFragment: BaseFragment(), AccountCreatePresenter.View {
     @Inject
-    lateinit var presenter: LoginPresenter
+    lateinit var presenter: AccountCreatePresenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -21,40 +21,39 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
     }
 
     override fun getFragmentLayout(): Int {
-        return R.layout.layout_login
+        return R.layout.layout_account_create
     }
 
     override fun injectDependencies() {
         (activity as MainComponentInterface).mainComponent.inject(this)
         presenter.setPresenter(this)
-    }
-
-    fun initialize() {
-        mainSignIn.setOnClickListener {
-            presenter.login(mainEmail.text.toString(), mainPassword.text.toString())
-        }
-        mainRegister.setOnClickListener {
-            fragmentNavigator.navigate(AccountCreateFragment())
-        }
+        initialize()
     }
 
     override fun isFormValid(): Boolean {
         var valid = true
 
-        if (TextUtils.isEmpty(mainEmail.getText().toString())) {
-            mainEmail.setError("Required.")
+        if (TextUtils.isEmpty(accountCreateEmail.getText().toString())) {
+            accountCreateEmail.setError("Required.")
             valid = false
         } else {
-            mainEmail.setError(null)
+            accountCreateEmail.setError(null)
         }
 
-        if (TextUtils.isEmpty(mainPassword.getText().toString())) {
-            mainPassword.setError("Required.")
+        if (TextUtils.isEmpty(accountCreatePassword.getText().toString())) {
+            accountCreatePassword.setError("Required.")
             valid = false
         } else {
-            mainPassword.setError(null)
+            accountCreatePassword.setError(null)
         }
 
         return valid
+    }
+
+
+    fun initialize() {
+        accountCreateRegister.setOnClickListener {
+            presenter.register(accountCreateEmail.text.toString(), accountCreatePassword.text.toString())
+        }
     }
 }
