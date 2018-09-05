@@ -5,12 +5,14 @@ import android.text.TextUtils
 import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.components.MainComponentInterface
+import com.progressor.progressor.dataobjects.firebase.FirebaseConstant
+import com.progressor.progressor.dataobjects.helper.FirebaseResponse
+import com.progressor.progressor.services.RxBus
 import com.progressor.progressor.views.presenter.AccountCreatePresenter
 import kotlinx.android.synthetic.main.layout_account_create.*
-import kotlinx.android.synthetic.main.layout_login.*
 import javax.inject.Inject
 
-class AccountCreateFragment: BaseFragment(), AccountCreatePresenter.View {
+class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
     @Inject
     lateinit var presenter: AccountCreatePresenter
 
@@ -28,6 +30,39 @@ class AccountCreateFragment: BaseFragment(), AccountCreatePresenter.View {
         (activity as MainComponentInterface).mainComponent.inject(this)
         presenter.setPresenter(this)
         initialize()
+    }
+
+    fun initialize() {
+        RxBus.listen(FirebaseResponse::class.java).subscribe {
+            println("TYPE: " + it.getType())
+            if (it.getType().equals(FirebaseConstant.TYPE_CREATE_ACCOUNT)) {
+                when (it.getSuccess()) {
+                    true -> {
+                        fragmentNavigator.navigate(DashboardFragment())
+                    }
+                    false -> {
+                        it.getErrors()?.forEach {
+                            println("Error: " + it)
+                            when (it) {
+                                FirebaseConstant.ERROR_EMAIL_ALREADY_IN_USE -> {
+                                    accountCreateEmailError.text = getString(R.string.account_create_error_email_exists)
+                                    accountCreateEmailError.visibility = View.VISIBLE
+                                }
+                                FirebaseConstant.ERROR_WEAK_PASSWORD -> {
+                                    accountCreatePasswordError.text = getString(R.string.account_create_error_password_weak)
+                                    accountCreatePasswordError.visibility = View.VISIBLE
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        accountCreateRegister.setOnClickListener {
+            accountCreateEmailError.visibility = View.GONE
+            accountCreatePasswordError.visibility = View.GONE
+            presenter.register(accountCreateEmail.text.toString(), accountCreatePassword.text.toString())
+        }
     }
 
     override fun isFormValid(): Boolean {
@@ -48,12 +83,5 @@ class AccountCreateFragment: BaseFragment(), AccountCreatePresenter.View {
         }
 
         return valid
-    }
-
-
-    fun initialize() {
-        accountCreateRegister.setOnClickListener {
-            presenter.register(accountCreateEmail.text.toString(), accountCreatePassword.text.toString())
-        }
     }
 }

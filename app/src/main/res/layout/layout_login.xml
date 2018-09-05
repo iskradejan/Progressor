@@ -110,5 +110,31 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/mainEmailError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/baseMaroon"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/mainEmail"
+            app:layout_constraintStart_toStartOf="@+id/mainEmail" />
+
+        <TextView
+            android:id="@+id/mainPasswordError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/baseMaroon"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/mainPassword"
+            app:layout_constraintStart_toStartOf="@+id/mainPassword"
+            app:layout_constraintTop_toBottomOf="@+id/mainEmail" />
+
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

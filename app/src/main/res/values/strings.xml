@@ -7,11 +7,15 @@
     <string name="login_register">Don\'t have an account? Register here.</string>
     <string name="login_logoDescription">Progressor Logo</string>
     <string name="login_progressor">Progressor</string>
+    <string name="login_error_email_not_found">Email not found.</string>
+    <string name="login_error_password_incorrect">Password incorrect.</string>
 
     <!-- Account Create Screen -->
     <string name="account_create_emailPlaceholder">&#160;email</string>
     <string name="account_create_passwordPlaceholder">&#160;password</string>
     <string name="account_create_register">Register</string>
+    <string name="account_create_error_email_exists">Email already exists.</string>
+    <string name="account_create_error_password_weak">Password is weak.</string>
 
     <!-- Splash Screen -->
     <string name="splash_header">Splash Header</string>
