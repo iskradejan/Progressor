@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import com.progressor.progressor.R
-import com.progressor.progressor.components.MainComponentInterface
-import com.progressor.progressor.dataobjects.firebase.FirebaseConstant
-import com.progressor.progressor.dataobjects.helper.FirebaseResponse
+import com.progressor.progressor.di.components.MainComponentInterface
+import com.progressor.progressor.model.constant.FirebaseConstant
+import com.progressor.progressor.model.pojo.FirebaseResponse
 import com.progressor.progressor.services.RxBus
 import com.progressor.progressor.views.presenter.AccountCreatePresenter
 import kotlinx.android.synthetic.main.layout_account_create.*

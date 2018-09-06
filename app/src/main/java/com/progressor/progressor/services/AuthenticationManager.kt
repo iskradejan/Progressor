@@ -3,9 +3,9 @@ package com.progressor.progressor.services
 import android.app.Activity
 import android.content.Context
 import com.google.firebase.auth.*
-import com.progressor.progressor.components.MainComponentInterface
-import com.progressor.progressor.dataobjects.firebase.FirebaseConstant
-import com.progressor.progressor.dataobjects.helper.FirebaseResponse
+import com.progressor.progressor.di.components.MainComponentInterface
+import com.progressor.progressor.model.constant.FirebaseConstant
+import com.progressor.progressor.model.pojo.FirebaseResponse
 import com.progressor.progressor.views.fragment.DashboardFragment
 import javax.inject.Inject
 

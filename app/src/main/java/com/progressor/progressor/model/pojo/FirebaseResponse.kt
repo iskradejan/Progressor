@@ -1,4 +1,4 @@
-package com.progressor.progressor.dataobjects.helper
+package com.progressor.progressor.model.pojo
 
 class FirebaseResponse {
     private var success: Boolean ?= null

@@ -1,6 +1,6 @@
 package com.progressor.progressor.services
 
-import com.progressor.progressor.interfaces.ApiInterface
+import com.progressor.progressor.di.interfaces.ApiInterface
 import javax.inject.Inject
 
 class ApiRequestor @Inject constructor() {

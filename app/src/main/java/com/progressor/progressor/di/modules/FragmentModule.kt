@@ -1,4 +1,4 @@
-package com.progressor.progressor.modules
+package com.progressor.progressor.di.modules
 
 import android.support.v4.app.FragmentManager
 import com.progressor.progressor.MainActivity

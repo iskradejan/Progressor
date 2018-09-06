@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.progressor.progressor.components.MainComponentInterface
+import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.services.ApiRequestor
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator

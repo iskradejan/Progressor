@@ -1,4 +1,4 @@
-package com.progressor.progressor.modules
+package com.progressor.progressor.di.modules
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -6,7 +6,7 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.progressor.progressor.MainActivity
-import com.progressor.progressor.interfaces.ApiInterface
+import com.progressor.progressor.di.interfaces.ApiInterface
 import com.progressor.progressor.services.AuthenticationManager
 import dagger.Module
 import dagger.Provides

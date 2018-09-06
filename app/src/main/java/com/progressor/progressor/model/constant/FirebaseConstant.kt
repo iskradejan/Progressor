@@ -1,4 +1,4 @@
-package com.progressor.progressor.dataobjects.firebase
+package com.progressor.progressor.model.constant
 
 class FirebaseConstant {
     companion object {

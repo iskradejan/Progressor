@@ -1,4 +1,4 @@
-package com.progressor.progressor.dataobjects.account
+package com.progressor.progressor.model.dataobjects.account
 
 import java.time.LocalDateTime
 

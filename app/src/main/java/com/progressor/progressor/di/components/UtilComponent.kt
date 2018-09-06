@@ -1,8 +1,8 @@
-package com.progressor.progressor.components
+package com.progressor.progressor.di.components
 
 import com.progressor.progressor.MainActivity
-import com.progressor.progressor.modules.ApiModule
-import com.progressor.progressor.modules.FragmentModule
+import com.progressor.progressor.di.modules.ApiModule
+import com.progressor.progressor.di.modules.FragmentModule
 import com.progressor.progressor.services.ApiRequestor
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator

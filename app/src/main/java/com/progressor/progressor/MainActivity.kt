@@ -3,20 +3,18 @@ package com.progressor.progressor
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.progressor.progressor.components.DaggerUtilComponent
-import com.progressor.progressor.dataobjects.account.*
-import com.progressor.progressor.modules.ApiModule
+import com.progressor.progressor.di.components.DaggerUtilComponent
+import com.progressor.progressor.model.dataobjects.account.*
+import com.progressor.progressor.di.modules.ApiModule
 import java.time.LocalDateTime
 import java.time.Month
 import javax.inject.Inject
-import com.progressor.progressor.components.MainComponentInterface
-import com.progressor.progressor.components.UtilComponent
-import com.progressor.progressor.modules.FragmentModule
+import com.progressor.progressor.di.components.MainComponentInterface
+import com.progressor.progressor.di.components.UtilComponent
+import com.progressor.progressor.di.modules.FragmentModule
 import com.progressor.progressor.services.FragmentNavigator
 import com.progressor.progressor.views.fragment.LoginFragment
 import com.progressor.progressor.views.fragment.SplashFragment
-import kotlinx.android.synthetic.main.layout_main.*
-import android.graphics.Color
 
 class MainActivity : AppCompatActivity(), MainComponentInterface {
     private var utilComponent: UtilComponent? = null

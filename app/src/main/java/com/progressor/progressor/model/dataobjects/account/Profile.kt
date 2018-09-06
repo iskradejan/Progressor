@@ -1,4 +1,4 @@
-package com.progressor.progressor.dataobjects.account
+package com.progressor.progressor.model.dataobjects.account
 
 data class Profile(
         val workouts: MutableList<Workout>? = null,
