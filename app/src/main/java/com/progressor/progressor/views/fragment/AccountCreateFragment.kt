@@ -32,8 +32,13 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
         initialize()
     }
 
+    override fun onStop() {
+        super.onStop()
+        RxBus.unsubscribe(this)
+    }
+
     fun initialize() {
-        RxBus.listen(FirebaseResponse::class.java).subscribe {
+        RxBus.subscribe<FirebaseResponse>(this) {
             println("TYPE: " + it.getType())
             if (it.getType().equals(FirebaseConstant.TYPE_CREATE_ACCOUNT)) {
                 when (it.getSuccess()) {

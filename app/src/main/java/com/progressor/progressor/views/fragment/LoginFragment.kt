@@ -32,8 +32,33 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
         presenter.setPresenter(this)
     }
 
+    override fun onStop() {
+        super.onStop()
+        RxBus.unsubscribe(this)
+    }
+
+    override fun isFormValid(): Boolean {
+        var valid = true
+
+        if (TextUtils.isEmpty(mainEmail.getText().toString())) {
+            mainEmail.setError("Required.")
+            valid = false
+        } else {
+            mainEmail.setError(null)
+        }
+
+        if (TextUtils.isEmpty(mainPassword.getText().toString())) {
+            mainPassword.setError("Required.")
+            valid = false
+        } else {
+            mainPassword.setError(null)
+        }
+
+        return valid
+    }
+
     fun initialize() {
-        RxBus.listen(FirebaseResponse::class.java).subscribe {
+        RxBus.subscribe<FirebaseResponse>(this) {
             if (it.getType().equals(FirebaseConstant.TYPE_LOGIN)) {
                 when (it.getSuccess()) {
                     true -> {
@@ -67,25 +92,5 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
         mainRegister.setOnClickListener {
             fragmentNavigator.navigate(AccountCreateFragment())
         }
-    }
-
-    override fun isFormValid(): Boolean {
-        var valid = true
-
-        if (TextUtils.isEmpty(mainEmail.getText().toString())) {
-            mainEmail.setError("Required.")
-            valid = false
-        } else {
-            mainEmail.setError(null)
-        }
-
-        if (TextUtils.isEmpty(mainPassword.getText().toString())) {
-            mainPassword.setError("Required.")
-            valid = false
-        } else {
-            mainPassword.setError(null)
-        }
-
-        return valid
     }
 }
