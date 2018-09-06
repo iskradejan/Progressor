@@ -24,8 +24,9 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/adequate"
             android:text="@string/login_progressor"
+            android:textAlignment="center"
             android:textColor="@color/baseGrey"
-            android:textSize="36sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/accountCreateEmail"
             app:layout_constraintEnd_toEndOf="@+id/accountCreateEmail"
             app:layout_constraintStart_toStartOf="@+id/accountCreateEmail"
@@ -96,6 +97,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/accountCreatePassword"
             app:layout_constraintStart_toStartOf="@+id/accountCreatePassword" />
+
+        <TextView
+            android:id="@+id/accountCreateLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/account_create_login"
+            android:textColor="@color/baseGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/accountCreateEmailError"

@@ -14,6 +14,7 @@
     <string name="account_create_emailPlaceholder">&#160;email</string>
     <string name="account_create_passwordPlaceholder">&#160;password</string>
     <string name="account_create_register">Register</string>
+    <string name="account_create_login">Already have an account? Login here.</string>
     <string name="account_create_error_email_exists">Email already exists.</string>
     <string name="account_create_error_password_weak">Password is weak.</string>
 

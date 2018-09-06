@@ -68,6 +68,9 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
             accountCreatePasswordError.visibility = View.GONE
             presenter.register(accountCreateEmail.text.toString(), accountCreatePassword.text.toString())
         }
+        accountCreateLogin.setOnClickListener {
+            fragmentNavigator.navigate(LoginFragment())
+        }
     }
 
     override fun isFormValid(): Boolean {
