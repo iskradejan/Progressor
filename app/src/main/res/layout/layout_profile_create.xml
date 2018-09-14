@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/profileCreateFirstNameValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/profileCreateFirstNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="8dp"
+            android:text="First Name"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/profileCreateFirstNameValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileCreateFirstNameValue" />
+
+        <EditText
+            android:id="@+id/profileCreateFirstNameValue"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/input_underline"
+            android:inputType="text"
+            android:paddingStart="8dp"
+            android:textColor="@color/baseGrey"
+            android:textCursorDrawable="@color/baseCursor"
+            app:layout_constraintBottom_toTopOf="@+id/profileCreateLastNameValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profileCreateFirstNameLabel" />
+
+        <TextView
+            android:id="@+id/profileCreateLastNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="8dp"
+            android:text="Last Name"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/profileCreateLastNameValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileCreateLastNameValue" />
+
+        <EditText
+            android:id="@+id/profileCreateLastNameValue"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/input_underline"
+            android:gravity="fill_vertical"
+            android:inputType="text"
+            android:paddingStart="8dp"
+            android:textColor="@color/baseGrey"
+            android:textCursorDrawable="@color/baseCursor"
+            app:layout_constraintBottom_toTopOf="@+id/profileCreateGenderValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profileCreateLastNameLabel" />
+
+        <TextView
+            android:id="@+id/profileCreateBirthdayValueLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="8dp"
+            android:text="Birthday"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/profileCreateBirthdayValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileCreateBirthdayValue" />
+
+        <TextView
+            android:id="@+id/profileCreateBirthdayValue"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/input_underline"
+            android:gravity="fill_vertical"
+            android:paddingStart="8dp"
+            android:text="05/12/2018"
+            android:textColor="@color/baseGrey"
+            android:textCursorDrawable="@color/baseCursor"
+            app:layout_constraintBottom_toTopOf="@+id/profileCreateFeetValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/profileCreateGenderValue" />
+
+        <TextView
+            android:id="@+id/profileCreateGenderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="8dp"
+            android:text="Gender"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/profileCreateGenderValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileCreateGenderValue" />
+
+        <Spinner
+            android:id="@+id/profileCreateGenderValue"
+            style="@style/spinner_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="35dp"
+            android:entries="@array/gender_array"
+            app:layout_constraintBottom_toTopOf="@+id/profileCreateBirthdayValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/profileCreateLastNameValue" />
+
+
+        <TextView
+            android:id="@+id/profileCreateFeetLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="35dp"
+            android:text="Feet"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/profileCreateFeetValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileCreateFeetValue" />
+
+        <Spinner
+            android:id="@+id/profileCreateFeetValue"
+            style="@style/spinner_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="35dp"
+            android:entries="@array/feet_array"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toTopOf="@+id/profileCreateInchValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/profileCreateBirthdayValue" />
+
+        <TextView
+            android:id="@+id/profileCreateInchesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="8dp"
+            android:text="Inches"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/profileCreateInchValue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profileCreateInchValue" />
+
+        <Spinner
+            android:id="@+id/profileCreateInchValue"
+            style="@style/spinner_style"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="35dp"
+            android:entries="@array/inches_array"
+            app:layout_constraintBottom_toTopOf="@+id/profileCreateContinue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/profileCreateFeetValue" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/profileCreateContinue"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="35dp"
+            android:background="@color/baseMaroon"
+            android:ems="12"
+            android:fontFamily="@font/alex"
+            android:stateListAnimator="@null"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

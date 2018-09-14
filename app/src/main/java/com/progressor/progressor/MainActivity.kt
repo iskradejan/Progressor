@@ -4,10 +4,7 @@ import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.progressor.progressor.di.components.DaggerUtilComponent
-import com.progressor.progressor.model.dataobjects.account.*
 import com.progressor.progressor.di.modules.ApiModule
-import java.time.LocalDateTime
-import java.time.Month
 import javax.inject.Inject
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.di.components.UtilComponent
@@ -51,27 +48,4 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
     private fun injectDependencies() {
         mainComponent?.inject(this)
     }
-
-    // TODO: this is how you create global object/value
-    companion object Singleton {
-        init {
-            println("Faked User Object")
-        }
-
-        private val workout = Workout(1, "Burn Baby Burn", LocalDateTime.now())
-        private val body = Body(180, 30, 40, 30, LocalDateTime.now())
-        private val workoutList: MutableList<Workout> = arrayListOf<Workout>(workout)
-        private val bodyHistoryList: MutableList<Body> = arrayListOf<Body>(body)
-
-        var user = User(
-                Login("diskra70@gmail.com"),
-                Person("Dejan", "Iskra", 1, LocalDateTime.of(1990, Month.DECEMBER, 16, 10, 10, 30), 72, 1, LocalDateTime.now()),
-                Profile(
-                        workouts = workoutList,
-                        bodyHistory = bodyHistoryList
-                ),
-                true
-        )
-    }
-    // end
 }

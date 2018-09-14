@@ -5,4 +5,16 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:colorAccent">@color/baseMaroon</item>
     </style>
+
+    <style name="spinner_style">
+        <!-- Color when pressed -->
+        <item name="colorAccent">@color/baseMaroon</item>
+        <!-- Default color for the dropdown arrow and line -->
+        <item name="colorControlNormal">@color/baseMaroon</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/input_underline</item>
+        <item name="android:popupBackground">@color/white</item>
+    </style>
+
 </resources>

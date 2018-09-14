@@ -33,8 +33,8 @@ class SplashFragment : BaseFragment(), SplashPresenter.View {
     }
 
     private fun initialize() {
-        splashHeader.text = MainActivity.user.person?.firstName ?: "none"
-        splashSubHeader.text = MainActivity.user.person?.lastName ?: "none"
+//        splashHeader.text = MainActivity.user.person?.firstName ?: "none"
+//        splashSubHeader.text = MainActivity.user.person?.lastName ?: "none"
 
         sharedPreferences.edit().putBoolean("firstTime", false).apply()
 

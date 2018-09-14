@@ -18,6 +18,39 @@
     <string name="account_create_error_email_exists">Email already exists.</string>
     <string name="account_create_error_password_weak">Password is weak.</string>
 
+    <!-- Profile Create Screen -->
+    <string-array name="feet_array">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="inches_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+    </string-array>
+
+    <string-array name="gender_array">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="dob_array">
+        <item>Birthday</item>
+    </string-array>
+
     <!-- Splash Screen -->
     <string name="splash_header">Splash Header</string>
     <string name="splash_subHeader">Splash Sub Header</string>

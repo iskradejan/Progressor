@@ -3,11 +3,10 @@ package com.progressor.progressor.model.dataobjects.account
 import java.time.LocalDateTime
 
 data class Person(
-        val firstName: String? = "",
-        val lastName: String? = "",
-        val gender: Int? = null,
-        val dob: LocalDateTime? = null,
-        val height: Int? = null,
-        val ethnicity: Int? = null,
-        val createDate: LocalDateTime? = null
+        val firstName: String,
+        val lastName: String,
+        val gender: Int = 0,
+        val dob: LocalDateTime,
+        val height: Int,
+        val createDate: LocalDateTime
 )
