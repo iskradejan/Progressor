@@ -19,11 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="411" />
-                            <entry key="outputName" value="ic_logo" />
+                            <entry key="height" value="40" />
+                            <entry key="outputName" value="xxx" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="$USER_HOME$/Desktop/logo.psd" />
-                            <entry key="width" value="411" />
+                            <entry key="sourceFile" value="$USER_HOME$/Downloads/human-male (2).svg" />
+                            <entry key="width" value="40" />
                           </map>
                         </option>
                       </PersistentState>
