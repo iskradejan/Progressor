@@ -21,7 +21,7 @@
     <string name="account_create_error_password_weak">Password is weak.</string>
 
     <!-- Profile Create Screen -->
-    <string name="profile_create_birthday_value">  --/--/----  </string>
+    <string name="profile_create_birthday_value">&#160;&#160;&#8212;/&#8212;/&#8212;&#8212;&#160;&#160;</string>
     <string name="profile_create_continue">Continue</string>
     <string name="profile_create_weight_title">Weight</string>
     <string name="profile_create_height_title">Height</string>
