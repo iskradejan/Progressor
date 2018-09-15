@@ -40,7 +40,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
-                android:text="Birthday"
+                android:text="@string/profile_create_birthday_title"
                 android:textAlignment="viewEnd"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +58,7 @@
                 android:gravity="fill_vertical"
                 android:paddingEnd="0dp"
                 android:paddingStart="0dp"
-                android:text="05/12/2018"
-                android:textColor="@color/baseGrey"
+                android:text="@string/profile_create_birthday_value"
                 android:textCursorDrawable="@color/baseCursor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -80,14 +79,14 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
-                android:text="Gender"
+                android:text="@string/profile_create_gender_title"
                 android:textAlignment="viewEnd"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/femaleButton"
+                android:id="@+id/profileCreateFemaleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -97,25 +96,23 @@
                 app:layout_constraintBottom_toBottomOf="@+id/profileCreateBirthdayValue"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="@+id/profileCreateBirthdayValue"
-                app:srcCompat="@drawable/female_active" />
+                app:srcCompat="@drawable/female_inactive" />
 
             <ImageButton
-                android:id="@+id/maleButton"
+                android:id="@+id/profileCreateMaleButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="35dp"
                 android:layout_weight="0"
                 android:background="@color/white"
                 android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="@+id/femaleButton"
+                app:layout_constraintBottom_toBottomOf="@+id/profileCreateFemaleButton"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/femaleButton"
+                app:layout_constraintTop_toTopOf="@+id/profileCreateFemaleButton"
                 app:srcCompat="@drawable/male_inactive" />
 
         </android.support.constraint.ConstraintLayout>
 
-
-<!-- Height -->
         <android.support.constraint.ConstraintLayout
             android:id="@+id/profileCreateHeightLayout"
             android:layout_width="match_parent"
@@ -131,7 +128,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
-                android:text="Height"
+                android:text="@string/profile_create_height_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -144,7 +141,7 @@
                 android:layout_marginEnd="35dp"
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="40dp"
-                android:max="100"
+                android:max="60"
                 android:maxHeight="3dp"
                 android:minHeight="3dp"
                 android:paddingEnd="0dp"
@@ -165,7 +162,6 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:text="6ft 0in"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/profileCreateHeightSeekBar"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -173,8 +169,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/profileCreateHeightLabel" />
         </android.support.constraint.ConstraintLayout>
 
-
-<!-- Weight -->
         <android.support.constraint.ConstraintLayout
             android:id="@+id/profileCreateWeightLayout"
             android:layout_width="match_parent"
@@ -190,7 +184,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
-                android:text="Weight"
+                android:text="@string/profile_create_weight_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -203,7 +197,7 @@
                 android:layout_marginEnd="35dp"
                 android:layout_marginStart="35dp"
                 android:layout_marginTop="40dp"
-                android:max="500"
+                android:max="450"
                 android:maxHeight="3dp"
                 android:minHeight="3dp"
                 android:paddingEnd="0dp"
@@ -225,7 +219,6 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:text="190lb"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/profileCreateWeightSeekBar"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -234,7 +227,6 @@
 
         </android.support.constraint.ConstraintLayout>
 
-<!-- Continue -->
         <android.support.constraint.ConstraintLayout
             android:id="@+id/profileCreateContinueLayout"
             android:layout_width="match_parent"
@@ -255,7 +247,7 @@
                 android:ems="12"
                 android:fontFamily="@font/alex"
                 android:stateListAnimator="@null"
-                android:text="Continue"
+                android:text="@string/profile_create_continue"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -263,7 +255,5 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
-
-
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

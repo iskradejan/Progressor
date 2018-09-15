@@ -28,9 +28,9 @@ class AccountCreatePresenter @Inject constructor(private var fragmentNavigator: 
         }
     }
 
-    fun register(email: String, password: String) {
+    fun register(email: String, password: String, displayName: String) {
         if (view.isFormValid()) {
-            authenticationManager.createAccount(context as Activity, email, password)
+            authenticationManager.createAccount(context as Activity, email, password, displayName)
         }
     }
 }

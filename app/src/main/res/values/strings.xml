@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Progressor</string>
+
     <!-- Login Screen -->
     <string name="login_emailPlaceholder">&#160;email</string>
     <string name="login_passwordPlaceholder">&#160;password</string>
@@ -11,6 +12,7 @@
     <string name="login_error_password_incorrect">Password incorrect.</string>
 
     <!-- Account Create Screen -->
+    <string name="account_create_nicknamePlaceholder">&#160;nickname</string>
     <string name="account_create_emailPlaceholder">&#160;email</string>
     <string name="account_create_passwordPlaceholder">&#160;password</string>
     <string name="account_create_register">Register</string>
@@ -19,37 +21,12 @@
     <string name="account_create_error_password_weak">Password is weak.</string>
 
     <!-- Profile Create Screen -->
-    <string-array name="feet_array">
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-    </string-array>
-
-    <string-array name="inches_array">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-    </string-array>
-
-    <string-array name="gender_array">
-        <item>Female</item>
-        <item>Male</item>
-    </string-array>
-
-    <string-array name="dob_array">
-        <item>Birthday</item>
-    </string-array>
+    <string name="profile_create_birthday_value">  --/--/----  </string>
+    <string name="profile_create_continue">Continue</string>
+    <string name="profile_create_weight_title">Weight</string>
+    <string name="profile_create_height_title">Height</string>
+    <string name="profile_create_gender_title">Gender</string>
+    <string name="profile_create_birthday_title">Birthday</string>
 
     <!-- Splash Screen -->
     <string name="splash_header">Splash Header</string>

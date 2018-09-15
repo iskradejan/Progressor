@@ -66,7 +66,8 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
         accountCreateRegister.setOnClickListener {
             accountCreateEmailError.visibility = View.GONE
             accountCreatePasswordError.visibility = View.GONE
-            presenter.register(accountCreateEmail.text.toString(), accountCreatePassword.text.toString())
+            accountCreateDisplayNameError.visibility = View.GONE
+            presenter.register(accountCreateEmail.text.toString(), accountCreatePassword.text.toString(), accountCreateDisplayName.text.toString())
         }
         accountCreateLogin.setOnClickListener {
             fragmentNavigator.navigate(LoginFragment())
@@ -76,18 +77,25 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
     override fun isFormValid(): Boolean {
         var valid = true
 
-        if (TextUtils.isEmpty(accountCreateEmail.getText().toString())) {
+        if(TextUtils.isEmpty(accountCreateEmail.getText().toString())) {
             accountCreateEmail.setError("Required.")
             valid = false
         } else {
             accountCreateEmail.setError(null)
         }
 
-        if (TextUtils.isEmpty(accountCreatePassword.getText().toString())) {
+        if(TextUtils.isEmpty(accountCreatePassword.getText().toString())) {
             accountCreatePassword.setError("Required.")
             valid = false
         } else {
             accountCreatePassword.setError(null)
+        }
+
+        if(TextUtils.isEmpty(accountCreateDisplayName.getText().toString())) {
+            accountCreateDisplayName.setError("Required")
+            valid = false
+        } else {
+            accountCreateDisplayName.setError(null)
         }
 
         return valid

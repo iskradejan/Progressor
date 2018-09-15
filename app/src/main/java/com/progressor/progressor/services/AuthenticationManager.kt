@@ -8,6 +8,8 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.pojo.FirebaseResponse
 import com.progressor.progressor.views.fragment.DashboardFragment
 import javax.inject.Inject
+import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.auth.FirebaseUser
 
 class AuthenticationManager constructor(private val mainActivity: Activity) {
 
@@ -21,9 +23,8 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         (mainActivity as MainComponentInterface).mainComponent?.inject(this)
     }
 
-    fun createAccount(context:Context, email: String, password: String) {
+    fun createAccount(context:Context, email: String, password: String, displayName: String) {
         if(isLoggedIn()) {
-            println("navigating to dashboard cause you are logged in , cant create acount")
             fragmentNavigator.navigate(DashboardFragment())
         }
 
@@ -34,9 +35,12 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
 
         firebaseAuth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(context as Activity) { task ->
             if(task.isSuccessful) {
-                println("account created successfully")
                 firebaseUser = firebaseAuth?.currentUser
                 authenticated = true
+
+                val profileUpdates = UserProfileChangeRequest.Builder().setDisplayName(displayName).build()
+
+                firebaseUser?.updateProfile(profileUpdates)
 
                 response.setSuccess(true)
                 RxBus.publish(response)
