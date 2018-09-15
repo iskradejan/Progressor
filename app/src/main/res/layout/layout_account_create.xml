@@ -27,9 +27,9 @@
             android:textAlignment="center"
             android:textColor="@color/baseGrey"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreateEmail"
-            app:layout_constraintEnd_toEndOf="@+id/accountCreateEmail"
-            app:layout_constraintStart_toStartOf="@+id/accountCreateEmail"
+            app:layout_constraintBottom_toTopOf="@+id/accountCreateEmailValue"
+            app:layout_constraintEnd_toEndOf="@+id/accountCreateEmailValue"
+            app:layout_constraintStart_toStartOf="@+id/accountCreateEmailValue"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -45,7 +45,7 @@
             app:srcCompat="@drawable/logo" />
 
         <EditText
-            android:id="@+id/accountCreateDisplayName"
+            android:id="@+id/accountCreateDisplayNameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -53,30 +53,29 @@
             android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
-            android:fontFamily="@font/alex"
             android:hint="@string/account_create_nicknamePlaceholder"
             android:inputType="textEmailAddress"
             android:text="diskra"
             android:textColor="@color/baseGrey"
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreateEmail"
+            app:layout_constraintBottom_toTopOf="@+id/accountCreateEmailValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/accountCreateDisplayNameError"
+            android:id="@+id/accountCreateDisplayNameValueError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:textColor="@color/baseMaroon"
             android:textSize="12sp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreateDisplayName"
-            app:layout_constraintStart_toStartOf="@+id/accountCreateDisplayName" />
+            app:layout_constraintBottom_toTopOf="@+id/accountCreateDisplayNameValue"
+            app:layout_constraintStart_toStartOf="@+id/accountCreateDisplayNameValue" />
 
         <EditText
-            android:id="@+id/accountCreateEmail"
+            android:id="@+id/accountCreateEmailValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -84,30 +83,29 @@
             android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
-            android:fontFamily="@font/alex"
             android:hint="@string/account_create_emailPlaceholder"
             android:inputType="textEmailAddress"
             android:text="asmdias@mai.com"
             android:textColor="@color/baseGrey"
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreatePassword"
+            app:layout_constraintBottom_toTopOf="@+id/accountCreatePasswordValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/accountCreateEmailError"
+            android:id="@+id/accountCreateEmailValueError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:textColor="@color/baseMaroon"
             android:textSize="12sp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreateEmail"
-            app:layout_constraintStart_toStartOf="@+id/accountCreateEmail" />
+            app:layout_constraintBottom_toTopOf="@+id/accountCreateEmailValue"
+            app:layout_constraintStart_toStartOf="@+id/accountCreateEmailValue" />
 
         <EditText
-            android:id="@+id/accountCreatePassword"
+            android:id="@+id/accountCreatePasswordValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
@@ -115,46 +113,44 @@
             android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
-            android:fontFamily="@font/alex"
             android:hint="@string/account_create_passwordPlaceholder"
             android:inputType="textPassword"
             android:text="aj9adma9d"
             android:textColor="@color/baseGrey"
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreateRegister"
+            app:layout_constraintBottom_toTopOf="@+id/accountCreateRegisterButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/accountCreatePasswordError"
+            android:id="@+id/accountCreatePasswordValueError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:textColor="@color/baseMaroon"
             android:textSize="12sp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreatePassword"
-            app:layout_constraintStart_toStartOf="@+id/accountCreatePassword" />
+            app:layout_constraintBottom_toTopOf="@+id/accountCreatePasswordValue"
+            app:layout_constraintStart_toStartOf="@+id/accountCreatePasswordValue" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/accountCreateRegister"
+            android:id="@+id/accountCreateRegisterButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginBottom="60dp"
             android:background="@color/baseMaroon"
             android:ems="12"
-            android:fontFamily="@font/alex"
             android:stateListAnimator="@null"
             android:text="@string/account_create_register"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/accountCreatePassword"
-            app:layout_constraintStart_toStartOf="@+id/accountCreatePassword" />
+            app:layout_constraintBottom_toTopOf="@+id/accountCreateLoginButton"
+            app:layout_constraintEnd_toEndOf="@+id/accountCreatePasswordValue"
+            app:layout_constraintStart_toStartOf="@+id/accountCreatePasswordValue" />
 
         <TextView
-            android:id="@+id/accountCreateLogin"
+            android:id="@+id/accountCreateLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"

@@ -96,7 +96,7 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
             })
 
             // Continue
-            profileCreateContinue.setOnClickListener {
+            profileCreateContinueButton.setOnClickListener {
                 presenter.createProfile(gender, height, weight, dob, createDate)
             }
         }

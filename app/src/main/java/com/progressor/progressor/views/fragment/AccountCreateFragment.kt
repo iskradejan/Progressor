@@ -49,12 +49,12 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
                         it.getErrors()?.forEach { error ->
                             when (error) {
                                 FirebaseConstant.ERROR_EMAIL_ALREADY_IN_USE -> {
-                                    accountCreateEmailError.text = getString(R.string.account_create_error_email_exists)
-                                    accountCreateEmailError.visibility = View.VISIBLE
+                                    accountCreateEmailValueError.text = getString(R.string.account_create_error_email_exists)
+                                    accountCreateEmailValueError.visibility = View.VISIBLE
                                 }
                                 FirebaseConstant.ERROR_WEAK_PASSWORD -> {
-                                    accountCreatePasswordError.text = getString(R.string.account_create_error_password_weak)
-                                    accountCreatePasswordError.visibility = View.VISIBLE
+                                    accountCreatePasswordValueError.text = getString(R.string.account_create_error_password_weak)
+                                    accountCreatePasswordValueError.visibility = View.VISIBLE
                                 }
                             }
                         }
@@ -62,13 +62,13 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
                 }
             }
         }
-        accountCreateRegister.setOnClickListener {
-            accountCreateEmailError.visibility = View.GONE
-            accountCreatePasswordError.visibility = View.GONE
-            accountCreateDisplayNameError.visibility = View.GONE
-            presenter.register(accountCreateEmail.text.toString(), accountCreatePassword.text.toString(), accountCreateDisplayName.text.toString())
+        accountCreateRegisterButton.setOnClickListener {
+            accountCreateEmailValueError.visibility = View.GONE
+            accountCreatePasswordValueError.visibility = View.GONE
+            accountCreateDisplayNameValueError.visibility = View.GONE
+            presenter.register(accountCreateEmailValue.text.toString(), accountCreatePasswordValue.text.toString(), accountCreateDisplayNameValue.text.toString())
         }
-        accountCreateLogin.setOnClickListener {
+        accountCreateLoginButton.setOnClickListener {
             fragmentNavigator.navigate(LoginFragment())
         }
     }
@@ -76,28 +76,28 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
     override fun isFormValid(): Boolean {
         var valid = true
 
-        if(TextUtils.isEmpty(accountCreateEmail.getText().toString())) {
-            accountCreateEmail.setError("Required.")
+        if(TextUtils.isEmpty(accountCreateEmailValue.getText().toString())) {
+            accountCreateEmailValue.setError("Required.")
             valid = false
         } else {
-            accountCreateEmail.setError(null)
+            accountCreateEmailValue.setError(null)
         }
 
-        if(TextUtils.isEmpty(accountCreatePassword.getText().toString())) {
-            accountCreatePassword.setError("Required.")
+        if(TextUtils.isEmpty(accountCreatePasswordValue.getText().toString())) {
+            accountCreatePasswordValue.setError("Required.")
             valid = false
         } else {
-            accountCreatePassword.setError(null)
+            accountCreatePasswordValue.setError(null)
         }
 
-        if(TextUtils.isEmpty(accountCreateDisplayName.getText().toString())) {
-            accountCreateDisplayName.setError("Required")
+        if(TextUtils.isEmpty(accountCreateDisplayNameValue.getText().toString())) {
+            accountCreateDisplayNameValue.setError("Required")
             valid = false
-        } else if(accountCreateDisplayName.getText().toString().count() < 2) {
-            accountCreateDisplayNameError.text = getString(R.string.account_create_error_display_name_short)
-            accountCreateDisplayNameError.visibility = View.VISIBLE
+        } else if(accountCreateDisplayNameValue.getText().toString().count() < 2) {
+            accountCreateDisplayNameValueError.text = getString(R.string.account_create_error_display_name_short)
+            accountCreateDisplayNameValueError.visibility = View.VISIBLE
         } else {
-            accountCreateDisplayName.setError(null)
+            accountCreateDisplayNameValue.setError(null)
         }
 
         return valid

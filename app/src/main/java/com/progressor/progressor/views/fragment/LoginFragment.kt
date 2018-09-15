@@ -40,18 +40,18 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
     override fun isFormValid(): Boolean {
         var valid = true
 
-        if (TextUtils.isEmpty(mainEmail.getText().toString())) {
-            mainEmail.setError("Required.")
+        if (TextUtils.isEmpty(loginEmailValue.getText().toString())) {
+            loginEmailValue.setError("Required.")
             valid = false
         } else {
-            mainEmail.setError(null)
+            loginEmailValue.setError(null)
         }
 
-        if (TextUtils.isEmpty(mainPassword.getText().toString())) {
-            mainPassword.setError("Required.")
+        if (TextUtils.isEmpty(loginPasswordValue.getText().toString())) {
+            loginPasswordValue.setError("Required.")
             valid = false
         } else {
-            mainPassword.setError(null)
+            loginPasswordValue.setError(null)
         }
 
         return valid
@@ -69,13 +69,13 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
                             when (it) {
                                 FirebaseConstant.ERROR_USER_NOT_FOUND -> {
                                     println("inside login email setter for error")
-                                    mainEmailError.text = context?.getString(R.string.login_error_email_not_found)?:"--"
-                                    mainEmailError.visibility = View.VISIBLE
+                                    loginEmailValueError.text = context?.getString(R.string.login_error_email_not_found)?:"--"
+                                    loginEmailValueError.visibility = View.VISIBLE
                                 }
 
                                 FirebaseConstant.ERROR_WRONG_PASSWORD -> {
-                                    mainPasswordError.text = context?.getString(R.string.login_error_password_incorrect)?:"--"
-                                    mainPasswordError.visibility = View.VISIBLE
+                                    loginPasswordValueError.text = context?.getString(R.string.login_error_password_incorrect)?:"--"
+                                    loginPasswordValueError.visibility = View.VISIBLE
                                 }
                             }
                         }
@@ -84,12 +84,12 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
             }
         }
 
-        mainSignIn.setOnClickListener {
-            mainEmailError.visibility = View.GONE
-            mainPasswordError.visibility = View.GONE
-            presenter.login(mainEmail.text.toString(), mainPassword.text.toString())
+        loginSignInButton.setOnClickListener {
+            loginEmailValueError.visibility = View.GONE
+            loginPasswordValueError.visibility = View.GONE
+            presenter.login(loginEmailValue.text.toString(), loginPasswordValue.text.toString())
         }
-        mainRegister.setOnClickListener {
+        loginRegisterButton.setOnClickListener {
             fragmentNavigator.navigate(AccountCreateFragment())
         }
     }

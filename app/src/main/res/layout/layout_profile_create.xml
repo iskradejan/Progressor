@@ -236,7 +236,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/profileCreateContinue"
+                android:id="@+id/profileCreateContinueButton"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginBottom="40dp"
@@ -245,7 +245,6 @@
                 android:layout_marginTop="40dp"
                 android:background="@color/baseMaroon"
                 android:ems="12"
-                android:fontFamily="@font/alex"
                 android:stateListAnimator="@null"
                 android:text="@string/profile_create_continue"
                 android:textAllCaps="false"

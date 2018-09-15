@@ -27,9 +27,9 @@
             android:textAlignment="center"
             android:textColor="@color/baseGrey"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/mainEmail"
-            app:layout_constraintEnd_toEndOf="@+id/mainEmail"
-            app:layout_constraintStart_toStartOf="@+id/mainEmail"
+            app:layout_constraintBottom_toTopOf="@+id/loginEmailValue"
+            app:layout_constraintEnd_toEndOf="@+id/loginEmailValue"
+            app:layout_constraintStart_toStartOf="@+id/loginEmailValue"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -45,7 +45,7 @@
             app:srcCompat="@drawable/logo" />
 
         <EditText
-            android:id="@+id/mainEmail"
+            android:id="@+id/loginEmailValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -53,19 +53,18 @@
             android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
-            android:fontFamily="@font/alex"
             android:hint="@string/login_emailPlaceholder"
             android:inputType="textEmailAddress"
             android:text="dejiskra@gmail.com"
             android:textColor="@color/baseGrey"
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
-            app:layout_constraintBottom_toTopOf="@+id/mainPassword"
+            app:layout_constraintBottom_toTopOf="@+id/loginPasswordValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/mainPassword"
+            android:id="@+id/loginPasswordValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
@@ -73,35 +72,33 @@
             android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
-            android:fontFamily="@font/alex"
             android:hint="@string/login_passwordPlaceholder"
             android:inputType="textPassword"
             android:text="lol101010"
             android:textColor="@color/baseGrey"
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
-            app:layout_constraintBottom_toTopOf="@+id/mainSignIn"
+            app:layout_constraintBottom_toTopOf="@+id/loginSignInButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/mainSignIn"
+            android:id="@+id/loginSignInButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginBottom="60dp"
             android:background="@color/baseMaroon"
             android:ems="12"
-            android:fontFamily="@font/alex"
             android:stateListAnimator="@null"
             android:text="@string/login_signIn"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/mainRegister"
-            app:layout_constraintEnd_toEndOf="@+id/mainPassword"
-            app:layout_constraintStart_toStartOf="@+id/mainPassword" />
+            app:layout_constraintBottom_toTopOf="@+id/loginRegisterButton"
+            app:layout_constraintEnd_toEndOf="@+id/loginPasswordValue"
+            app:layout_constraintStart_toStartOf="@+id/loginPasswordValue" />
 
         <TextView
-            android:id="@+id/mainRegister"
+            android:id="@+id/loginRegisterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -113,7 +110,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/mainEmailError"
+            android:id="@+id/loginEmailValueError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
@@ -121,11 +118,11 @@
             android:textColor="@color/baseMaroon"
             android:textSize="12sp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/mainEmail"
-            app:layout_constraintStart_toStartOf="@+id/mainEmail" />
+            app:layout_constraintBottom_toTopOf="@+id/loginEmailValue"
+            app:layout_constraintStart_toStartOf="@+id/loginEmailValue" />
 
         <TextView
-            android:id="@+id/mainPasswordError"
+            android:id="@+id/loginPasswordValueError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
@@ -134,9 +131,9 @@
             android:textColor="@color/baseMaroon"
             android:textSize="12sp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/mainPassword"
-            app:layout_constraintStart_toStartOf="@+id/mainPassword"
-            app:layout_constraintTop_toBottomOf="@+id/mainEmail" />
+            app:layout_constraintBottom_toTopOf="@+id/loginPasswordValue"
+            app:layout_constraintStart_toStartOf="@+id/loginPasswordValue"
+            app:layout_constraintTop_toBottomOf="@+id/loginEmailValue" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
