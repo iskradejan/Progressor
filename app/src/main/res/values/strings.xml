@@ -19,6 +19,7 @@
     <string name="account_create_login">Already have an account? Login here.</string>
     <string name="account_create_error_email_exists">Email already exists.</string>
     <string name="account_create_error_password_weak">Password is weak.</string>
+    <string name="account_create_error_display_name_short">Too short.</string>
 
     <!-- Profile Create Screen -->
     <string name="profile_create_birthday_value">&#160;&#160;&#8212;/&#8212;/&#8212;&#8212;&#160;&#160;</string>

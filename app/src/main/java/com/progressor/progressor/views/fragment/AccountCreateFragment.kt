@@ -46,8 +46,8 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
                         fragmentNavigator.navigate(ProfileCreateFragment())
                     }
                     false -> {
-                        it.getErrors()?.forEach {
-                            when (it) {
+                        it.getErrors()?.forEach { error ->
+                            when (error) {
                                 FirebaseConstant.ERROR_EMAIL_ALREADY_IN_USE -> {
                                     accountCreateEmailError.text = getString(R.string.account_create_error_email_exists)
                                     accountCreateEmailError.visibility = View.VISIBLE
@@ -93,6 +93,9 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
         if(TextUtils.isEmpty(accountCreateDisplayName.getText().toString())) {
             accountCreateDisplayName.setError("Required")
             valid = false
+        } else if(accountCreateDisplayName.getText().toString().count() < 2) {
+            accountCreateDisplayNameError.text = getString(R.string.account_create_error_display_name_short)
+            accountCreateDisplayNameError.visibility = View.VISIBLE
         } else {
             accountCreateDisplayName.setError(null)
         }
