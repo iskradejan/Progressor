@@ -34,7 +34,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/profileCreateBirthdayValueLabel"
+                android:id="@+id/profileCreateBirthdayLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -63,7 +63,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profileCreateBirthdayValueLabel" />
+                app:layout_constraintTop_toBottomOf="@+id/profileCreateBirthdayLabel" />
 
             <android.support.constraint.Guideline
                 android:id="@+id/guideline"

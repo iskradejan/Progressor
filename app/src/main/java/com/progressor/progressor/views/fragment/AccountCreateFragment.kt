@@ -47,7 +47,6 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
                     }
                     false -> {
                         it.getErrors()?.forEach {
-                            println("Error: " + it)
                             when (it) {
                                 FirebaseConstant.ERROR_EMAIL_ALREADY_IN_USE -> {
                                     accountCreateEmailError.text = getString(R.string.account_create_error_email_exists)
