@@ -22,6 +22,7 @@ interface UtilComponent {
     fun inject(dashboardFragment: DashboardFragment)
     fun inject(accountCreateFragment: AccountCreateFragment)
     fun inject(profileCreateFragment: ProfileCreateFragment)
+    fun inject(passwordResetFragment: PasswordResetFragment)
 
     // Services
     fun inject(apiRequestor: ApiRequestor)

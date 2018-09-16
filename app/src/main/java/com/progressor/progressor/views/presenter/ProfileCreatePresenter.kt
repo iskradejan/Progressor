@@ -23,15 +23,13 @@ class ProfileCreatePresenter @Inject constructor(private var fragmentNavigator: 
     }
 
     fun initialize() {
-        println("inside profile create presenter")
+
     }
 
     fun createProfile(gender: Int?, height: Int?, weight: Int?, dob: LocalDateTime?, createDate: LocalDateTime) {
         if (view.isFormValid()) {
-            println("Profile create valid")
 //            authenticationManager.createAccount(context as Activity, email, password, displayName)
         } else {
-            println("Profile create invalid")
         }
     }
 }

@@ -17,21 +17,6 @@ class SplashFragment : BaseFragment(), SplashPresenter.View {
     @Inject
     lateinit var sharedPreferences: SharedPreferences
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        injectDependencies()
-        initialize()
-    }
-
-    override fun getFragmentLayout(): Int {
-        return R.layout.layout_splash
-    }
-
-    override fun injectDependencies() {
-        (activity as MainComponentInterface).mainComponent.inject(this)
-        presenter.setPresenter(this)
-    }
-
     private fun initialize() {
 //        splashHeader.text = MainActivity.user.person?.firstName ?: "none"
 //        splashSubHeader.text = MainActivity.user.person?.lastName ?: "none"
@@ -45,5 +30,20 @@ class SplashFragment : BaseFragment(), SplashPresenter.View {
         splashRegister.setOnClickListener {
             fragmentNavigator.navigate(AccountCreateFragment())
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        injectDependencies()
+        initialize()
+    }
+
+    override fun injectDependencies() {
+        (activity as MainComponentInterface).mainComponent.inject(this)
+        presenter.setPresenter(this)
+    }
+
+    override fun getFragmentLayout(): Int {
+        return R.layout.layout_splash
     }
 }

@@ -17,24 +17,45 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
     @Inject
     lateinit var presenter: LoginPresenter
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        injectDependencies()
-        initialize()
-    }
+    fun initialize() {
+        RxBus.subscribe<FirebaseResponse>(this) {
+            if (it.getType().equals(FirebaseConstant.TYPE_LOGIN)) {
+                when (it.getSuccess()) {
+                    true -> {
+                        fragmentNavigator.navigate(DashboardFragment())
+                    }
+                    false -> {
+                        it.getErrors()?.forEach {
+                            when (it) {
+                                FirebaseConstant.ERROR_USER_NOT_FOUND -> {
+                                    loginEmailValueError.text = context?.getString(R.string.login_error_email_not_found)?:"--"
+                                    loginEmailValueError.visibility = View.VISIBLE
+                                }
 
-    override fun getFragmentLayout(): Int {
-        return R.layout.layout_login
-    }
+                                FirebaseConstant.ERROR_WRONG_PASSWORD -> {
+                                    loginPasswordValueError.text = context?.getString(R.string.login_error_password_incorrect)?:"--"
+                                    loginPasswordValueError.visibility = View.VISIBLE
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-    override fun injectDependencies() {
-        (activity as MainComponentInterface).mainComponent.inject(this)
-        presenter.setPresenter(this)
-    }
+        loginSignInButton.setOnClickListener {
+            loginEmailValueError.visibility = View.GONE
+            loginPasswordValueError.visibility = View.GONE
+            presenter.login(loginEmailValue.text.toString(), loginPasswordValue.text.toString())
+        }
 
-    override fun onStop() {
-        super.onStop()
-        RxBus.unsubscribe(this)
+        loginRegisterButton.setOnClickListener {
+            fragmentNavigator.navigate(AccountCreateFragment())
+        }
+
+        loginForgotPasswordButton.setOnClickListener {
+            fragmentNavigator.navigate(PasswordResetFragment())
+        }
     }
 
     override fun isFormValid(): Boolean {
@@ -57,40 +78,23 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
         return valid
     }
 
-    fun initialize() {
-        RxBus.subscribe<FirebaseResponse>(this) {
-            if (it.getType().equals(FirebaseConstant.TYPE_LOGIN)) {
-                when (it.getSuccess()) {
-                    true -> {
-                        fragmentNavigator.navigate(DashboardFragment())
-                    }
-                    false -> {
-                        it.getErrors()?.forEach {
-                            when (it) {
-                                FirebaseConstant.ERROR_USER_NOT_FOUND -> {
-                                    println("inside login email setter for error")
-                                    loginEmailValueError.text = context?.getString(R.string.login_error_email_not_found)?:"--"
-                                    loginEmailValueError.visibility = View.VISIBLE
-                                }
+    override fun onStop() {
+        super.onStop()
+        RxBus.unsubscribe(this)
+    }
 
-                                FirebaseConstant.ERROR_WRONG_PASSWORD -> {
-                                    loginPasswordValueError.text = context?.getString(R.string.login_error_password_incorrect)?:"--"
-                                    loginPasswordValueError.visibility = View.VISIBLE
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        injectDependencies()
+        initialize()
+    }
 
-        loginSignInButton.setOnClickListener {
-            loginEmailValueError.visibility = View.GONE
-            loginPasswordValueError.visibility = View.GONE
-            presenter.login(loginEmailValue.text.toString(), loginPasswordValue.text.toString())
-        }
-        loginRegisterButton.setOnClickListener {
-            fragmentNavigator.navigate(AccountCreateFragment())
-        }
+    override fun injectDependencies() {
+        (activity as MainComponentInterface).mainComponent.inject(this)
+        presenter.setPresenter(this)
+    }
+
+    override fun getFragmentLayout(): Int {
+        return R.layout.layout_login
     }
 }

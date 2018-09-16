@@ -16,30 +16,8 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
     @Inject
     lateinit var presenter: AccountCreatePresenter
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        injectDependencies()
-        initialize()
-    }
-
-    override fun getFragmentLayout(): Int {
-        return R.layout.layout_account_create
-    }
-
-    override fun injectDependencies() {
-        (activity as MainComponentInterface).mainComponent.inject(this)
-        presenter.setPresenter(this)
-        initialize()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        RxBus.unsubscribe(this)
-    }
-
     fun initialize() {
         RxBus.subscribe<FirebaseResponse>(this) {
-            println("TYPE: " + it.getType())
             if (it.getType().equals(FirebaseConstant.TYPE_CREATE_ACCOUNT)) {
                 when (it.getSuccess()) {
                     true -> {
@@ -76,24 +54,24 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
     override fun isFormValid(): Boolean {
         var valid = true
 
-        if(TextUtils.isEmpty(accountCreateEmailValue.getText().toString())) {
+        if (TextUtils.isEmpty(accountCreateEmailValue.getText().toString())) {
             accountCreateEmailValue.setError("Required.")
             valid = false
         } else {
             accountCreateEmailValue.setError(null)
         }
 
-        if(TextUtils.isEmpty(accountCreatePasswordValue.getText().toString())) {
+        if (TextUtils.isEmpty(accountCreatePasswordValue.getText().toString())) {
             accountCreatePasswordValue.setError("Required.")
             valid = false
         } else {
             accountCreatePasswordValue.setError(null)
         }
 
-        if(TextUtils.isEmpty(accountCreateDisplayNameValue.getText().toString())) {
+        if (TextUtils.isEmpty(accountCreateDisplayNameValue.getText().toString())) {
             accountCreateDisplayNameValue.setError("Required")
             valid = false
-        } else if(accountCreateDisplayNameValue.getText().toString().count() < 2) {
+        } else if (accountCreateDisplayNameValue.getText().toString().count() < 2) {
             accountCreateDisplayNameValueError.text = getString(R.string.account_create_error_display_name_short)
             accountCreateDisplayNameValueError.visibility = View.VISIBLE
         } else {
@@ -101,5 +79,26 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
         }
 
         return valid
+    }
+
+    override fun onStop() {
+        super.onStop()
+        RxBus.unsubscribe(this)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        injectDependencies()
+        initialize()
+    }
+
+    override fun injectDependencies() {
+        (activity as MainComponentInterface).mainComponent.inject(this)
+        presenter.setPresenter(this)
+        initialize()
+    }
+
+    override fun getFragmentLayout(): Int {
+        return R.layout.layout_account_create
     }
 }

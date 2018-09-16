@@ -6,10 +6,15 @@
     <string name="login_passwordPlaceholder">&#160;password</string>
     <string name="login_signIn">Sign in</string>
     <string name="login_register">Don\'t have an account? Register here.</string>
+    <string name="login_forgot_password">Forgot password?</string>
     <string name="login_logoDescription">Progressor Logo</string>
     <string name="login_progressor">Progressor</string>
     <string name="login_error_email_not_found">Email not found.</string>
     <string name="login_error_password_incorrect">Password incorrect.</string>
+
+    <!-- Password Reset Screen -->
+    <string name="password_reset_error_email_not_found">Email not found.</string>
+    <string name="password_reset_error_email_invalid">Email invalid.</string>
 
     <!-- Account Create Screen -->
     <string name="account_create_nicknamePlaceholder">&#160;nickname</string>

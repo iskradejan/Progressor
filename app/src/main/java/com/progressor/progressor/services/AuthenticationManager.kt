@@ -10,21 +10,23 @@ import com.progressor.progressor.views.fragment.DashboardFragment
 import javax.inject.Inject
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.FirebaseUser
+import com.progressor.progressor.views.fragment.LoginFragment
 
 class AuthenticationManager constructor(private val mainActivity: Activity) {
 
     var firebaseAuth: FirebaseAuth? = null
     var firebaseUser: FirebaseUser? = null
-    var authenticated : Boolean = false
+    var authenticated: Boolean = false
 
-    @Inject lateinit var fragmentNavigator: FragmentNavigator
+    @Inject
+    lateinit var fragmentNavigator: FragmentNavigator
 
     init {
         (mainActivity as MainComponentInterface).mainComponent?.inject(this)
     }
 
-    fun createAccount(context:Context, email: String, password: String, displayName: String) {
-        if(isLoggedIn()) {
+    fun createAccount(context: Context, email: String, password: String, displayName: String) {
+        if (isLoggedIn()) {
             fragmentNavigator.navigate(DashboardFragment())
         }
 
@@ -34,7 +36,7 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(context as Activity) { task ->
-            if(task.isSuccessful) {
+            if (task.isSuccessful) {
                 firebaseUser = firebaseAuth?.currentUser
                 authenticated = true
 
@@ -48,9 +50,9 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
                 val exception = task.exception as FirebaseAuthException
 
                 response.setSuccess(false)
-                val errors : MutableList<String> = ArrayList()
+                val errors: MutableList<String> = ArrayList()
 
-                when(exception.errorCode) {
+                when (exception.errorCode) {
                     FirebaseConstant.ERROR_EMAIL_ALREADY_IN_USE -> {
                         errors.add(FirebaseConstant.ERROR_EMAIL_ALREADY_IN_USE)
                     }
@@ -80,9 +82,9 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
             } else {
                 val exception = task.exception as FirebaseAuthException
                 response.setSuccess(false)
-                val errors : MutableList<String> = ArrayList()
+                val errors: MutableList<String> = ArrayList()
 
-                when(exception.errorCode) {
+                when (exception.errorCode) {
                     FirebaseConstant.ERROR_USER_NOT_FOUND -> {
                         errors.add(FirebaseConstant.ERROR_USER_NOT_FOUND)
                     }
@@ -96,8 +98,37 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         }
     }
 
+    fun resetPassword(context: Context, email: String) {
+        val response = FirebaseResponse()
+        response.setType(FirebaseConstant.TYPE_PASSWORD_RESET)
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        firebaseAuth?.sendPasswordResetEmail(email)?.addOnCompleteListener(context as Activity) { task ->
+            if (task.isSuccessful) {
+                response.setSuccess(true)
+                RxBus.publish(response)
+            } else {
+                val exception = task.exception as FirebaseAuthException
+                response.setSuccess(false)
+                val errors: MutableList<String> = ArrayList()
+
+                when (exception.errorCode) {
+                    FirebaseConstant.ERROR_USER_NOT_FOUND -> {
+                        errors.add(FirebaseConstant.ERROR_USER_NOT_FOUND)
+                    }
+                    FirebaseConstant.ERROR_INVALID_EMAIL -> {
+                        errors.add(FirebaseConstant.ERROR_INVALID_EMAIL)
+                    }
+                }
+                response.setErrors(errors)
+                RxBus.publish(response)
+            }
+        }
+    }
+
     fun signOut() {
-        if(firebaseUser != null) {
+        if (firebaseUser != null) {
             firebaseAuth?.signOut()
             firebaseUser = null
             authenticated = false

@@ -15,6 +15,7 @@ import java.time.LocalDateTime
 import javax.inject.Inject
 
 class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
+
     @Inject
     lateinit var presenter: ProfileCreatePresenter
 
@@ -136,8 +137,10 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
         return valid
     }
 
-    override fun getFragmentLayout(): Int {
-        return R.layout.layout_profile_create
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        injectDependencies()
+        initialize()
     }
 
     override fun injectDependencies() {
@@ -146,9 +149,7 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
         initialize()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        injectDependencies()
-        initialize()
+    override fun getFragmentLayout(): Int {
+        return R.layout.layout_profile_create
     }
 }
