@@ -13,6 +13,8 @@
     <string name="login_error_password_incorrect">Password incorrect.</string>
 
     <!-- Password Reset Screen -->
+    <string name="password_reset_content">To reset your password, enter your email and check your inbox.</string>
+    <string name="password_reset_button">Reset</string>
     <string name="password_reset_error_email_not_found">Email not found.</string>
     <string name="password_reset_error_email_invalid">Email invalid.</string>
 
