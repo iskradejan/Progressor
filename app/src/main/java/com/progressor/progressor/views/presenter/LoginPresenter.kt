@@ -9,6 +9,7 @@ import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.UserManager
 import com.progressor.progressor.views.fragment.DashboardFragment
 import com.progressor.progressor.views.fragment.EmailVerifyFragment
+import com.progressor.progressor.views.fragment.ProfileCreateFragment
 
 class LoginPresenter @Inject constructor(
         var fragmentNavigator: FragmentNavigator,
@@ -29,10 +30,16 @@ class LoginPresenter @Inject constructor(
     }
 
     private fun initialize() {
-        if (authenticationManager.isLoggedIn() && authenticationManager.isVerified()) {
-            fragmentNavigator.navigate(DashboardFragment())
-        } else if (authenticationManager.isLoggedIn() && !authenticationManager.isVerified()) {
-            fragmentNavigator.navigate(EmailVerifyFragment())
+        if (authenticationManager.isLoggedIn()) {
+            if(!authenticationManager.isVerified()) {
+                fragmentNavigator.navigate(EmailVerifyFragment())
+            } else {
+                if(userManager.user?.person == null) {
+                    fragmentNavigator.navigate(ProfileCreateFragment())
+                } else {
+                    fragmentNavigator.navigate(DashboardFragment())
+                }
+            }
         }
     }
 

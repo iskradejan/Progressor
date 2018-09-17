@@ -5,6 +5,7 @@ import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
 import com.progressor.progressor.services.UserManager
 import com.progressor.progressor.views.fragment.DashboardFragment
+import com.progressor.progressor.views.fragment.EmailVerifyFragment
 import com.progressor.progressor.views.fragment.LoginFragment
 import com.progressor.progressor.views.fragment.ProfileCreateFragment
 import java.time.LocalDateTime
@@ -29,8 +30,11 @@ class ProfileCreatePresenter @Inject constructor(
     }
 
     fun initialize() {
-        if (!authenticationManager.isLoggedIn() || !authenticationManager.isVerified()) {
+        if (!authenticationManager.isLoggedIn()) {
             fragmentNavigator.navigate(LoginFragment())
+        }
+        if (!authenticationManager.isVerified()) {
+            fragmentNavigator.navigate(EmailVerifyFragment())
         }
     }
 

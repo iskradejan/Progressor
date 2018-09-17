@@ -30,4 +30,9 @@ class EmailVerifyPresenter @Inject constructor(private var fragmentNavigator: Fr
         authenticationManager.signOut()
         fragmentNavigator.navigate(LoginFragment())
     }
+
+    fun cancel() {
+        authenticationManager.signOut()
+        fragmentNavigator.navigate(LoginFragment())
+    }
 }

@@ -18,7 +18,7 @@ class EmailVerifyFragment : BaseFragment(), EmailVerifyPresenter.View {
         }
 
         emailVerifyLoginButton.setOnClickListener {
-            fragmentNavigator.navigate(LoginFragment())
+            presenter.cancel()
         }
     }
 

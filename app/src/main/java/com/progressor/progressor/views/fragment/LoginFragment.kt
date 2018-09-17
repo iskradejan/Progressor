@@ -1,10 +1,8 @@
 package com.progressor.progressor.views.fragment
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import android.widget.Toast
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
@@ -26,9 +24,12 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
                     true -> {
                         if(!authenticationManager.isVerified()) {
                             fragmentNavigator.navigate(EmailVerifyFragment())
-                        }
-                        if(userManager.user?.person == null) {
-                            fragmentNavigator.navigate(ProfileCreateFragment())
+                        } else {
+                            if(userManager.user?.person == null) {
+                                fragmentNavigator.navigate(ProfileCreateFragment())
+                            } else {
+                                fragmentNavigator.navigate(DashboardFragment())
+                            }
                         }
                     }
                     false -> {
