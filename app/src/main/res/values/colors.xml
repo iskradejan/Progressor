@@ -12,8 +12,4 @@
 
     <!-- Login Screen -->
     <color name="loginPlaceholder">#ececec</color>
-
-    <!-- Profile Screen -->
-    <color name="femaleActive">#CDDC39</color>
-    <color name="maleActive">#00BCD4</color>
 </resources>

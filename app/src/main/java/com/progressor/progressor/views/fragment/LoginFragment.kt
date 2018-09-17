@@ -1,8 +1,10 @@
 package com.progressor.progressor.views.fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.Toast
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
@@ -22,11 +24,16 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_LOGIN)) {
                 when (it.getSuccess()) {
                     true -> {
-                        fragmentNavigator.navigate(DashboardFragment())
+                        if(!authenticationManager.isVerified()) {
+                            fragmentNavigator.navigate(EmailVerifyFragment())
+                        }
+                        if(userManager.user?.person == null) {
+                            fragmentNavigator.navigate(ProfileCreateFragment())
+                        }
                     }
                     false -> {
-                        it.getErrors()?.forEach {
-                            when (it) {
+                        it.getErrors()?.forEach { error ->
+                            when (error) {
                                 FirebaseConstant.ERROR_USER_NOT_FOUND -> {
                                     loginEmailValueError.text = context?.getString(R.string.login_error_email_not_found)?:"--"
                                     loginEmailValueError.visibility = View.VISIBLE

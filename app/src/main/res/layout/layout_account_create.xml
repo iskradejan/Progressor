@@ -19,7 +19,7 @@
             android:id="@+id/logoText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/adequate"
@@ -27,9 +27,8 @@
             android:textAlignment="center"
             android:textColor="@color/baseGrey"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreateEmailValue"
-            app:layout_constraintEnd_toEndOf="@+id/accountCreateEmailValue"
-            app:layout_constraintStart_toStartOf="@+id/accountCreateEmailValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -46,11 +45,9 @@
 
         <EditText
             android:id="@+id/accountCreateDisplayNameValue"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
             android:hint="@string/account_create_nicknamePlaceholder"
@@ -59,8 +56,8 @@
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
             app:layout_constraintBottom_toTopOf="@+id/accountCreateEmailValue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/accountCreateRegisterButton"
+            app:layout_constraintStart_toStartOf="@+id/accountCreateRegisterButton" />
 
         <TextView
             android:id="@+id/accountCreateDisplayNameValueError"
@@ -75,11 +72,9 @@
 
         <EditText
             android:id="@+id/accountCreateEmailValue"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
             android:hint="@string/account_create_emailPlaceholder"
@@ -88,8 +83,8 @@
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
             app:layout_constraintBottom_toTopOf="@+id/accountCreatePasswordValue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/accountCreateRegisterButton"
+            app:layout_constraintStart_toStartOf="@+id/accountCreateRegisterButton" />
 
         <TextView
             android:id="@+id/accountCreateEmailValueError"
@@ -104,11 +99,9 @@
 
         <EditText
             android:id="@+id/accountCreatePasswordValue"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
             android:hint="@string/account_create_passwordPlaceholder"
@@ -117,8 +110,8 @@
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
             app:layout_constraintBottom_toTopOf="@+id/accountCreateRegisterButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="@+id/accountCreateRegisterButton"
+            app:layout_constraintStart_toStartOf="@+id/accountCreateRegisterButton" />
 
         <TextView
             android:id="@+id/accountCreatePasswordValueError"
@@ -136,15 +129,17 @@
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginBottom="60dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
             android:background="@color/baseMaroon"
             android:ems="12"
             android:stateListAnimator="@null"
             android:text="@string/account_create_register"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/accountCreateLoginButton"
-            app:layout_constraintEnd_toEndOf="@+id/accountCreatePasswordValue"
-            app:layout_constraintStart_toStartOf="@+id/accountCreatePasswordValue" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/accountCreateLoginButton"

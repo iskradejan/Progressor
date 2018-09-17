@@ -6,9 +6,15 @@ import javax.inject.Inject
 import android.app.Activity
 import android.content.Context
 import com.progressor.progressor.services.AuthenticationManager
+import com.progressor.progressor.services.UserManager
 import com.progressor.progressor.views.fragment.DashboardFragment
+import com.progressor.progressor.views.fragment.EmailVerifyFragment
 
-class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigator, var authenticationManager: AuthenticationManager) {
+class LoginPresenter @Inject constructor(
+        var fragmentNavigator: FragmentNavigator,
+        var authenticationManager: AuthenticationManager,
+        var userManager: UserManager) {
+
     private lateinit var view: View
     private var context: Context? = null
 
@@ -23,8 +29,10 @@ class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigato
     }
 
     private fun initialize() {
-        if (authenticationManager.isLoggedIn()) {
+        if (authenticationManager.isLoggedIn() && authenticationManager.isVerified()) {
             fragmentNavigator.navigate(DashboardFragment())
+        } else if (authenticationManager.isLoggedIn() && !authenticationManager.isVerified()) {
+            fragmentNavigator.navigate(EmailVerifyFragment())
         }
     }
 

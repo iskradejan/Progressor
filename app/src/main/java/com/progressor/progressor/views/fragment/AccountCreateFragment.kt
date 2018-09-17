@@ -21,7 +21,7 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_CREATE_ACCOUNT)) {
                 when (it.getSuccess()) {
                     true -> {
-                        fragmentNavigator.navigate(ProfileCreateFragment())
+                        fragmentNavigator.navigate(EmailVerifyFragment())
                     }
                     false -> {
                         it.getErrors()?.forEach { error ->

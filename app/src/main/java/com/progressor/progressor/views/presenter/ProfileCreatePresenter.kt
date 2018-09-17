@@ -1,14 +1,20 @@
 package com.progressor.progressor.views.presenter
 
-import android.app.Activity
 import android.content.Context
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
+import com.progressor.progressor.services.UserManager
+import com.progressor.progressor.views.fragment.DashboardFragment
+import com.progressor.progressor.views.fragment.LoginFragment
 import com.progressor.progressor.views.fragment.ProfileCreateFragment
 import java.time.LocalDateTime
 import javax.inject.Inject
 
-class ProfileCreatePresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var authenticationManager: AuthenticationManager) {
+class ProfileCreatePresenter @Inject constructor(
+        private var fragmentNavigator: FragmentNavigator,
+        private var authenticationManager: AuthenticationManager,
+        private var userManager: UserManager) {
+
     private lateinit var view: View
     private var context: Context? = null
 
@@ -23,13 +29,15 @@ class ProfileCreatePresenter @Inject constructor(private var fragmentNavigator: 
     }
 
     fun initialize() {
-
+        if (!authenticationManager.isLoggedIn() || !authenticationManager.isVerified()) {
+            fragmentNavigator.navigate(LoginFragment())
+        }
     }
 
-    fun createProfile(gender: Int?, height: Int?, weight: Int?, dob: LocalDateTime?, createDate: LocalDateTime) {
+    fun createProfile(gender: Int?, height: Int?, weight: Int?, dob: LocalDateTime?) {
         if (view.isFormValid()) {
-//            authenticationManager.createAccount(context as Activity, email, password, displayName)
-        } else {
+            userManager.createPerson(gender!!, dob!!, height!!, weight!!)
+            fragmentNavigator.navigate(DashboardFragment())
         }
     }
 }

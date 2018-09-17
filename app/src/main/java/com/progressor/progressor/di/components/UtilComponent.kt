@@ -6,6 +6,7 @@ import com.progressor.progressor.di.modules.FragmentModule
 import com.progressor.progressor.services.ApiRequestor
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
+import com.progressor.progressor.services.UserManager
 import com.progressor.progressor.views.fragment.*
 import dagger.Component
 import javax.inject.Singleton
@@ -23,9 +24,11 @@ interface UtilComponent {
     fun inject(accountCreateFragment: AccountCreateFragment)
     fun inject(profileCreateFragment: ProfileCreateFragment)
     fun inject(passwordResetFragment: PasswordResetFragment)
+    fun inject(emailVerifyFragment: EmailVerifyFragment)
 
     // Services
     fun inject(apiRequestor: ApiRequestor)
     fun inject(fragmentNavigator: FragmentNavigator)
     fun inject(authenticationManager: AuthenticationManager)
+    fun inject(userManager: UserManager)
 }

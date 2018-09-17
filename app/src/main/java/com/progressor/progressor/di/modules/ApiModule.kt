@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder
 import com.progressor.progressor.MainActivity
 import com.progressor.progressor.di.interfaces.ApiInterface
 import com.progressor.progressor.services.AuthenticationManager
+import com.progressor.progressor.services.UserManager
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -60,7 +61,13 @@ open class ApiModule(private val mainActivity: MainActivity) {
 
     @Provides
     @Singleton
-    fun authenticationManager() : AuthenticationManager {
+    fun authenticationManager(): AuthenticationManager {
         return AuthenticationManager(mainActivity)
+    }
+
+    @Provides
+    @Singleton
+    fun userManager(): UserManager {
+        return UserManager(mainActivity)
     }
 }

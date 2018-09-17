@@ -10,30 +10,32 @@ import com.progressor.progressor.views.fragment.DashboardFragment
 import javax.inject.Inject
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.FirebaseUser
-import com.progressor.progressor.views.fragment.LoginFragment
+import com.progressor.progressor.views.fragment.EmailVerifyFragment
 
 class AuthenticationManager constructor(private val mainActivity: Activity) {
+    @Inject
+    lateinit var fragmentNavigator: FragmentNavigator
 
     var firebaseAuth: FirebaseAuth? = null
     var firebaseUser: FirebaseUser? = null
     var authenticated: Boolean = false
-
-    @Inject
-    lateinit var fragmentNavigator: FragmentNavigator
+    var verified: Boolean = false
 
     init {
         (mainActivity as MainComponentInterface).mainComponent?.inject(this)
     }
 
     fun createAccount(context: Context, email: String, password: String, displayName: String) {
-        if (isLoggedIn()) {
+        if (isLoggedIn() && isVerified()) {
             fragmentNavigator.navigate(DashboardFragment())
+        } else if (isLoggedIn() && !isVerified()) {
+            fragmentNavigator.navigate(EmailVerifyFragment())
         }
 
         val response = FirebaseResponse()
         response.setType(FirebaseConstant.TYPE_CREATE_ACCOUNT)
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance()
 
         firebaseAuth?.createUserWithEmailAndPassword(email, password)?.addOnCompleteListener(context as Activity) { task ->
             if (task.isSuccessful) {
@@ -43,6 +45,8 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
                 val profileUpdates = UserProfileChangeRequest.Builder().setDisplayName(displayName).build()
 
                 firebaseUser?.updateProfile(profileUpdates)
+
+                verifyEmail()
 
                 response.setSuccess(true)
                 RxBus.publish(response)
@@ -70,12 +74,16 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         val response = FirebaseResponse()
         response.setType(FirebaseConstant.TYPE_LOGIN)
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance()
 
         firebaseAuth?.signInWithEmailAndPassword(email, password)?.addOnCompleteListener(context as Activity) { task ->
             if (task.isSuccessful) {
                 firebaseUser = firebaseAuth?.currentUser
                 authenticated = true
+
+                if(firebaseUser?.isEmailVerified == true){
+                    verified = true
+                }
 
                 response.setSuccess(true)
                 RxBus.publish(response)
@@ -102,7 +110,7 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         val response = FirebaseResponse()
         response.setType(FirebaseConstant.TYPE_PASSWORD_RESET)
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance()
 
         firebaseAuth?.sendPasswordResetEmail(email)?.addOnCompleteListener(context as Activity) { task ->
             if (task.isSuccessful) {
@@ -127,6 +135,31 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         }
     }
 
+    fun verifyEmail() {
+        if(isLoggedIn() && !isVerified()) {
+            firebaseUser?.sendEmailVerification()
+        }
+    }
+
+    fun refreshUser(context: Context) {
+        if(isLoggedIn()) {
+            firebaseUser?.reload()?.addOnCompleteListener(context as Activity) { task ->
+                if (task.isSuccessful) {
+                    if(firebaseUser?.isEmailVerified == true) {
+                        verified = true
+                        val response = FirebaseResponse()
+                        response.setType(FirebaseConstant.TYPE_EMAIL_VERIFICATION)
+                        response.setSuccess(true)
+                        RxBus.publish(response)
+                    }
+                } else {
+                    val exception = task.exception as FirebaseAuthException
+                    println("reload error: " + exception.message)
+                }
+            }
+        }
+    }
+
     fun signOut() {
         if (firebaseUser != null) {
             firebaseAuth?.signOut()
@@ -136,7 +169,11 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
         }
     }
 
-    fun isLoggedIn(): Boolean {
+    fun isLoggedIn() : Boolean {
         return authenticated
+    }
+
+    fun isVerified() : Boolean {
+        return verified
     }
 }

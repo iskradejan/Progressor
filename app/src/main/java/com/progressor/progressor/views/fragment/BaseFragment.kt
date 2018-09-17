@@ -10,6 +10,7 @@ import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.services.ApiRequestor
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
+import com.progressor.progressor.services.UserManager
 import javax.inject.Inject
 
 abstract class BaseFragment : Fragment() {
@@ -19,6 +20,8 @@ abstract class BaseFragment : Fragment() {
     protected lateinit var fragmentNavigator: FragmentNavigator
     @Inject
     protected lateinit var authenticationManager: AuthenticationManager
+    @Inject
+    protected lateinit var userManager: UserManager
 
     protected abstract fun getFragmentLayout(): Int
     protected abstract fun injectDependencies()

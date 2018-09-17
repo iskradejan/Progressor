@@ -44,65 +44,52 @@
             app:srcCompat="@drawable/logo" />
 
         <TextView
-            android:id="@+id/passwordResetContent"
+            android:id="@+id/emailVerifyContent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:backgroundTint="@color/baseMaroon"
             android:ems="12"
             android:hint="@string/login_emailPlaceholder"
-            android:text="@string/password_reset_content"
+            android:text="Looks like you have not verified your email. Please check your inbox and click the link inside. If you have lost the email, you can re-send it below."
             android:textAlignment="center"
             android:textColor="@color/baseGrey"
             android:textColorHint="@color/loginPlaceholder"
             android:textCursorDrawable="@color/baseCursor"
-            app:layout_constraintBottom_toTopOf="@+id/passwordResetEmailValue"
-            app:layout_constraintEnd_toEndOf="@+id/passwordResetEmailValue"
-            app:layout_constraintStart_toStartOf="@+id/passwordResetEmailValue" />
-
-        <TextView
-            android:id="@+id/passwordResetEmailValueError"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:textColor="@color/baseMaroon"
-            android:textSize="12sp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/passwordResetEmailValue"
-            app:layout_constraintStart_toStartOf="@+id/passwordResetEmailValue" />
-
-        <EditText
-            android:id="@+id/passwordResetEmailValue"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/baseMaroon"
-            android:ems="12"
-            android:hint="@string/login_passwordPlaceholder"
-            android:textColor="@color/baseGrey"
-            android:textColorHint="@color/loginPlaceholder"
-            android:textCursorDrawable="@color/baseCursor"
-            app:layout_constraintBottom_toTopOf="@+id/passwordResetButton"
-            app:layout_constraintEnd_toEndOf="@+id/passwordResetButton"
-            app:layout_constraintStart_toStartOf="@+id/passwordResetButton" />
+            app:layout_constraintBottom_toTopOf="@+id/emailVerifyButton"
+            app:layout_constraintEnd_toEndOf="@+id/emailVerifyButton"
+            app:layout_constraintStart_toStartOf="@+id/emailVerifyButton" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/passwordResetButton"
+            android:id="@+id/emailVerifyButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginBottom="60dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="35dp"
             android:background="@color/baseMaroon"
             android:ems="12"
             android:stateListAnimator="@null"
-            android:text="@string/password_reset_button"
+            android:text="Send"
             android:textAllCaps="false"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/emailVerifyLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Go back to login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

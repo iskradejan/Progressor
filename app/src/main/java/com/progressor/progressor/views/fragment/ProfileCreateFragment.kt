@@ -23,7 +23,6 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
     private var height : Int ?= null
     private var weight : Int ?= null
     private var dob : LocalDateTime ?= null
-    private var createDate = LocalDateTime.now()
 
     fun initialize() {
         context?.let {context ->
@@ -98,7 +97,7 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
 
             // Continue
             profileCreateContinueButton.setOnClickListener {
-                presenter.createProfile(gender, height, weight, dob, createDate)
+                presenter.createProfile(gender, height, weight, dob)
             }
         }
     }
