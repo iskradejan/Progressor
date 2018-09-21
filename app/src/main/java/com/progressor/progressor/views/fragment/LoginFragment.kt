@@ -6,7 +6,7 @@ import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
-import com.progressor.progressor.model.pojo.FirebaseResponse
+import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.services.RxBus
 import com.progressor.progressor.views.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.layout_login.*

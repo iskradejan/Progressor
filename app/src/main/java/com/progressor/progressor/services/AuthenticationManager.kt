@@ -5,7 +5,7 @@ import android.content.Context
 import com.google.firebase.auth.*
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
-import com.progressor.progressor.model.pojo.FirebaseResponse
+import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.views.fragment.DashboardFragment
 import javax.inject.Inject
 import com.google.firebase.auth.UserProfileChangeRequest
