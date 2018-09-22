@@ -45,6 +45,7 @@ repositories {
 dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.3'
     implementation 'com.google.firebase:firebase-auth:16.0.3'
+    implementation 'com.google.firebase:firebase-firestore:17.1.0'
 
 //    Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'

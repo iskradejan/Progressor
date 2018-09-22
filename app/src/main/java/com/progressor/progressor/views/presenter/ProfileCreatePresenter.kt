@@ -4,11 +4,9 @@ import android.content.Context
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
 import com.progressor.progressor.services.UserManager
-import com.progressor.progressor.views.fragment.DashboardFragment
 import com.progressor.progressor.views.fragment.EmailVerifyFragment
 import com.progressor.progressor.views.fragment.LoginFragment
 import com.progressor.progressor.views.fragment.ProfileCreateFragment
-import java.time.LocalDateTime
 import javax.inject.Inject
 
 class ProfileCreatePresenter @Inject constructor(
@@ -38,10 +36,11 @@ class ProfileCreatePresenter @Inject constructor(
         }
     }
 
-    fun createProfile(gender: Int?, height: Int?, weight: Int?, dob: LocalDateTime?) {
+    fun createProfile(gender: Int, height: Int, weight: Int, dob: String) {
         if (view.isFormValid()) {
-            userManager.createPerson(gender!!, dob!!, height!!, weight!!)
-            fragmentNavigator.navigate(DashboardFragment())
+            authenticationManager.firebaseUser?.uid?.let { it ->
+                userManager.createUser(it, gender, dob, height, weight)
+            }
         }
     }
 }

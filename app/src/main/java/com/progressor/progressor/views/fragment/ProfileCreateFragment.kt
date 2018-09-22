@@ -9,6 +9,11 @@ import kotlinx.android.synthetic.main.layout_profile_create.*
 import java.text.SimpleDateFormat
 import java.util.*
 import android.widget.SeekBar
+import android.widget.Toast
+import com.progressor.progressor.model.constant.FirebaseConstant
+import com.progressor.progressor.model.constant.UserConstant
+import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
+import com.progressor.progressor.services.RxBus
 import com.progressor.progressor.views.presenter.ProfileCreatePresenter
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -19,12 +24,27 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
     @Inject
     lateinit var presenter: ProfileCreatePresenter
 
-    private var gender : Int ?= null
-    private var height : Int ?= null
-    private var weight : Int ?= null
-    private var dob : LocalDateTime ?= null
+    private var gender : Int = 0
+    private var height : Int = 0
+    private var weight : Int = 0
+    private var dob : String = ""
 
     fun initialize() {
+        RxBus.subscribe<FirebaseResponse>(this) {
+            if (it.getType().equals(FirebaseConstant.TYPE_CREATE_PROFILE)) {
+                when (it.getSuccess()) {
+                    true -> {
+                        fragmentNavigator.navigate(DashboardFragment())
+                    }
+                    false -> {
+                        context.let { context ->
+                            Toast.makeText(context, "Something went wrong. Try again", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
+            }
+        }
+
         context?.let {context ->
             // Date picker listener
             val calendar = Calendar.getInstance()
@@ -38,7 +58,7 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
                 val simpleDateFormat = SimpleDateFormat(format, Locale.US)
                 profileCreateBirthdayValue.text = simpleDateFormat.format(calendar.time)
 
-                dob = LocalDate.of(year, monthOfYear, dayOfMonth).atStartOfDay()
+                dob = LocalDate.of(year, monthOfYear, dayOfMonth).atStartOfDay().toString()
             }
 
             // Birthday
@@ -50,14 +70,14 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
             profileCreateFemaleButton.setOnClickListener {
                 profileCreateFemaleButton.setImageResource(R.drawable.female_active)
                 profileCreateMaleButton.setImageResource(R.drawable.male_inactive)
-                gender = 0
+                gender = UserConstant.PERSON_GENDER_FEMALE
             }
 
             // Gender Male
             profileCreateMaleButton.setOnClickListener {
                 profileCreateFemaleButton.setImageResource(R.drawable.female_inactive)
                 profileCreateMaleButton.setImageResource(R.drawable.male_active)
-                gender = 1
+                gender = UserConstant.PERSON_GENDER_MALE
             }
 
             // Height
@@ -105,28 +125,28 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
     override fun isFormValid(): Boolean {
         var valid = true
 
-        if(gender == null) {
+        if(gender == 0) {
             profileCreateGenderLabel.setError("Required")
             valid = false
         } else {
             profileCreateGenderLabel.setError(null)
         }
 
-        if(height == null) {
+        if(height == 0) {
             profileCreateHeightLabel.setError("Required")
             valid = false
         } else {
             profileCreateHeightLabel.setError(null)
         }
 
-        if(weight == null) {
+        if(weight == 0) {
             profileCreateWeightLabel.setError("Required")
             valid = false
         } else {
             profileCreateWeightLabel.setError(null)
         }
 
-        if(dob == null) {
+        if("".equals(dob)) {
             profileCreateBirthdayLabel.setError("Required")
             valid = false
         } else {

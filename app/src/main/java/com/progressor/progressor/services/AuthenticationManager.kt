@@ -15,6 +15,8 @@ import com.progressor.progressor.views.fragment.EmailVerifyFragment
 class AuthenticationManager constructor(private val mainActivity: Activity) {
     @Inject
     lateinit var fragmentNavigator: FragmentNavigator
+    @Inject
+    lateinit var userManager: UserManager
 
     var firebaseAuth: FirebaseAuth? = null
     var firebaseUser: FirebaseUser? = null
@@ -85,8 +87,9 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
                     verified = true
                 }
 
-                response.setSuccess(true)
-                RxBus.publish(response)
+                firebaseUser?.uid?.let {
+                    userManager.fetchUser(it)
+                }
             } else {
                 val exception = task.exception as FirebaseAuthException
                 response.setSuccess(false)

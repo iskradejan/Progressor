@@ -31,10 +31,10 @@ class LoginPresenter @Inject constructor(
 
     private fun initialize() {
         if (authenticationManager.isLoggedIn()) {
-            if(!authenticationManager.isVerified()) {
+            if (!authenticationManager.isVerified()) {
                 fragmentNavigator.navigate(EmailVerifyFragment())
             } else {
-                if(userManager.user?.person == null) {
+                if (userManager.user?.person == null) {
                     fragmentNavigator.navigate(ProfileCreateFragment())
                 } else {
                     fragmentNavigator.navigate(DashboardFragment())

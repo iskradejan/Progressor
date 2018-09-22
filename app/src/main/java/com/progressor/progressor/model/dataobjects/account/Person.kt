@@ -1,11 +1,9 @@
 package com.progressor.progressor.model.dataobjects.account
 
-import java.time.LocalDateTime
-
 data class Person(
-        val gender: Int,
-        val dob: LocalDateTime,
-        val height: Int,
-        val weight: Int,
-        val createDate: LocalDateTime
+        val gender: Int = 0,
+        val dob: String = "",
+        val height: Int = 0,
+        val weight: Int = 0,
+        val createDate: String = ""
 )

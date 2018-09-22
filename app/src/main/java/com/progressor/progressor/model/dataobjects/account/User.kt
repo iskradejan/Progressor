@@ -3,7 +3,6 @@ package com.progressor.progressor.model.dataobjects.account
 import java.time.LocalDateTime
 
 data class User(
-        var displayName: String? = null,
         val person: Person ?= null,
         val workouts: MutableList<Workout>? = null,
         val bodyHistory: MutableList<Body>? = null,
