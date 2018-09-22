@@ -69,12 +69,17 @@ class PasswordResetFragment : BaseFragment(), PasswordResetPresenter.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         injectDependencies()
+        setSidePane()
         initialize()
     }
 
     override fun injectDependencies() {
         (activity as MainComponentInterface).mainComponent.inject(this)
         presenter.setPresenter(this)
+    }
+
+    override fun setSidePane() {
+        sidePaneManager.showSidePane(false)
     }
 
     override fun getFragmentLayout(): Int {

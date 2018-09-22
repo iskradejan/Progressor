@@ -16,7 +16,6 @@ import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.services.RxBus
 import com.progressor.progressor.views.presenter.ProfileCreatePresenter
 import java.time.LocalDate
-import java.time.LocalDateTime
 import javax.inject.Inject
 
 class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
@@ -159,13 +158,17 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         injectDependencies()
+        setSidePane()
         initialize()
     }
 
     override fun injectDependencies() {
         (activity as MainComponentInterface).mainComponent.inject(this)
         presenter.setPresenter(this)
-        initialize()
+    }
+
+    override fun setSidePane() {
+        sidePaneManager.showSidePane(false)
     }
 
     override fun getFragmentLayout(): Int {

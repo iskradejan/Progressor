@@ -20,12 +20,17 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         injectDependencies()
+        setSidePane()
         initialize()
     }
     
     override fun injectDependencies() {
         (activity as MainComponentInterface).mainComponent.inject(this)
         presenter.setPresenter(this)
+    }
+
+    override fun setSidePane() {
+        sidePaneManager.showSidePane(true)
     }
 
     override fun getFragmentLayout(): Int {

@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder
 import com.progressor.progressor.MainActivity
 import com.progressor.progressor.di.interfaces.ApiInterface
 import com.progressor.progressor.services.AuthenticationManager
+import com.progressor.progressor.services.SidePaneManager
 import com.progressor.progressor.services.UserManager
 import dagger.Module
 import dagger.Provides
@@ -69,5 +70,11 @@ open class ApiModule(private val mainActivity: MainActivity) {
     @Singleton
     fun userManager(): UserManager {
         return UserManager(mainActivity)
+    }
+
+    @Provides
+    @Singleton
+    fun sidePaneManager(): SidePaneManager {
+        return SidePaneManager(mainActivity)
     }
 }

@@ -7,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.progressor.progressor.di.components.MainComponentInterface
-import com.progressor.progressor.services.ApiRequestor
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.services.UserManager
+import com.progressor.progressor.services.*
 import javax.inject.Inject
 
 abstract class BaseFragment : Fragment() {
@@ -22,9 +19,12 @@ abstract class BaseFragment : Fragment() {
     protected lateinit var authenticationManager: AuthenticationManager
     @Inject
     protected lateinit var userManager: UserManager
+    @Inject
+    protected lateinit var sidePaneManager: SidePaneManager
 
     protected abstract fun getFragmentLayout(): Int
     protected abstract fun injectDependencies()
+    protected abstract fun setSidePane()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(getFragmentLayout(), container, false)

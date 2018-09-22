@@ -3,10 +3,7 @@ package com.progressor.progressor.di.components
 import com.progressor.progressor.MainActivity
 import com.progressor.progressor.di.modules.ApiModule
 import com.progressor.progressor.di.modules.FragmentModule
-import com.progressor.progressor.services.ApiRequestor
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.services.UserManager
+import com.progressor.progressor.services.*
 import com.progressor.progressor.views.fragment.*
 import dagger.Component
 import javax.inject.Singleton
@@ -31,4 +28,5 @@ interface UtilComponent {
     fun inject(fragmentNavigator: FragmentNavigator)
     fun inject(authenticationManager: AuthenticationManager)
     fun inject(userManager: UserManager)
+    fun inject(sidePaneManager: SidePaneManager)
 }
