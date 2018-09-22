@@ -24,6 +24,10 @@ class UserManager constructor(private val mainActivity: Activity) {
         (mainActivity as MainComponentInterface).mainComponent?.inject(this)
     }
 
+    fun createPerson(gender: Int, dob: String, height: Int, weight: Int): Person {
+        return Person(gender = gender, dob = dob, height = height, weight = weight, createDate = LocalDateTime.now().toString())
+    }
+
     fun fetchUser(uid: String) {
         val response = FirebaseResponse()
         response.setType(FirebaseConstant.TYPE_LOGIN)
@@ -36,12 +40,9 @@ class UserManager constructor(private val mainActivity: Activity) {
         }
     }
 
-    fun createUser(uid: String, gender: Int, dob: String, height: Int, weight: Int) {
+    fun createUser(uid: String, newUser: User) {
         val response = FirebaseResponse()
         response.setType(FirebaseConstant.TYPE_CREATE_PROFILE)
-
-        val person = Person(gender = gender, dob = dob, height = height, weight = weight, createDate = LocalDateTime.now().toString())
-        val newUser = User(person = person)
 
         firebaseFirestore.collection("users")
                 .document(uid)
