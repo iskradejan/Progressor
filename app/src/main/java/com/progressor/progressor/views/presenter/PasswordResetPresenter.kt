@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.views.fragment.DashboardFragment
+import com.progressor.progressor.views.fragment.EmptyDashboardFragment
 import com.progressor.progressor.views.fragment.PasswordResetFragment
 import javax.inject.Inject
 
@@ -24,7 +24,7 @@ class PasswordResetPresenter @Inject constructor(var fragmentNavigator: Fragment
 
     private fun initialize() {
         if (authenticationManager.isLoggedIn()) {
-            fragmentNavigator.navigate(DashboardFragment())
+            fragmentNavigator.navigate(EmptyDashboardFragment())
         }
     }
 

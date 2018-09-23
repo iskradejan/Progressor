@@ -6,7 +6,7 @@ import com.google.firebase.auth.*
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
-import com.progressor.progressor.views.fragment.DashboardFragment
+import com.progressor.progressor.views.fragment.EmptyDashboardFragment
 import javax.inject.Inject
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.FirebaseUser
@@ -29,7 +29,7 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
 
     fun createAccount(context: Context, email: String, password: String, displayName: String) {
         if (isLoggedIn() && isVerified()) {
-            fragmentNavigator.navigate(DashboardFragment())
+            fragmentNavigator.navigate(EmptyDashboardFragment())
         } else if (isLoggedIn() && !isVerified()) {
             fragmentNavigator.navigate(EmailVerifyFragment())
         }

@@ -28,7 +28,7 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
                             if(userManager.user?.person == null) {
                                 fragmentNavigator.navigate(ProfileCreateFragment())
                             } else {
-                                fragmentNavigator.navigate(DashboardFragment())
+                                fragmentNavigator.navigate(EmptyDashboardFragment())
                             }
                         }
                     }

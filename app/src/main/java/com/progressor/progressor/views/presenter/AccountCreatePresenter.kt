@@ -5,7 +5,7 @@ import android.content.Context
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
 import com.progressor.progressor.views.fragment.AccountCreateFragment
-import com.progressor.progressor.views.fragment.DashboardFragment
+import com.progressor.progressor.views.fragment.EmptyDashboardFragment
 import javax.inject.Inject
 
 class AccountCreatePresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var authenticationManager: AuthenticationManager) {
@@ -24,7 +24,7 @@ class AccountCreatePresenter @Inject constructor(private var fragmentNavigator: 
 
     fun initialize() {
         if (authenticationManager.isLoggedIn()) {
-            fragmentNavigator.navigate(DashboardFragment())
+            fragmentNavigator.navigate(EmptyDashboardFragment())
         }
     }
 

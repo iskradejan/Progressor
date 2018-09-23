@@ -7,7 +7,7 @@ import android.app.Activity
 import android.content.Context
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.UserManager
-import com.progressor.progressor.views.fragment.DashboardFragment
+import com.progressor.progressor.views.fragment.EmptyDashboardFragment
 import com.progressor.progressor.views.fragment.EmailVerifyFragment
 import com.progressor.progressor.views.fragment.ProfileCreateFragment
 
@@ -37,7 +37,7 @@ class LoginPresenter @Inject constructor(
                 if (userManager.user?.person == null) {
                     fragmentNavigator.navigate(ProfileCreateFragment())
                 } else {
-                    fragmentNavigator.navigate(DashboardFragment())
+                    fragmentNavigator.navigate(EmptyDashboardFragment())
                 }
             }
         }

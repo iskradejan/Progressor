@@ -7,5 +7,6 @@ data class Body(
         val fatPercentage: Int? = null,
         val musclePercentage: Int? = null,
         val waterPerfentage: Int? = null,
+        val mood: String? = null,
         val createDate: LocalDateTime? = null
 )

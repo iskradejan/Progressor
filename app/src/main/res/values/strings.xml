@@ -49,7 +49,11 @@
     <string name="profile_create_birthday_title">Birthday</string>
 
 
-    <!-- Dashboard Screen -->
-    <string name="dashboard_welcome">Welcome,</string>
-    <string name="dashboard_emailAddress">placeholder@gmail.com</string>
+    <!-- Empty Dashboard Screen -->
+    <string name="empty_dashboard_header_title">Select your choice of progression</string>
+    <string name="empty_dashboard_continue">Continue</string>
+    <string name="empty_dashboard_workout_title">Workout</string>
+    <string name="empty_dashboard_workout_info">Choose from a variety of workout programs! You can choose based on your goal, difficulty, length, and review score. For each program you will have an individual progress chart showing your progress over time. It is extremely important to visually see your progression as it helps your state of mind.</string>
+    <string name="empty_dashboard_body_title">Body</string>
+    <string name="empty_dashboard_body_info">Start tracking your physique and see the incredible results! You can record things like weight, fat percentage, muscle percentage, water percentage, and mood. It is extremely important to visually see your progression as it helps your state of mind.</string>
 </resources>

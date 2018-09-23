@@ -17,7 +17,7 @@ interface UtilComponent {
     fun inject(baseFragment: BaseFragment)
     fun inject(loginFragment: LoginFragment)
     fun inject(splashFragment: SplashFragment)
-    fun inject(dashboardFragment: DashboardFragment)
+    fun inject(emptyDashboardFragment: EmptyDashboardFragment)
     fun inject(accountCreateFragment: AccountCreateFragment)
     fun inject(profileCreateFragment: ProfileCreateFragment)
     fun inject(passwordResetFragment: PasswordResetFragment)
