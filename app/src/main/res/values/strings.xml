@@ -7,6 +7,10 @@
     <string name="splash_login">Login</string>
     <string name="splash_register">Register</string>
 
+    <!-- Slider Screen -->
+    <string name="slider_hello">Hello</string>
+    <string name="slider_log_out">Log Out</string>
+
     <!-- Login Screen -->
     <string name="login_emailPlaceholder">&#160;email</string>
     <string name="login_passwordPlaceholder">&#160;password</string>

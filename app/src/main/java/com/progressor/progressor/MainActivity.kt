@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_main)
         injectDependencies()
-//        slidingPane.setSliderFadeColor(Color.TRANSPARENT)
         if (sharedPreferences.getBoolean("firstTime", true)) {
             fragmentNavigator.navigate(SplashFragment())
         } else {
