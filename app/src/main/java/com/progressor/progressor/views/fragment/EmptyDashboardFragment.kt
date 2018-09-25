@@ -5,7 +5,7 @@ import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.views.presenter.EmptyDashboardPresenter
-import kotlinx.android.synthetic.main.layout_dashboard.*
+import kotlinx.android.synthetic.main.layout_empty_dashboard.*
 import javax.inject.Inject
 
 class EmptyDashboardFragment : BaseFragment(), EmptyDashboardPresenter.View {
@@ -46,6 +46,6 @@ class EmptyDashboardFragment : BaseFragment(), EmptyDashboardPresenter.View {
     }
 
     override fun getFragmentLayout(): Int {
-        return R.layout.layout_dashboard
+        return R.layout.layout_empty_dashboard
     }
 }
