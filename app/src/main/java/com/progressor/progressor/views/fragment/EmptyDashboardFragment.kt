@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
+import com.progressor.progressor.services.BodyCalculator
 import com.progressor.progressor.views.presenter.EmptyDashboardPresenter
 import kotlinx.android.synthetic.main.layout_empty_dashboard.*
 import javax.inject.Inject
@@ -25,7 +26,9 @@ class EmptyDashboardFragment : BaseFragment(), EmptyDashboardPresenter.View {
         }
 
         emptyDashboardContinueButton.setOnClickListener {
-
+            val bodyCalculator = BodyCalculator()
+            println("Male Fat: " + bodyCalculator.calculateMaleFat(190.0, 30.5))
+            println("Female Fat: " + bodyCalculator.calculateFemaleFat(125.0, 6.0, 24.0, 38.0, 9.5))
         }
     }
 
