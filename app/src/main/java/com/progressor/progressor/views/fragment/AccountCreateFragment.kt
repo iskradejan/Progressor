@@ -55,14 +55,14 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
         var valid = true
 
         if (TextUtils.isEmpty(accountCreateEmailValue.getText().toString())) {
-            accountCreateEmailValue.setError("Required.")
+            accountCreateEmailValue.setError("Required")
             valid = false
         } else {
             accountCreateEmailValue.setError(null)
         }
 
         if (TextUtils.isEmpty(accountCreatePasswordValue.getText().toString())) {
-            accountCreatePasswordValue.setError("Required.")
+            accountCreatePasswordValue.setError("Required")
             valid = false
         } else {
             accountCreatePasswordValue.setError(null)

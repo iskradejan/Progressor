@@ -1,6 +1,7 @@
 package com.progressor.progressor.views.fragment
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
@@ -14,10 +15,13 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
     @Inject
     lateinit var presenter: NewBodyPresenter
 
+    private var isMoodSelected = false
+
     private fun initialize() {
-        genderHandler()
+        genderFieldHandler()
 
         newBodyWeightEdit.setText(userManager.user?.person?.weight.toString())
+
         newBodyWaistEdit.requestFocus()
 
         newBodyMoodGreat.setOnClickListener {
@@ -44,10 +48,18 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
             moodToggleHandler()
             newBodyMoodTerrible.setImageResource(R.drawable.mood_terrible_active)
         }
+
+        newBodySubmit.setOnClickListener {
+            presenter.addBody()
+        }
     }
 
-    private fun genderHandler() {
-        if (userManager.user?.person?.gender == UserConstant.PERSON_GENDER_FEMALE) {
+    private fun isFemale(): Boolean {
+        return userManager.user?.person?.gender == UserConstant.PERSON_GENDER_FEMALE
+    }
+
+    private fun genderFieldHandler() {
+        if (isFemale()) {
             newBodyWristLabel.visibility = View.VISIBLE
             newBodyWristEdit.visibility = View.VISIBLE
 
@@ -65,6 +77,52 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
         newBodyMoodNeutral.setImageResource(R.drawable.mood_neutral_inactive)
         newBodyMoodBad.setImageResource(R.drawable.mood_bad_inactive)
         newBodyMoodTerrible.setImageResource(R.drawable.mood_terrible_inactive)
+
+        newBodyMoodLabel.setError(null)
+        isMoodSelected = true
+    }
+
+    override fun isFormValid(): Boolean {
+        var valid = true
+
+        if (TextUtils.isEmpty(newBodyWaistEdit.getText().toString())) {
+            newBodyWaistEdit.setError("Required")
+            valid = false
+        } else {
+            newBodyWaistEdit.setError(null)
+        }
+
+        if (isFemale()) {
+            if (TextUtils.isEmpty(newBodyWristEdit.getText().toString())) {
+                newBodyWristEdit.setError("Required")
+                valid = false
+            } else {
+                newBodyWristEdit.setError(null)
+            }
+
+            if (TextUtils.isEmpty(newBodyHipEdit.getText().toString())) {
+                newBodyHipEdit.setError("Required")
+                valid = false
+            } else {
+                newBodyHipEdit.setError(null)
+            }
+
+            if (TextUtils.isEmpty(newBodyForearmEdit.getText().toString())) {
+                newBodyForearmEdit.setError("Required")
+                valid = false
+            } else {
+                newBodyForearmEdit.setError(null)
+            }
+        }
+
+        if(!isMoodSelected) {
+            newBodyMoodLabel.setError("Required")
+            valid = false
+        } else {
+            newBodyMoodLabel.setError(null)
+        }
+
+        return valid
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -52,7 +52,7 @@ class PasswordResetFragment : BaseFragment(), PasswordResetPresenter.View {
         var valid = true
 
         if (TextUtils.isEmpty(passwordResetEmailValue.getText().toString())) {
-            passwordResetEmailValue.setError("Required.")
+            passwordResetEmailValue.setError("Required")
             valid = false
         } else {
             passwordResetEmailValue.setError(null)

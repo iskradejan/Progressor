@@ -52,8 +52,6 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
         }
 
         loginSignInButton.setOnClickListener {
-            loginEmailValueError.visibility = View.GONE
-            loginPasswordValueError.visibility = View.GONE
             presenter.login(loginEmailValue.text.toString(), loginPasswordValue.text.toString())
         }
 
@@ -70,14 +68,14 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
         var valid = true
 
         if (TextUtils.isEmpty(loginEmailValue.getText().toString())) {
-            loginEmailValue.setError("Required.")
+            loginEmailValue.setError("Required")
             valid = false
         } else {
             loginEmailValue.setError(null)
         }
 
         if (TextUtils.isEmpty(loginPasswordValue.getText().toString())) {
-            loginPasswordValue.setError("Required.")
+            loginPasswordValue.setError("Required")
             valid = false
         } else {
             loginPasswordValue.setError(null)
