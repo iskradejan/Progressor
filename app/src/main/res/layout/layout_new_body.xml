@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/newBodyExplainerInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:text="In order to derive to the most accurate results, please fill out the form below. The results have 3% margin of error."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/newBodyInputs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/newBodyMoodContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newBodyExplainerInfo">
+
+        <TextView
+            android:id="@+id/newBodyWeightLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Weight"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/newBodyWeightEdit"
+            app:layout_constraintStart_toStartOf="@+id/newBodyWeightEdit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/newBodyWeightEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/baseMaroon"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:textAlignment="center"
+            android:textColor="@color/baseGrey"
+            android:textColorHint="@color/loginPlaceholder"
+            android:textCursorDrawable="@color/baseCursor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyWeightLabel" />
+
+        <TextView
+            android:id="@+id/newBodyWaistLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Waist"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/newBodyWaistEdit"
+            app:layout_constraintStart_toStartOf="@+id/newBodyWaistEdit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/newBodyWaistEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="@color/baseMaroon"
+            android:ems="4"
+            android:focusedByDefault="true"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textAlignment="center"
+            android:textColor="@color/baseGrey"
+            android:textColorHint="@color/loginPlaceholder"
+            android:textCursorDrawable="@color/baseCursor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyWaistLabel" />
+
+        <TextView
+            android:id="@+id/newBodyWristLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Wrist"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/newBodyWristEdit"
+            app:layout_constraintStart_toStartOf="@+id/newBodyWristEdit"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyWeightEdit" />
+
+        <EditText
+            android:id="@+id/newBodyWristEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/baseMaroon"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textAlignment="center"
+            android:textColor="@color/baseGrey"
+            android:textColorHint="@color/loginPlaceholder"
+            android:textCursorDrawable="@color/baseCursor"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyWristLabel" />
+
+        <TextView
+            android:id="@+id/newBodyHipLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Hip"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/newBodyWaistEdit"
+            app:layout_constraintStart_toStartOf="@+id/newBodyWaistEdit"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyWaistEdit" />
+
+        <EditText
+            android:id="@+id/newBodyHipEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:backgroundTint="@color/baseMaroon"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textAlignment="center"
+            android:textColor="@color/baseGrey"
+            android:textColorHint="@color/loginPlaceholder"
+            android:textCursorDrawable="@color/baseCursor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyHipLabel" />
+
+        <TextView
+            android:id="@+id/newBodyForearmLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Forearm"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/newBodyWristEdit"
+            app:layout_constraintStart_toStartOf="@+id/newBodyWristEdit"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyWristEdit" />
+
+        <EditText
+            android:id="@+id/newBodyForearmEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="@color/baseMaroon"
+            android:ems="4"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:textAlignment="center"
+            android:textColor="@color/baseGrey"
+            android:textColorHint="@color/loginPlaceholder"
+            android:textCursorDrawable="@color/baseCursor"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyForearmLabel" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/newBodyMoodContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/newBodySubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newBodyInputs">
+
+        <TextView
+            android:id="@+id/newBodyMoodLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="How do you feel?"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/newBodyMoodGreat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/newBodyMoodOkay"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyMoodLabel"
+            app:srcCompat="@drawable/mood_great_inactive" />
+
+        <ImageButton
+            android:id="@+id/newBodyMoodOkay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/newBodyMoodNeutral"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newBodyMoodGreat"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyMoodLabel"
+            app:srcCompat="@drawable/mood_okay_inactive" />
+
+        <ImageButton
+            android:id="@+id/newBodyMoodNeutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/newBodyMoodBad"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newBodyMoodOkay"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyMoodLabel"
+            app:srcCompat="@drawable/mood_neutral_inactive" />
+
+        <ImageButton
+            android:id="@+id/newBodyMoodBad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/newBodyMoodTerrible"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newBodyMoodNeutral"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyMoodLabel"
+            app:srcCompat="@drawable/mood_bad_inactive" />
+
+        <ImageButton
+            android:id="@+id/newBodyMoodTerrible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0"
+            android:background="@color/white"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newBodyMoodBad"
+            app:layout_constraintTop_toBottomOf="@+id/newBodyMoodLabel"
+            app:srcCompat="@drawable/mood_terrible_inactive" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/newBodySubmit"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:background="@color/baseMaroon"
+        android:ems="12"
+        android:stateListAnimator="@null"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
