@@ -16,6 +16,12 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
     lateinit var presenter: NewBodyPresenter
 
     private var isMoodSelected = false
+    private var weight: Double = 0.0
+    private var waist: Double = 0.0
+    private var wrist: Double? = null
+    private var hip: Double? = null
+    private var forearm: Double? = null
+    private var mood: Int = 0
 
     private fun initialize() {
         genderFieldHandler()
@@ -25,32 +31,33 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
         newBodyWaistEdit.requestFocus()
 
         newBodyMoodGreat.setOnClickListener {
-            moodToggleHandler()
+            moodToggleHandler(UserConstant.PERSON_MOOD_GREAT)
             newBodyMoodGreat.setImageResource(R.drawable.mood_great_active)
         }
 
         newBodyMoodOkay.setOnClickListener {
-            moodToggleHandler()
+            moodToggleHandler(UserConstant.PERSON_MOOD_OKAY)
             newBodyMoodOkay.setImageResource(R.drawable.mood_okay_active)
         }
 
         newBodyMoodNeutral.setOnClickListener {
-            moodToggleHandler()
+            moodToggleHandler(UserConstant.PERSON_MOOD_NEUTRAL)
             newBodyMoodNeutral.setImageResource(R.drawable.mood_neutral_active)
         }
 
         newBodyMoodBad.setOnClickListener {
-            moodToggleHandler()
+            moodToggleHandler(UserConstant.PERSON_MOOD_BAD)
             newBodyMoodBad.setImageResource(R.drawable.mood_bad_active)
         }
 
         newBodyMoodTerrible.setOnClickListener {
-            moodToggleHandler()
+            moodToggleHandler(UserConstant.PERSON_MOOD_TERRIBLE)
             newBodyMoodTerrible.setImageResource(R.drawable.mood_terrible_active)
         }
 
         newBodySubmit.setOnClickListener {
-            presenter.addBody()
+            setValues()
+            presenter.addBody(weight = weight, waist = waist, mood = mood, wrist = wrist, hip = hip, forearm = forearm)
         }
     }
 
@@ -71,7 +78,7 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
         }
     }
 
-    private fun moodToggleHandler() {
+    private fun moodToggleHandler(selectedMood: Int) {
         newBodyMoodGreat.setImageResource(R.drawable.mood_great_inactive)
         newBodyMoodOkay.setImageResource(R.drawable.mood_okay_inactive)
         newBodyMoodNeutral.setImageResource(R.drawable.mood_neutral_inactive)
@@ -80,12 +87,32 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
 
         newBodyMoodLabel.setError(null)
         isMoodSelected = true
+        mood = selectedMood
+    }
+
+    private fun setValues() {
+        if(isFormValid()) {
+            weight = newBodyWeightEdit.getText().toString().toDouble()
+            waist = newBodyWaistEdit.getText().toString().toDouble()
+            if(isFemale()) {
+                wrist = newBodyWristEdit.getText().toString().toDouble()
+                hip = newBodyHipEdit.getText().toString().toDouble()
+                forearm = newBodyForearmEdit.getText().toString().toDouble()
+            }
+        }
     }
 
     override fun isFormValid(): Boolean {
         var valid = true
 
-        if (TextUtils.isEmpty(newBodyWaistEdit.getText().toString())) {
+        if (TextUtils.isEmpty(newBodyWeightEdit.getText().toString()) || "0".equals(newBodyWeightEdit.getText().toString()) || "0.0".equals(newBodyWeightEdit.getText().toString())) {
+            newBodyWeightEdit.setError("Required")
+            valid = false
+        } else {
+            newBodyWeightEdit.setError(null)
+        }
+
+        if (TextUtils.isEmpty(newBodyWaistEdit.getText().toString()) || "0".equals(newBodyWaistEdit.getText().toString()) || "0.0".equals(newBodyWaistEdit.getText().toString())) {
             newBodyWaistEdit.setError("Required")
             valid = false
         } else {
@@ -93,21 +120,21 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
         }
 
         if (isFemale()) {
-            if (TextUtils.isEmpty(newBodyWristEdit.getText().toString())) {
+            if (TextUtils.isEmpty(newBodyWristEdit.getText().toString()) || "0".equals(newBodyWristEdit.getText().toString()) || "0.0".equals(newBodyWristEdit.getText().toString())) {
                 newBodyWristEdit.setError("Required")
                 valid = false
             } else {
                 newBodyWristEdit.setError(null)
             }
 
-            if (TextUtils.isEmpty(newBodyHipEdit.getText().toString())) {
+            if (TextUtils.isEmpty(newBodyHipEdit.getText().toString()) || "0".equals(newBodyHipEdit.getText().toString()) || "0.0".equals(newBodyHipEdit.getText().toString())) {
                 newBodyHipEdit.setError("Required")
                 valid = false
             } else {
                 newBodyHipEdit.setError(null)
             }
 
-            if (TextUtils.isEmpty(newBodyForearmEdit.getText().toString())) {
+            if (TextUtils.isEmpty(newBodyForearmEdit.getText().toString()) || "0".equals(newBodyForearmEdit.getText().toString()) || "0.0".equals(newBodyForearmEdit.getText().toString())) {
                 newBodyForearmEdit.setError("Required")
                 valid = false
             } else {
