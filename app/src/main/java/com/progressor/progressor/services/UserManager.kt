@@ -40,9 +40,9 @@ class UserManager constructor(private val mainActivity: Activity) {
         }
     }
 
-    fun createUser(uid: String, newUser: User) {
+    fun addUser(uid: String, newUser: User, type: String) {
         val response = FirebaseResponse()
-        response.setType(FirebaseConstant.TYPE_CREATE_PROFILE)
+        response.setType(type)
 
         firebaseFirestore.collection("users")
                 .document(uid)

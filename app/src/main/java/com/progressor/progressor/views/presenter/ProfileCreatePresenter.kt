@@ -1,6 +1,7 @@
 package com.progressor.progressor.views.presenter
 
 import android.content.Context
+import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.account.User
 import com.progressor.progressor.services.AuthenticationManager
 import com.progressor.progressor.services.FragmentNavigator
@@ -41,7 +42,7 @@ class ProfileCreatePresenter @Inject constructor(
         if (view.isFormValid()) {
             authenticationManager.firebaseUser?.uid?.let { it ->
                 val person = userManager.createPerson(gender, dob, height, weight)
-                userManager.createUser(it, User(person = person))
+                userManager.addUser(it, User(person = person), FirebaseConstant.TYPE_CREATE_PROFILE)
             }
         }
     }

@@ -5,5 +5,5 @@ import java.time.LocalDateTime
 data class Workout(
         val id: Int? = null,
         val name: String? = null,
-        val startDate: LocalDateTime? = null
+        val createDate: String = ""
 )

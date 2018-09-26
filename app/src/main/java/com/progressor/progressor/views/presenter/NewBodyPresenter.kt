@@ -1,5 +1,6 @@
 package com.progressor.progressor.views.presenter
 
+import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.model.dataobjects.account.Body
 import com.progressor.progressor.services.AuthenticationManager
@@ -52,7 +53,7 @@ class NewBodyPresenter @Inject constructor(private var fragmentNavigator: Fragme
 
             authenticationManager.firebaseUser?.uid?.let { uid ->
                 userManager.user?.let { user ->
-                    userManager.createUser(uid, user)
+                    userManager.addUser(uid, user, FirebaseConstant.TYPE_NEW_BODY)
                 }
             }
         }

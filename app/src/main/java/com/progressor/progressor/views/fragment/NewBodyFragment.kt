@@ -3,9 +3,13 @@ package com.progressor.progressor.views.fragment
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.Toast
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
+import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.constant.UserConstant
+import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
+import com.progressor.progressor.services.RxBus
 import com.progressor.progressor.views.presenter.NewBodyPresenter
 import kotlinx.android.synthetic.main.layout_new_body.*
 import javax.inject.Inject
@@ -24,6 +28,22 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
     private var mood: Int = 0
 
     private fun initialize() {
+        RxBus.subscribe<FirebaseResponse>(this) {
+            if (it.getType().equals(FirebaseConstant.TYPE_NEW_BODY)) {
+                when (it.getSuccess()) {
+                    true -> {
+                        // TODO: Go somewhere - real dashboard?
+//                        fragmentNavigator.navigate(EmptyDashboardFragment())
+                    }
+                    false -> {
+                        context.let { context ->
+                            Toast.makeText(context, "Something went wrong. Try again", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                }
+            }
+        }
+
         genderFieldHandler()
 
         newBodyWeightEdit.setText(userManager.user?.person?.weight.toString())

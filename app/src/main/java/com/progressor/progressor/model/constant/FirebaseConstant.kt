@@ -13,5 +13,6 @@ class FirebaseConstant {
         const val TYPE_CREATE_PROFILE = "CREATE_PROFILE"
         const val TYPE_PASSWORD_RESET = "TYPE_PASSWORD_RESET"
         const val TYPE_EMAIL_VERIFICATION = "TYPE_EMAIL_VERIFICATION"
+        const val TYPE_NEW_BODY = "TYPE_NEW_BODY"
     }
 }
