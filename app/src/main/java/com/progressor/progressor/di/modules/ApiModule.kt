@@ -7,9 +7,9 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.progressor.progressor.MainActivity
 import com.progressor.progressor.di.interfaces.ApiInterface
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.SidePaneManager
-import com.progressor.progressor.services.UserManager
+import com.progressor.progressor.service.AuthenticationManager
+import com.progressor.progressor.service.SidePaneManager
+import com.progressor.progressor.service.UserManager
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

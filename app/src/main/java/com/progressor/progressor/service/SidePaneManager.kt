@@ -1,10 +1,10 @@
-package com.progressor.progressor.services
+package com.progressor.progressor.service
 
 import android.app.Activity
 import android.graphics.Color
 import android.view.View
 import com.progressor.progressor.di.components.MainComponentInterface
-import com.progressor.progressor.views.fragment.LoginFragment
+import com.progressor.progressor.view.LoginFragment
 import kotlinx.android.synthetic.main.layout_main.*
 import kotlinx.android.synthetic.main.layout_main.view.*
 import kotlinx.android.synthetic.main.layout_slider.view.*

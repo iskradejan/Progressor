@@ -9,9 +9,9 @@ import javax.inject.Inject
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.di.components.UtilComponent
 import com.progressor.progressor.di.modules.FragmentModule
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.views.fragment.LoginFragment
-import com.progressor.progressor.views.fragment.SplashFragment
+import com.progressor.progressor.service.FragmentNavigator
+import com.progressor.progressor.view.LoginFragment
+import com.progressor.progressor.view.SplashFragment
 
 class MainActivity : AppCompatActivity(), MainComponentInterface {
     private var utilComponent: UtilComponent? = null

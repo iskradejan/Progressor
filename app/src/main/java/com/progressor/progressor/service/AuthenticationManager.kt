@@ -1,4 +1,4 @@
-package com.progressor.progressor.services
+package com.progressor.progressor.service
 
 import android.app.Activity
 import android.content.Context
@@ -6,11 +6,11 @@ import com.google.firebase.auth.*
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
-import com.progressor.progressor.views.fragment.EmptyDashboardFragment
+import com.progressor.progressor.view.EmptyDashboardFragment
 import javax.inject.Inject
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.FirebaseUser
-import com.progressor.progressor.views.fragment.EmailVerifyFragment
+import com.progressor.progressor.view.EmailVerifyFragment
 
 class AuthenticationManager constructor(private val mainActivity: Activity) {
     @Inject

@@ -1,10 +1,10 @@
-package com.progressor.progressor.views.presenter
+package com.progressor.progressor.presenter
 
 import android.content.Context
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.views.fragment.EmailVerifyFragment
-import com.progressor.progressor.views.fragment.LoginFragment
+import com.progressor.progressor.service.AuthenticationManager
+import com.progressor.progressor.service.FragmentNavigator
+import com.progressor.progressor.view.EmailVerifyFragment
+import com.progressor.progressor.view.LoginFragment
 import javax.inject.Inject
 
 class EmailVerifyPresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var authenticationManager: AuthenticationManager) {

@@ -1,14 +1,14 @@
-package com.progressor.progressor.views.presenter
+package com.progressor.progressor.presenter
 
 import android.content.Context
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.account.User
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.services.UserManager
-import com.progressor.progressor.views.fragment.EmailVerifyFragment
-import com.progressor.progressor.views.fragment.LoginFragment
-import com.progressor.progressor.views.fragment.ProfileCreateFragment
+import com.progressor.progressor.service.AuthenticationManager
+import com.progressor.progressor.service.FragmentNavigator
+import com.progressor.progressor.service.UserManager
+import com.progressor.progressor.view.EmailVerifyFragment
+import com.progressor.progressor.view.LoginFragment
+import com.progressor.progressor.view.ProfileCreateFragment
 import javax.inject.Inject
 
 class ProfileCreatePresenter @Inject constructor(

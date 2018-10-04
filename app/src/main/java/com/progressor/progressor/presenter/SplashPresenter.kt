@@ -1,6 +1,6 @@
-package com.progressor.progressor.views.presenter
+package com.progressor.progressor.presenter
 
-import com.progressor.progressor.views.fragment.SplashFragment
+import com.progressor.progressor.view.SplashFragment
 import javax.inject.Inject
 
 class SplashPresenter @Inject constructor() {

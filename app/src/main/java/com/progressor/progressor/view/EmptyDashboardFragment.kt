@@ -1,10 +1,10 @@
-package com.progressor.progressor.views.fragment
+package com.progressor.progressor.view
 
 import android.os.Bundle
 import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
-import com.progressor.progressor.views.presenter.EmptyDashboardPresenter
+import com.progressor.progressor.presenter.EmptyDashboardPresenter
 import kotlinx.android.synthetic.main.layout_empty_dashboard.*
 import javax.inject.Inject
 

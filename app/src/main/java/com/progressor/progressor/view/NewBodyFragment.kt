@@ -1,4 +1,4 @@
-package com.progressor.progressor.views.fragment
+package com.progressor.progressor.view
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -9,8 +9,8 @@ import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
-import com.progressor.progressor.services.RxBus
-import com.progressor.progressor.views.presenter.NewBodyPresenter
+import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.presenter.NewBodyPresenter
 import kotlinx.android.synthetic.main.layout_new_body.*
 import javax.inject.Inject
 

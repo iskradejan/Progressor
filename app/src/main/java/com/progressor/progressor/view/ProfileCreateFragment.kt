@@ -1,4 +1,4 @@
-package com.progressor.progressor.views.fragment
+package com.progressor.progressor.view
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -13,8 +13,8 @@ import android.widget.Toast
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
-import com.progressor.progressor.services.RxBus
-import com.progressor.progressor.views.presenter.ProfileCreatePresenter
+import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.presenter.ProfileCreatePresenter
 import java.time.LocalDate
 import javax.inject.Inject
 

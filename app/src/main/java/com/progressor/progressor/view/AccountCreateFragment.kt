@@ -1,4 +1,4 @@
-package com.progressor.progressor.views.fragment
+package com.progressor.progressor.view
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -7,8 +7,8 @@ import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
-import com.progressor.progressor.services.RxBus
-import com.progressor.progressor.views.presenter.AccountCreatePresenter
+import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.presenter.AccountCreatePresenter
 import kotlinx.android.synthetic.main.layout_account_create.*
 import javax.inject.Inject
 

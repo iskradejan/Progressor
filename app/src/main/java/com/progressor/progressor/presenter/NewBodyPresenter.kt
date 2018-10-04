@@ -1,14 +1,14 @@
-package com.progressor.progressor.views.presenter
+package com.progressor.progressor.presenter
 
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.model.dataobjects.account.Body
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.BodyCalculator
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.services.UserManager
-import com.progressor.progressor.views.fragment.LoginFragment
-import com.progressor.progressor.views.fragment.NewBodyFragment
+import com.progressor.progressor.service.AuthenticationManager
+import com.progressor.progressor.service.BodyCalculator
+import com.progressor.progressor.service.FragmentNavigator
+import com.progressor.progressor.service.UserManager
+import com.progressor.progressor.view.LoginFragment
+import com.progressor.progressor.view.NewBodyFragment
 import java.time.LocalDateTime
 import javax.inject.Inject
 

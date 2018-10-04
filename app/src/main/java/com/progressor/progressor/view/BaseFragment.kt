@@ -1,4 +1,4 @@
-package com.progressor.progressor.views.fragment
+package com.progressor.progressor.view
 
 import android.content.Context
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.progressor.progressor.di.components.MainComponentInterface
-import com.progressor.progressor.services.*
+import com.progressor.progressor.service.*
 import javax.inject.Inject
 
 abstract class BaseFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.progressor.progressor.services
+package com.progressor.progressor.service
 
 import android.app.Activity
 import com.google.android.gms.tasks.OnFailureListener

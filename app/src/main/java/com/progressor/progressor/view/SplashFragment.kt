@@ -1,11 +1,11 @@
-package com.progressor.progressor.views.fragment
+package com.progressor.progressor.view
 
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
-import com.progressor.progressor.views.presenter.SplashPresenter
+import com.progressor.progressor.presenter.SplashPresenter
 import kotlinx.android.synthetic.main.layout_splash.*
 import javax.inject.Inject
 

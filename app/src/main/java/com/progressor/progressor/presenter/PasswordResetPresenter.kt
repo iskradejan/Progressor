@@ -1,11 +1,11 @@
-package com.progressor.progressor.views.presenter
+package com.progressor.progressor.presenter
 
 import android.app.Activity
 import android.content.Context
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.views.fragment.EmptyDashboardFragment
-import com.progressor.progressor.views.fragment.PasswordResetFragment
+import com.progressor.progressor.service.AuthenticationManager
+import com.progressor.progressor.service.FragmentNavigator
+import com.progressor.progressor.view.EmptyDashboardFragment
+import com.progressor.progressor.view.PasswordResetFragment
 import javax.inject.Inject
 
 class PasswordResetPresenter @Inject constructor(var fragmentNavigator: FragmentNavigator, var authenticationManager: AuthenticationManager) {

@@ -1,11 +1,11 @@
-package com.progressor.progressor.views.presenter
+package com.progressor.progressor.presenter
 
 import android.app.Activity
 import android.content.Context
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.views.fragment.AccountCreateFragment
-import com.progressor.progressor.views.fragment.EmptyDashboardFragment
+import com.progressor.progressor.service.AuthenticationManager
+import com.progressor.progressor.service.FragmentNavigator
+import com.progressor.progressor.view.AccountCreateFragment
+import com.progressor.progressor.view.EmptyDashboardFragment
 import javax.inject.Inject
 
 class AccountCreatePresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var authenticationManager: AuthenticationManager) {

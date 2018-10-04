@@ -3,8 +3,8 @@ package com.progressor.progressor.di.components
 import com.progressor.progressor.MainActivity
 import com.progressor.progressor.di.modules.ApiModule
 import com.progressor.progressor.di.modules.FragmentModule
-import com.progressor.progressor.services.*
-import com.progressor.progressor.views.fragment.*
+import com.progressor.progressor.service.*
+import com.progressor.progressor.view.*
 import dagger.Component
 import javax.inject.Singleton
 

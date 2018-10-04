@@ -1,15 +1,15 @@
-package com.progressor.progressor.views.presenter
+package com.progressor.progressor.presenter
 
-import com.progressor.progressor.services.FragmentNavigator
-import com.progressor.progressor.views.fragment.LoginFragment
+import com.progressor.progressor.service.FragmentNavigator
+import com.progressor.progressor.view.LoginFragment
 import javax.inject.Inject
 import android.app.Activity
 import android.content.Context
-import com.progressor.progressor.services.AuthenticationManager
-import com.progressor.progressor.services.UserManager
-import com.progressor.progressor.views.fragment.EmptyDashboardFragment
-import com.progressor.progressor.views.fragment.EmailVerifyFragment
-import com.progressor.progressor.views.fragment.ProfileCreateFragment
+import com.progressor.progressor.service.AuthenticationManager
+import com.progressor.progressor.service.UserManager
+import com.progressor.progressor.view.EmptyDashboardFragment
+import com.progressor.progressor.view.EmailVerifyFragment
+import com.progressor.progressor.view.ProfileCreateFragment
 
 class LoginPresenter @Inject constructor(
         var fragmentNavigator: FragmentNavigator,

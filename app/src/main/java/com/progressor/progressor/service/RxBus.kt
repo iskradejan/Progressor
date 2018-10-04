@@ -1,4 +1,4 @@
-package com.progressor.progressor.services
+package com.progressor.progressor.service
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.PublishSubject

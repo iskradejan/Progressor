@@ -1,4 +1,4 @@
-package com.progressor.progressor.services
+package com.progressor.progressor.service
 
 import java.text.DecimalFormat
 

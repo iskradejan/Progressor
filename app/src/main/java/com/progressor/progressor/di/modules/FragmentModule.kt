@@ -2,7 +2,7 @@ package com.progressor.progressor.di.modules
 
 import android.support.v4.app.FragmentManager
 import com.progressor.progressor.MainActivity
-import com.progressor.progressor.services.FragmentNavigator
+import com.progressor.progressor.service.FragmentNavigator
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
