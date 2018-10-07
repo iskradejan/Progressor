@@ -32,8 +32,7 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_NEW_BODY)) {
                 when (it.getSuccess()) {
                     true -> {
-                        // TODO: Go somewhere - real dashboard?
-//                        fragmentNavigator.navigate(EmptyDashboardFragment())
+                        fragmentNavigator.navigate(BodyHistoryFragment())
                     }
                     false -> {
                         context.let { context ->
