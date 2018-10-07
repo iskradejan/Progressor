@@ -23,6 +23,7 @@ interface UtilComponent {
     fun inject(passwordResetFragment: PasswordResetFragment)
     fun inject(emailVerifyFragment: EmailVerifyFragment)
     fun inject(newBodyFragment: NewBodyFragment)
+    fun inject(bodyHistoryFragment: BodyHistoryFragment)
 
     // Services
     fun inject(apiRequestor: ApiRequestor)
