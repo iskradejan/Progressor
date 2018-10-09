@@ -19,12 +19,16 @@ class EmptyDashboardFragment : BaseFragment(), EmptyDashboardPresenter.View {
         emptyDashboardWorkoutGfx.setOnClickListener {
             emptyDashboardWorkoutGfx.setImageResource(R.drawable.workout_gfx_active)
             emptyDashboardBodyGfx.setImageResource(R.drawable.body_gfx_inactive)
+            emptyDashboardExplainerTitle.text = getString(R.string.empty_dashboard_workout_title)
+            emptyDashboardExplainerInfo.text = getString(R.string.empty_dashboard_workout_info)
             isWorkout = true
         }
 
         emptyDashboardBodyGfx.setOnClickListener {
             emptyDashboardWorkoutGfx.setImageResource(R.drawable.workout_gfx_inactive)
             emptyDashboardBodyGfx.setImageResource(R.drawable.body_gfx_active)
+            emptyDashboardExplainerTitle.text = getString(R.string.empty_dashboard_body_title)
+            emptyDashboardExplainerInfo.text = getString(R.string.empty_dashboard_body_info)
             isWorkout = false
         }
 
