@@ -448,6 +448,7 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -473,12 +474,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="20%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -492,7 +494,6 @@
                     android:id="@+id/bodyHistoryBarMood1"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:background="@drawable/mood_okay_active"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar1">
@@ -533,12 +534,13 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -558,12 +560,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -578,7 +581,6 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="0dp"
-                    android:background="@drawable/mood_okay_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar2">
@@ -619,12 +621,13 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -643,12 +646,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -663,7 +667,6 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="0dp"
-                    android:background="@drawable/mood_okay_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar3">
@@ -704,12 +707,13 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -728,12 +732,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -748,7 +753,6 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="0dp"
-                    android:background="@drawable/mood_okay_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar4">
@@ -789,12 +793,13 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -813,12 +818,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -833,7 +839,6 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="0dp"
-                    android:background="@drawable/mood_okay_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar5">
@@ -874,12 +879,13 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -898,12 +904,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -918,7 +925,6 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="0dp"
-                    android:background="@drawable/mood_okay_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar6"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar6">
@@ -959,12 +965,13 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -983,12 +990,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -1003,7 +1011,6 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="0dp"
-                    android:background="@drawable/mood_okay_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar7"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar7">
@@ -1044,12 +1051,13 @@
                         app:layout_constraintVertical_bias="0.0">
 
                         <TextView
+                            android:id="@+id/muscleLabel8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -1068,12 +1076,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
+                            android:id="@+id/fatLabel8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="50%"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -1088,7 +1097,6 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="0dp"
-                    android:background="@drawable/mood_okay_inactive"
                     app:layout_constraintBottom_toBottomOf="@+id/bodyHistoryBar8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bodyHistoryBar8">
