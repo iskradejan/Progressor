@@ -1,5 +1,6 @@
 package com.progressor.progressor.presenter
 
+import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.model.dataobjects.account.Body
 import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
@@ -12,11 +13,14 @@ import javax.inject.Inject
 
 class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var userManager: UserManager, private var authenticationManager: AuthenticationManager) {
     private lateinit var view: View
+    private lateinit var lastBody: Body
     private val user = userManager.user
     private val monthlyDecremental = 1L
+    private val fatPercentageDecremental = 1
+    private val musclePercentageIncremental = 1
 
     interface View {
-        fun totalDateLabels(): Int
+        fun totalBars(): Int
     }
 
     fun setPresenter(bodyHistoryFragment: BodyHistoryFragment) {
@@ -34,10 +38,15 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
         val newBodyList: MutableList<Body>? = user?.bodyHistory?.sortedWith(compareBy({it.createDate}))?.reversed()?.toMutableList()
 
         newBodyList?.let { list ->
-            if (list.size < view.totalDateLabels()) {
-                val difference = view.totalDateLabels().minus(list.size)
+            lastBody = list.last()
+            if (list.size < view.totalBars()) {
+                val difference = view.totalBars().minus(list.size)
                 for (i in 1..difference) {
-                    list.add(Body(createDate = convertDate(list.last().createDate, monthlyDecremental)))
+                    list.add(Body(
+                            mood = UserConstant.PERSON_MOOD_GREAT,
+                            fatPercentage = lastBody.fatPercentage?.minus(fatPercentageDecremental),
+                            musclePercentage = lastBody.musclePercentage?.plus(musclePercentageIncremental),
+                            createDate = modifyDate(list.last().createDate, monthlyDecremental)))
                 }
             }
         }
@@ -45,7 +54,7 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
         return newBodyList
     }
 
-    private fun convertDate(localDateTime: String, months: Long): String {
+    private fun modifyDate(localDateTime: String, months: Long): String {
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
         val formatDateTime = LocalDateTime.parse(localDateTime, formatter)
         return formatDateTime.minusMonths(months).format(formatter)
