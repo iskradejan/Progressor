@@ -17,6 +17,9 @@ import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
 import kotlin.collections.LinkedHashMap
+import android.support.constraint.ConstraintSet
+
+
 
 class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
 
@@ -38,7 +41,6 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         view?.let {
             it.afterMeasured {
                 presenter.getBodyList()?.forEachIndexed { index, body ->
-                    println("index: " + index)
                     dateLabels[index].text = reformatDate(body.createDate)
 
                     getBarContainers().forEach { baseKey, baseValue ->
@@ -48,18 +50,17 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
                                 muscleMap.forEach { muscleContainer, muscleLabel ->
                                     barWidth = muscleContainer.measuredWidth
                                     body.musclePercentage ?.let { muscle ->
-                                        muscleLabel.text = muscle.toString()
+                                        muscleLabel.text = (muscle.toString())+"%"
                                     }
                                 }
 
                                 fatMap.forEach { fatContainer, fatLabel ->
                                     barWidth += fatContainer.measuredWidth
                                     body.fatPercentage?.let { fat ->
-                                        fatLabel.text = fat.toString()
-                                        val fatLayoutParameters = fatContainer.getLayoutParams() as ConstraintLayout.LayoutParams
-                                        println("fat width calc: " + (barWidth.times((fat.div(100)))).toInt())
+                                        fatLabel.text = (fat.toString())+"%"
+                                        val fatLayoutParameters = fatContainer.layoutParams
                                         fatLayoutParameters.width = (barWidth.times((fat.div(100)))).toInt()
-                                        fatContainer.setLayoutParams(fatLayoutParameters)
+                                        fatContainer.layoutParams = fatLayoutParameters
                                     }
                                 }
                             }
@@ -102,7 +103,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap1 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap1.put(bodyHistoryBarMuscle1, muscleLabel1)
         val fatMap1 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap1.put(bodyHistoryBarMuscle1, muscleLabel1)
+        fatMap1.put(bodyHistoryBarFat1, fatLabel1)
         val barMap1 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap1.put(muscleMap1, fatMap1)
         val bodyContainerMap1 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()
@@ -111,7 +112,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap2 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap2.put(bodyHistoryBarMuscle2, muscleLabel2)
         val fatMap2 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap2.put(bodyHistoryBarMuscle2, muscleLabel2)
+        fatMap2.put(bodyHistoryBarFat2, fatLabel2)
         val barMap2 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap2.put(muscleMap2, fatMap2)
         val bodyContainerMap2 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()
@@ -120,7 +121,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap3 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap3.put(bodyHistoryBarMuscle3, muscleLabel3)
         val fatMap3 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap1.put(bodyHistoryBarMuscle3, muscleLabel3)
+        fatMap3.put(bodyHistoryBarFat3, fatLabel3)
         val barMap3 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap3.put(muscleMap3, fatMap3)
         val bodyContainerMap3 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()
@@ -129,7 +130,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap4 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap4.put(bodyHistoryBarMuscle4, muscleLabel4)
         val fatMap4 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap4.put(bodyHistoryBarMuscle4, muscleLabel4)
+        fatMap4.put(bodyHistoryBarFat4, fatLabel4)
         val barMap4 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap4.put(muscleMap4, fatMap4)
         val bodyContainerMap4 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()
@@ -138,7 +139,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap5 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap5.put(bodyHistoryBarMuscle5, muscleLabel5)
         val fatMap5 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap5.put(bodyHistoryBarMuscle5, muscleLabel5)
+        fatMap5.put(bodyHistoryBarFat5, fatLabel5)
         val barMap5 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap5.put(muscleMap5, fatMap5)
         val bodyContainerMap5 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()
@@ -147,7 +148,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap6 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap6.put(bodyHistoryBarMuscle6, muscleLabel6)
         val fatMap6 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap6.put(bodyHistoryBarMuscle6, muscleLabel6)
+        fatMap6.put(bodyHistoryBarFat6, fatLabel6)
         val barMap6 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap6.put(muscleMap6, fatMap6)
         val bodyContainerMap6 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()
@@ -156,7 +157,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap7 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap7.put(bodyHistoryBarMuscle7, muscleLabel7)
         val fatMap7 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap7.put(bodyHistoryBarMuscle7, muscleLabel7)
+        fatMap7.put(bodyHistoryBarFat7, fatLabel7)
         val barMap7 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap7.put(muscleMap7, fatMap7)
         val bodyContainerMap7 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()
@@ -165,7 +166,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         val muscleMap8 = LinkedHashMap<ConstraintLayout, TextView>()
         muscleMap8.put(bodyHistoryBarMuscle8, muscleLabel8)
         val fatMap8 = LinkedHashMap<ConstraintLayout, TextView>()
-        fatMap8.put(bodyHistoryBarMuscle8, muscleLabel8)
+        fatMap8.put(bodyHistoryBarFat8, fatLabel8)
         val barMap8 = LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>()
         barMap8.put(muscleMap8, fatMap8)
         val bodyContainerMap8 = LinkedHashMap<LinkedHashMap<LinkedHashMap<ConstraintLayout, TextView>, LinkedHashMap<ConstraintLayout, TextView>>, ConstraintLayout>()

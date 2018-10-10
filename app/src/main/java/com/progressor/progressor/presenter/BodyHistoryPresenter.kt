@@ -16,8 +16,8 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
     private lateinit var lastBody: Body
     private val user = userManager.user
     private val monthlyDecremental = 1L
-    private val fatPercentageDecremental = 1
-    private val musclePercentageIncremental = 1
+    private val fatPercentageDecremental = 5
+    private val musclePercentageIncremental = 5
 
     interface View {
         fun totalBars(): Int
