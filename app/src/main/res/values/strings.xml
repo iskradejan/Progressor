@@ -63,6 +63,7 @@
 
     <!-- Body History Screen -->
     <string name="body_history_percent">%1$s%%</string>
+    <string name="body_history_ellipsis">&#8230;</string>
     <string name="body_history_legend_muscle">Muscle</string>
     <string name="body_history_legend_fat">Fat</string>
 </resources>

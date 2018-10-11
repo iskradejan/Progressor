@@ -57,7 +57,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
                                         }
                                         barWidth = muscleContainer.measuredWidth
                                         list.get(index).musclePercentage?.let { muscle ->
-                                            muscleLabel.text = String.format(getString(R.string.body_history_percent), muscle)
+                                            setLabelPercentages(muscle, muscleLabel)
                                         }
                                     }
 
@@ -67,7 +67,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
                                         }
                                         barWidth += fatContainer.measuredWidth
                                         list.get(index).fatPercentage?.let { fat ->
-                                            fatLabel.text = String.format(getString(R.string.body_history_percent), fat)
+                                            setLabelPercentages(fat, fatLabel)
 
                                             val fatLayoutParameters = fatContainer.layoutParams
                                             fatLayoutParameters.width = (barWidth.times((fat.div(100))))
@@ -83,6 +83,16 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
                     }
                 }
             }
+        }
+    }
+
+    private fun setLabelPercentages(percent: Int, textView: TextView) {
+        if(percent < 5 && percent > 2) {
+            textView.text = getString(R.string.body_history_ellipsis)
+        } else if(percent <= 2) {
+            textView.text = ""
+        } else {
+            textView.text = String.format(getString(R.string.body_history_percent), percent)
         }
     }
 
