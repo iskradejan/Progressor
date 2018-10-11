@@ -16,8 +16,9 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
     private lateinit var lastBody: Body
     private val user = userManager.user
     private val monthlyDecremental = 1L
-    private val fatPercentageDecremental = 5
-    private val musclePercentageIncremental = 5
+    private val fatPercentageDecremental = 1
+    private val musclePercentageIncremental = 1
+    private var bodyList: MutableList<Body>? = null
 
     interface View {
         fun totalBars(): Int
@@ -32,10 +33,16 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
         if (!authenticationManager.isLoggedIn()) {
             fragmentNavigator.navigate(LoginFragment())
         }
+
+        bodyList = user?.bodyHistory?.sortedWith(compareBy({it.createDate}))?.toMutableList()
     }
 
-    fun getBodyList(): MutableList<Body>? {
-        val newBodyList: MutableList<Body>? = user?.bodyHistory?.sortedWith(compareBy({it.createDate}))?.reversed()?.toMutableList()
+    fun getRealBodySize(): Int {
+        return bodyList?.size ?: 0
+    }
+
+    fun getFullBodyList(): MutableList<Body>? {
+        val newBodyList = bodyList
 
         newBodyList?.let { list ->
             lastBody = list.last()
@@ -57,6 +64,6 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
     private fun modifyDate(localDateTime: String, months: Long): String {
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
         val formatDateTime = LocalDateTime.parse(localDateTime, formatter)
-        return formatDateTime.minusMonths(months).format(formatter)
+        return formatDateTime.plusMonths(months).format(formatter)
     }
 }

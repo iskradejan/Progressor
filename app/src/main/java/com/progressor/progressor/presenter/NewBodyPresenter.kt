@@ -60,6 +60,6 @@ class NewBodyPresenter @Inject constructor(private var fragmentNavigator: Fragme
     }
 
     private fun createBody(weight: Double, fatPercentage: Double, musclePercentage: Double, mood: Int): Body {
-        return Body(weight = weight, fatPercentage = fatPercentage, musclePercentage = musclePercentage, mood = mood, createDate = LocalDateTime.now().toString())
+        return Body(weight = weight, fatPercentage = Math.round(fatPercentage).toInt(), musclePercentage = Math.round(musclePercentage).toInt(), mood = mood, createDate = LocalDateTime.now().toString())
     }
 }

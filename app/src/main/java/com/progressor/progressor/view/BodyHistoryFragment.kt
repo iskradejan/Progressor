@@ -10,16 +10,11 @@ import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.presenter.BodyHistoryPresenter
 import kotlinx.android.synthetic.main.layout_body_history.*
-import kotlinx.android.synthetic.main.layout_splash.view.*
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
 import kotlin.collections.LinkedHashMap
-import android.support.constraint.ConstraintSet
-
-
 
 class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
 
@@ -38,36 +33,52 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
     }
 
     private fun setBars() {
+        var index = 0
+        var active = true
+        val realBodySize = presenter.getRealBodySize()
+
         view?.let {
             it.afterMeasured {
-                presenter.getBodyList()?.forEachIndexed { index, body ->
-                    dateLabels[index].text = reformatDate(body.createDate)
+                context?.let { context ->
+                    presenter.getFullBodyList()?.let { list ->
+                        getBarContainers().forEach { baseKey, baseValue ->
+                            if(index > realBodySize) {
+                                active = false
+                            }
 
-                    getBarContainers().forEach { baseKey, baseValue ->
-                        baseValue.forEach { barKey, barMood ->
-                            var barWidth = 0
-                            barKey.forEach { muscleMap, fatMap ->
-                                muscleMap.forEach { muscleContainer, muscleLabel ->
-                                    barWidth = muscleContainer.measuredWidth
-                                    body.musclePercentage ?.let { muscle ->
-                                        muscleLabel.text = (muscle.toString())+"%"
+                            dateLabels[index].text = reformatDate(list.get(index).createDate)
+
+                            baseValue.forEach { barKey, barMood ->
+                                var barWidth = 0
+                                barKey.forEach { muscleMap, fatMap ->
+                                    muscleMap.forEach { muscleContainer, muscleLabel ->
+                                        if(active) {
+                                            muscleContainer.background = context.getDrawable(R.color.baseCyan)
+                                        }
+                                        barWidth = muscleContainer.measuredWidth
+                                        list.get(index).musclePercentage?.let { muscle ->
+                                            muscleLabel.text = String.format(getString(R.string.body_history_percent), muscle)
+                                        }
+                                    }
+
+                                    fatMap.forEach { fatContainer, fatLabel ->
+                                        if(active) {
+                                            fatContainer.background = context.getDrawable(R.color.baseYellow)
+                                        }
+                                        barWidth += fatContainer.measuredWidth
+                                        list.get(index).fatPercentage?.let { fat ->
+                                            fatLabel.text = String.format(getString(R.string.body_history_percent), fat)
+
+                                            val fatLayoutParameters = fatContainer.layoutParams
+                                            fatLayoutParameters.width = (barWidth.times((fat.div(100))))
+                                            fatContainer.layoutParams = fatLayoutParameters
+                                        }
                                     }
                                 }
 
-                                fatMap.forEach { fatContainer, fatLabel ->
-                                    barWidth += fatContainer.measuredWidth
-                                    body.fatPercentage?.let { fat ->
-                                        fatLabel.text = (fat.toString())+"%"
-                                        val fatLayoutParameters = fatContainer.layoutParams
-                                        fatLayoutParameters.width = (barWidth.times((fat.div(100)))).toInt()
-                                        fatContainer.layoutParams = fatLayoutParameters
-                                    }
-                                }
+                                barMood.background = context.getDrawable(getMoodBackground(list.get(index).mood, active))
                             }
-
-                            context?.let { context ->
-                                barMood.background = context.getDrawable(getMoodBackground(body.mood))
-                            }
+                            index++
                         }
                     }
                 }
@@ -86,13 +97,13 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         })
     }
 
-    private fun getMoodBackground(mood: Int): Int {
+    private fun getMoodBackground(mood: Int, active: Boolean): Int {
         when (mood) {
-            UserConstant.PERSON_MOOD_GREAT -> { return R.drawable.mood_great_active }
-            UserConstant.PERSON_MOOD_OKAY -> { return R.drawable.mood_okay_active }
-            UserConstant.PERSON_MOOD_NEUTRAL -> { return R.drawable.mood_neutral_active }
-            UserConstant.PERSON_MOOD_BAD -> { return R.drawable.mood_bad_active }
-            UserConstant.PERSON_MOOD_TERRIBLE -> { return R.drawable.mood_terrible_active }
+            UserConstant.PERSON_MOOD_GREAT -> { return if(active) R.drawable.mood_great_active else R.drawable.mood_great_inactive }
+            UserConstant.PERSON_MOOD_OKAY -> { return if(active) R.drawable.mood_okay_active else R.drawable.mood_okay_inactive }
+            UserConstant.PERSON_MOOD_NEUTRAL -> { return if(active) R.drawable.mood_neutral_active else R.drawable.mood_neutral_inactive }
+            UserConstant.PERSON_MOOD_BAD -> { return if(active) R.drawable.mood_bad_active else R.drawable.mood_bad_inactive }
+            UserConstant.PERSON_MOOD_TERRIBLE -> { return if(active) R.drawable.mood_terrible_active else R.drawable.mood_terrible_inactive }
         }
 
         return 0

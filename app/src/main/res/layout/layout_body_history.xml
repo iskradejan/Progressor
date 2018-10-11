@@ -1160,7 +1160,7 @@
                         android:id="@+id/bodyHistoryLegendMuscleTtitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Muscle"
+                        android:text="@string/body_history_legend_muscle"
                         android:textSize="10sp" />
 
                 </android.support.constraint.ConstraintLayout>
@@ -1211,7 +1211,7 @@
                         android:id="@+id/bodyHistoryLegendFatTtitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fat"
+                        android:text="@string/body_history_legend_fat"
                         android:textSize="10sp" />
 
                 </android.support.constraint.ConstraintLayout>
