@@ -31,15 +31,19 @@ class NewBodyPresenter @Inject constructor(private var fragmentNavigator: Fragme
         }
     }
 
-    fun addBody(weight: Double, waist: Double, wrist: Double? = null, hip: Double? = null, forearm: Double? = null, mood: Int) {
+    fun addBody(weight: Double, waist: Double, wrist: Double? = null, hip: Double? = null, forearm: Double? = null, mood: Int): Boolean {
         if (view.isFormValid()) {
             val fatPercentage: Double
-            if(userManager.user?.person?.gender == UserConstant.PERSON_GENDER_FEMALE) {
-                fatPercentage  = bodyCalculator.calculateFemaleFatPercentage(weight = weight, wrist = wrist!!, hip = hip!!, waist = waist, forearm = forearm!!)
+            if (userManager.user?.person?.gender == UserConstant.PERSON_GENDER_FEMALE) {
+                fatPercentage = bodyCalculator.calculateFemaleFatPercentage(weight = weight, wrist = wrist!!, hip = hip!!, waist = waist, forearm = forearm!!)
             } else {
                 fatPercentage = bodyCalculator.calculateMaleFatPercentage(weight = weight, waist = waist)
             }
             val musclePercentage = bodyCalculator.calculateMusclePercentage(fat = fatPercentage)
+
+            if (fatPercentage < 4 || (fatPercentage.plus(musclePercentage)).plus(15) > 100) {
+                return false
+            }
 
             val body = createBody(weight = weight, fatPercentage = fatPercentage, musclePercentage = musclePercentage, mood = mood)
 
@@ -56,7 +60,10 @@ class NewBodyPresenter @Inject constructor(private var fragmentNavigator: Fragme
                     userManager.addUser(uid, user, FirebaseConstant.TYPE_NEW_BODY)
                 }
             }
+
+            return true
         }
+        return false
     }
 
     private fun createBody(weight: Double, fatPercentage: Double, musclePercentage: Double, mood: Int): Body {

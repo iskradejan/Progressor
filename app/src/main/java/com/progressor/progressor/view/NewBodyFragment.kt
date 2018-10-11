@@ -76,7 +76,9 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
 
         newBodySubmit.setOnClickListener {
             setValues()
-            presenter.addBody(weight = weight, waist = waist, mood = mood, wrist = wrist, hip = hip, forearm = forearm)
+            if(!presenter.addBody(weight = weight, waist = waist, mood = mood, wrist = wrist, hip = hip, forearm = forearm)){
+                Toast.makeText(context, "Based on the numbers you should be dead", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
