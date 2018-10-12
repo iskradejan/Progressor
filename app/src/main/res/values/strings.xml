@@ -62,6 +62,10 @@
     <string name="empty_dashboard_body_info">Start tracking your physique and see the incredible results! You can record things like weight, fat percentage, muscle percentage, water percentage, and mood. It is extremely important to visually see your progression as it helps your state of mind.</string>
 
     <!-- Body History Screen -->
+    <string name="body_history_zero_percent">0%</string>
+    <string name="body_history_twenty_percent">0%</string>
+    <string name="body_history_fifty_percent">50%</string>
+    <string name="body_history_hundred_percent">100%</string>
     <string name="body_history_percent">%1$s%%</string>
     <string name="body_history_ellipsis">&#8230;</string>
     <string name="body_history_legend_muscle">Muscle</string>

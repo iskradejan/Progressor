@@ -35,7 +35,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
     private fun setBars() {
         var index = 0
         var active = true
-        val realBodySize = presenter.getRealBodySize()
+        val realBodySize = presenter.getRealBodySize().minus(1)
 
         view?.let {
             it.afterMeasured {

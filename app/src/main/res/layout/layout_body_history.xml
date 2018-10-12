@@ -29,12 +29,10 @@
                 android:id="@+id/bodyHistoryAxisXLabelsContainer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryAxisXLabelContainer"
@@ -50,8 +48,8 @@
                         android:id="@+id/bodyHistoryAxisXLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
                         android:text="0%"
                         android:textSize="10sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,8 +65,8 @@
                     android:id="@+id/bodyHistoryAxisXLabel2Container"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryAxisXLabel3Container"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -79,8 +77,8 @@
                         android:id="@+id/bodyHistoryAxisXLabel2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
                         android:text="50%"
                         android:textSize="10sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -154,9 +152,9 @@
                     android:id="@+id/bodyHistoryAxisYLabelContainer"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toTopOf="@+id/bodyHistoryAxisYLabelContainer2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -425,12 +423,13 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar1"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -439,8 +438,8 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle1"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:background="@color/baseCyan"
+                        android:layout_height="50dp"
+                        android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat1"
                         app:layout_constraintStart_toStartOf="parent"
@@ -467,8 +466,8 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat1"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
-                        android:background="@color/baseYellow"
+                        android:layout_height="50dp"
+                        android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -516,7 +515,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar2"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood2"
                     app:layout_constraintStart_toStartOf="parent"
@@ -525,7 +524,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle2"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat2"
@@ -553,7 +552,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat2"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -603,7 +602,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar3"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood3"
                     app:layout_constraintStart_toStartOf="parent"
@@ -612,7 +611,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle3"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat3"
@@ -639,7 +638,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat3"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -689,7 +688,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar4"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood4"
                     app:layout_constraintStart_toStartOf="parent"
@@ -698,7 +697,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle4"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat4"
@@ -725,7 +724,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat4"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -775,7 +774,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar5"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -784,7 +783,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle5"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat5"
@@ -811,7 +810,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat5"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -861,7 +860,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar6"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood6"
                     app:layout_constraintStart_toStartOf="parent"
@@ -870,7 +869,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle6"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat6"
@@ -897,7 +896,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat6"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -947,7 +946,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar7"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood7"
                     app:layout_constraintStart_toStartOf="parent"
@@ -956,7 +955,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle7"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat7"
@@ -983,7 +982,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat7"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -1033,7 +1032,7 @@
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/bodyHistoryBar8"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarMood8"
                     app:layout_constraintStart_toStartOf="parent"
@@ -1042,7 +1041,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarMuscle8"
                         android:layout_width="0dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryMusclePlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/bodyHistoryBarFat8"
@@ -1069,7 +1068,7 @@
                     <android.support.constraint.ConstraintLayout
                         android:id="@+id/bodyHistoryBarFat8"
                         android:layout_width="50dp"
-                        android:layout_height="40dp"
+                        android:layout_height="50dp"
                         android:background="@color/bodyHistoryFatPlaceholder"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
