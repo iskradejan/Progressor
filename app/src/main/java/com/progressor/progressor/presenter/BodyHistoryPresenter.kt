@@ -61,6 +61,10 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
         return newBodyList
     }
 
+    private fun predict() {
+
+    }
+
     private fun modifyDate(localDateTime: String, months: Long): String {
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
         val formatDateTime = LocalDateTime.parse(localDateTime, formatter)
