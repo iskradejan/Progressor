@@ -7,9 +7,11 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.BodyCalculator
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
+import com.progressor.progressor.view.EmptyDashboardFragment
 import com.progressor.progressor.view.LoginFragment
 import com.progressor.progressor.view.NewBodyFragment
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
 class NewBodyPresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var userManager: UserManager, private var authenticationManager: AuthenticationManager) {
@@ -29,6 +31,19 @@ class NewBodyPresenter @Inject constructor(private var fragmentNavigator: Fragme
         if (!authenticationManager.isLoggedIn()) {
             fragmentNavigator.navigate(LoginFragment())
         }
+
+        userManager.user?.bodyHistory?.last()?.let {
+            if(!isEligible(it.createDate)) {
+                // TODO: Change this to some other dashboard screen
+                fragmentNavigator.navigate(EmptyDashboardFragment())
+            }
+        }
+    }
+
+    private fun isEligible(localDateTime: String): Boolean {
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
+        val formatDateTime = LocalDateTime.parse(localDateTime, formatter)
+        return formatDateTime.isAfter(LocalDateTime.now().plusMonths(1))
     }
 
     fun addBody(weight: Double, waist: Double, wrist: Double? = null, hip: Double? = null, forearm: Double? = null, mood: Int): Boolean {
