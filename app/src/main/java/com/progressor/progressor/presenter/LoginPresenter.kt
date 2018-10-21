@@ -1,15 +1,12 @@
 package com.progressor.progressor.presenter
 
 import com.progressor.progressor.service.FragmentNavigator
-import com.progressor.progressor.view.LoginFragment
 import javax.inject.Inject
 import android.app.Activity
 import android.content.Context
 import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.UserManager
-import com.progressor.progressor.view.EmptyDashboardFragment
-import com.progressor.progressor.view.EmailVerifyFragment
-import com.progressor.progressor.view.ProfileCreateFragment
+import com.progressor.progressor.view.*
 
 class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigator, var authenticationManager: AuthenticationManager, var userManager: UserManager) {
 
@@ -33,8 +30,10 @@ class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigato
             } else {
                 if (userManager.user?.person == null) {
                     fragmentNavigator.to(ProfileCreateFragment())
-                } else {
+                } else if(userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
                     fragmentNavigator.to(EmptyDashboardFragment())
+                } else {
+                    fragmentNavigator.to(DashboardFragment())
                 }
             }
         }

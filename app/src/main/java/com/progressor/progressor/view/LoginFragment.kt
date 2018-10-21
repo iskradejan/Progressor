@@ -22,13 +22,17 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_LOGIN)) {
                 when (it.getSuccess()) {
                     true -> {
-                        if(!authenticationManager.isVerified()) {
-                            fragmentNavigator.to(EmailVerifyFragment())
-                        } else {
-                            if(userManager.user?.person == null) {
-                                fragmentNavigator.to(ProfileCreateFragment())
+                        if (authenticationManager.isLoggedIn()) {
+                            if (!authenticationManager.isVerified()) {
+                                fragmentNavigator.to(EmailVerifyFragment())
                             } else {
-                                fragmentNavigator.to(EmptyDashboardFragment())
+                                if (userManager.user?.person == null) {
+                                    fragmentNavigator.to(ProfileCreateFragment())
+                                } else if(userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
+                                    fragmentNavigator.to(EmptyDashboardFragment())
+                                } else {
+                                    fragmentNavigator.to(DashboardFragment())
+                                }
                             }
                         }
                     }
