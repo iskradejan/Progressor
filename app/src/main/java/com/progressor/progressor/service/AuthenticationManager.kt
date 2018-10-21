@@ -6,11 +6,9 @@ import com.google.firebase.auth.*
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
-import com.progressor.progressor.view.EmptyDashboardFragment
 import javax.inject.Inject
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.FirebaseUser
-import com.progressor.progressor.view.EmailVerifyFragment
 
 class AuthenticationManager constructor(private val mainActivity: Activity) {
     @Inject
@@ -28,12 +26,6 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
     }
 
     fun createAccount(context: Context, email: String, password: String, displayName: String) {
-        if (isLoggedIn() && isVerified()) {
-            fragmentNavigator.to(EmptyDashboardFragment())
-        } else if (isLoggedIn() && !isVerified()) {
-            fragmentNavigator.to(EmailVerifyFragment())
-        }
-
         val response = FirebaseResponse()
         response.setType(FirebaseConstant.TYPE_CREATE_ACCOUNT)
 

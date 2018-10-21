@@ -11,7 +11,11 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
-class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var userManager: UserManager, private var authenticationManager: AuthenticationManager) {
+class BodyHistoryPresenter @Inject constructor(
+        var fragmentNavigator: FragmentNavigator,
+        var userManager: UserManager,
+        var authenticationManager: AuthenticationManager) {
+
     private lateinit var view: View
     private lateinit var lastBody: Body
     private val user = userManager.user
@@ -34,7 +38,7 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
             fragmentNavigator.to(LoginFragment())
         }
 
-        bodyList = user?.bodyHistory?.sortedWith(compareBy({it.createDate}))?.toMutableList()
+        bodyList = user?.bodyHistory?.sortedWith(compareBy({ it.createDate }))?.toMutableList()
     }
 
     fun getRealBodySize(): Int {

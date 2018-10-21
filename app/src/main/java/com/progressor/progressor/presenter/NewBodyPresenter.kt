@@ -8,14 +8,17 @@ import com.progressor.progressor.service.BodyCalculator
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.DashboardFragment
-import com.progressor.progressor.view.EmptyDashboardFragment
 import com.progressor.progressor.view.LoginFragment
 import com.progressor.progressor.view.NewBodyFragment
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
-class NewBodyPresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var userManager: UserManager, private var authenticationManager: AuthenticationManager) {
+class NewBodyPresenter @Inject constructor(
+        var fragmentNavigator: FragmentNavigator,
+        var userManager: UserManager,
+        var authenticationManager: AuthenticationManager) {
+
     private lateinit var view: View
     private var bodyCalculator = BodyCalculator()
 
@@ -34,8 +37,8 @@ class NewBodyPresenter @Inject constructor(private var fragmentNavigator: Fragme
         }
 
         userManager.user?.bodyHistory?.let {
-            if(it.isNotEmpty()) {
-                if(!isEligible(it.last().createDate)) {
+            if (it.isNotEmpty()) {
+                if (!isEligible(it.last().createDate)) {
                     fragmentNavigator.to(DashboardFragment())
                 }
             }

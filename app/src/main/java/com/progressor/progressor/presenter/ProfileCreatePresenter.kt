@@ -12,9 +12,9 @@ import com.progressor.progressor.view.ProfileCreateFragment
 import javax.inject.Inject
 
 class ProfileCreatePresenter @Inject constructor(
-        private var fragmentNavigator: FragmentNavigator,
-        private var authenticationManager: AuthenticationManager,
-        private var userManager: UserManager) {
+        var fragmentNavigator: FragmentNavigator,
+        var authenticationManager: AuthenticationManager,
+        var userManager: UserManager) {
 
     private lateinit var view: View
     private var context: Context? = null

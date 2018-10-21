@@ -5,7 +5,10 @@ import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.view.EmptyDashboardFragment
 import javax.inject.Inject
 
-class EmptyDashboardPresenter @Inject constructor(private var fragmentNavigator: FragmentNavigator, private var authenticationManager: AuthenticationManager) {
+class EmptyDashboardPresenter @Inject constructor(
+        var fragmentNavigator: FragmentNavigator,
+        var authenticationManager: AuthenticationManager) {
+    
     private lateinit var view: View
 
     interface View {}

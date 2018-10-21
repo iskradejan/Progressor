@@ -8,7 +8,10 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.*
 
-class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigator, var authenticationManager: AuthenticationManager, var userManager: UserManager) {
+class LoginPresenter @Inject constructor(
+        var fragmentNavigator: FragmentNavigator,
+        var authenticationManager: AuthenticationManager,
+        var userManager: UserManager) {
 
     private lateinit var view: View
     private var context: Context? = null
@@ -24,19 +27,7 @@ class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigato
     }
 
     private fun initialize() {
-        if (authenticationManager.isLoggedIn()) {
-            if (!authenticationManager.isVerified()) {
-                fragmentNavigator.to(EmailVerifyFragment())
-            } else {
-                if (userManager.user?.person == null) {
-                    fragmentNavigator.to(ProfileCreateFragment())
-                } else if(userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
-                    fragmentNavigator.to(EmptyDashboardFragment())
-                } else {
-                    fragmentNavigator.to(DashboardFragment())
-                }
-            }
-        }
+        fragmentNavigator.manage(authenticationManager, userManager)
     }
 
     fun login(email: String, password: String) {
