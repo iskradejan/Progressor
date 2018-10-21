@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity(), MainComponentInterface {
         setContentView(R.layout.layout_main)
         injectDependencies()
         if (sharedPreferences.getBoolean("firstTime", true)) {
-            fragmentNavigator.navigate(SplashFragment())
+            fragmentNavigator.to(SplashFragment())
         } else {
-            fragmentNavigator.navigate(LoginFragment())
+            fragmentNavigator.to(LoginFragment())
         }
     }
 

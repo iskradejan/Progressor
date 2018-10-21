@@ -34,7 +34,7 @@ class EmptyDashboardFragment : BaseFragment(), EmptyDashboardPresenter.View {
 
         emptyDashboardContinueButton.setOnClickListener {
             if (!isWorkout) {
-                fragmentNavigator.navigate(NewBodyFragment())
+                fragmentNavigator.to(NewBodyFragment())
             }
         }
     }

@@ -23,11 +23,11 @@ class SplashFragment : BaseFragment(), SplashPresenter.View {
         sharedPreferences.edit().putBoolean("firstTime", false).apply()
 
         splashLogin.setOnClickListener {
-            fragmentNavigator.navigate(LoginFragment())
+            fragmentNavigator.to(LoginFragment())
         }
 
         splashRegister.setOnClickListener {
-            fragmentNavigator.navigate(AccountCreateFragment())
+            fragmentNavigator.to(AccountCreateFragment())
         }
     }
 

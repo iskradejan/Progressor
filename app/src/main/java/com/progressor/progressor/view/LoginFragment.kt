@@ -23,12 +23,12 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
                 when (it.getSuccess()) {
                     true -> {
                         if(!authenticationManager.isVerified()) {
-                            fragmentNavigator.navigate(EmailVerifyFragment())
+                            fragmentNavigator.to(EmailVerifyFragment())
                         } else {
                             if(userManager.user?.person == null) {
-                                fragmentNavigator.navigate(ProfileCreateFragment())
+                                fragmentNavigator.to(ProfileCreateFragment())
                             } else {
-                                fragmentNavigator.navigate(EmptyDashboardFragment())
+                                fragmentNavigator.to(EmptyDashboardFragment())
                             }
                         }
                     }
@@ -56,11 +56,11 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
         }
 
         loginRegisterButton.setOnClickListener {
-            fragmentNavigator.navigate(AccountCreateFragment())
+            fragmentNavigator.to(AccountCreateFragment())
         }
 
         loginForgotPasswordButton.setOnClickListener {
-            fragmentNavigator.navigate(PasswordResetFragment())
+            fragmentNavigator.to(PasswordResetFragment())
         }
     }
 

@@ -7,6 +7,7 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.BodyCalculator
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
+import com.progressor.progressor.view.DashboardFragment
 import com.progressor.progressor.view.EmptyDashboardFragment
 import com.progressor.progressor.view.LoginFragment
 import com.progressor.progressor.view.NewBodyFragment
@@ -29,13 +30,14 @@ class NewBodyPresenter @Inject constructor(private var fragmentNavigator: Fragme
 
     fun initialize() {
         if (!authenticationManager.isLoggedIn()) {
-            fragmentNavigator.navigate(LoginFragment())
+            fragmentNavigator.to(LoginFragment())
         }
 
-        userManager.user?.bodyHistory?.last()?.let {
-            if(!isEligible(it.createDate)) {
-                // TODO: Change this to some other dashboard screen
-                fragmentNavigator.navigate(EmptyDashboardFragment())
+        userManager.user?.bodyHistory?.let {
+            if(it.isNotEmpty()) {
+                if(!isEligible(it.last().createDate)) {
+                    fragmentNavigator.to(DashboardFragment())
+                }
             }
         }
     }

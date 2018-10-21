@@ -21,18 +21,18 @@ class EmailVerifyPresenter @Inject constructor(private var fragmentNavigator: Fr
 
     fun initialize() {
         if (!authenticationManager.isLoggedIn()) {
-            fragmentNavigator.navigate(LoginFragment())
+            fragmentNavigator.to(LoginFragment())
         }
     }
 
     fun sendEmail() {
         authenticationManager.verifyEmail()
         authenticationManager.signOut()
-        fragmentNavigator.navigate(LoginFragment())
+        fragmentNavigator.to(LoginFragment())
     }
 
     fun cancel() {
         authenticationManager.signOut()
-        fragmentNavigator.navigate(LoginFragment())
+        fragmentNavigator.to(LoginFragment())
     }
 }

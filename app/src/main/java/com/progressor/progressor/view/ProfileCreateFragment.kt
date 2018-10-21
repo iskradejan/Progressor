@@ -33,7 +33,7 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_CREATE_PROFILE)) {
                 when (it.getSuccess()) {
                     true -> {
-                        fragmentNavigator.navigate(EmptyDashboardFragment())
+                        fragmentNavigator.to(EmptyDashboardFragment())
                     }
                     false -> {
                         context.let { context ->

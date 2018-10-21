@@ -11,10 +11,7 @@ import com.progressor.progressor.view.EmptyDashboardFragment
 import com.progressor.progressor.view.EmailVerifyFragment
 import com.progressor.progressor.view.ProfileCreateFragment
 
-class LoginPresenter @Inject constructor(
-        var fragmentNavigator: FragmentNavigator,
-        var authenticationManager: AuthenticationManager,
-        var userManager: UserManager) {
+class LoginPresenter @Inject constructor(var fragmentNavigator: FragmentNavigator, var authenticationManager: AuthenticationManager, var userManager: UserManager) {
 
     private lateinit var view: View
     private var context: Context? = null
@@ -32,12 +29,12 @@ class LoginPresenter @Inject constructor(
     private fun initialize() {
         if (authenticationManager.isLoggedIn()) {
             if (!authenticationManager.isVerified()) {
-                fragmentNavigator.navigate(EmailVerifyFragment())
+                fragmentNavigator.to(EmailVerifyFragment())
             } else {
                 if (userManager.user?.person == null) {
-                    fragmentNavigator.navigate(ProfileCreateFragment())
+                    fragmentNavigator.to(ProfileCreateFragment())
                 } else {
-                    fragmentNavigator.navigate(EmptyDashboardFragment())
+                    fragmentNavigator.to(EmptyDashboardFragment())
                 }
             }
         }

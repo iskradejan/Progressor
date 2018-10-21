@@ -46,6 +46,6 @@ class SidePaneManager constructor(private val mainActivity: Activity) {
 
     private fun logOut() {
         authenticationManager.signOut()
-        fragmentNavigator.navigate(LoginFragment())
+        fragmentNavigator.to(LoginFragment())
     }
 }

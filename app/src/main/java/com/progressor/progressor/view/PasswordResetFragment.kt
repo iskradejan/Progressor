@@ -22,7 +22,7 @@ class PasswordResetFragment : BaseFragment(), PasswordResetPresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_PASSWORD_RESET)) {
                 when (it.getSuccess()) {
                     true -> {
-                        fragmentNavigator.navigate(LoginFragment())
+                        fragmentNavigator.to(LoginFragment())
                     }
                     false -> {
                         it.getErrors()?.forEach {

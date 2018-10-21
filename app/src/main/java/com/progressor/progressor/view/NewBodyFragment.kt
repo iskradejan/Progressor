@@ -32,7 +32,7 @@ class NewBodyFragment : BaseFragment(), NewBodyPresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_NEW_BODY)) {
                 when (it.getSuccess()) {
                     true -> {
-                        fragmentNavigator.navigate(BodyHistoryFragment())
+                        fragmentNavigator.to(BodyHistoryFragment())
                     }
                     false -> {
                         context.let { context ->

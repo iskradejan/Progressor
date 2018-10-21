@@ -24,7 +24,7 @@ class PasswordResetPresenter @Inject constructor(var fragmentNavigator: Fragment
 
     private fun initialize() {
         if (authenticationManager.isLoggedIn()) {
-            fragmentNavigator.navigate(EmptyDashboardFragment())
+            fragmentNavigator.to(EmptyDashboardFragment())
         }
     }
 

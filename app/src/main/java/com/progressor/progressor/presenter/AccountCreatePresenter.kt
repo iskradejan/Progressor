@@ -24,7 +24,7 @@ class AccountCreatePresenter @Inject constructor(private var fragmentNavigator: 
 
     fun initialize() {
         if (authenticationManager.isLoggedIn()) {
-            fragmentNavigator.navigate(EmptyDashboardFragment())
+            fragmentNavigator.to(EmptyDashboardFragment())
         }
     }
 

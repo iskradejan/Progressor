@@ -29,9 +29,9 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
 
     fun createAccount(context: Context, email: String, password: String, displayName: String) {
         if (isLoggedIn() && isVerified()) {
-            fragmentNavigator.navigate(EmptyDashboardFragment())
+            fragmentNavigator.to(EmptyDashboardFragment())
         } else if (isLoggedIn() && !isVerified()) {
-            fragmentNavigator.navigate(EmailVerifyFragment())
+            fragmentNavigator.to(EmailVerifyFragment())
         }
 
         val response = FirebaseResponse()

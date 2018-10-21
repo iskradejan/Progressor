@@ -31,7 +31,7 @@ class BodyHistoryPresenter @Inject constructor(private var fragmentNavigator: Fr
 
     private fun initialize() {
         if (!authenticationManager.isLoggedIn()) {
-            fragmentNavigator.navigate(LoginFragment())
+            fragmentNavigator.to(LoginFragment())
         }
 
         bodyList = user?.bodyHistory?.sortedWith(compareBy({it.createDate}))?.toMutableList()

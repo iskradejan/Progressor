@@ -24,6 +24,7 @@ interface UtilComponent {
     fun inject(emailVerifyFragment: EmailVerifyFragment)
     fun inject(newBodyFragment: NewBodyFragment)
     fun inject(bodyHistoryFragment: BodyHistoryFragment)
+    fun inject(dashboardFragment: DashboardFragment)
 
     // Services
     fun inject(apiRequestor: ApiRequestor)
