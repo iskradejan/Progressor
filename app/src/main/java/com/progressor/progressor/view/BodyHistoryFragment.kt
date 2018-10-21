@@ -5,10 +5,12 @@ import android.support.constraint.ConstraintLayout
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.TextView
+import com.progressor.progressor.MainActivity
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.presenter.BodyHistoryPresenter
+import com.progressor.progressor.service.interfaces.BackPressedHandler
 import kotlinx.android.synthetic.main.layout_body_history.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -24,6 +26,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
     private var dateLabels = ArrayList<TextView>()
 
     private fun initialize() {
+        (activity as MainActivity).setBackFragment(DashboardFragment())
         setDateLabelArray()
         setBars()
     }

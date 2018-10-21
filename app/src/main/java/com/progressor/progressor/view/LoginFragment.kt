@@ -9,6 +9,7 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.service.RxBus
 import com.progressor.progressor.presenter.LoginPresenter
+import com.progressor.progressor.service.interfaces.BackPressedHandler
 import kotlinx.android.synthetic.main.layout_login.*
 import javax.inject.Inject
 
@@ -22,7 +23,7 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
             if (it.getType().equals(FirebaseConstant.TYPE_LOGIN)) {
                 when (it.getSuccess()) {
                     true -> {
-                        fragmentNavigator.manage(authenticationManager, userManager)
+                        presenter.route()
                     }
                     false -> {
                         it.getErrors()?.forEach { error ->

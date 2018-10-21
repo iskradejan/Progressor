@@ -27,7 +27,25 @@ class LoginPresenter @Inject constructor(
     }
 
     private fun initialize() {
-        fragmentNavigator.manage(authenticationManager, userManager)
+        route()
+    }
+
+    fun route() {
+        if (authenticationManager.isLoggedIn()) {
+            if (!authenticationManager.isVerified()) {
+                fragmentNavigator.to(EmailVerifyFragment())
+            } else {
+                if (userManager.user?.person == null) {
+                    fragmentNavigator.to(ProfileCreateFragment())
+                } else if (userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
+                    fragmentNavigator.to(EmptyDashboardFragment())
+                } else {
+                    fragmentNavigator.to(DashboardFragment())
+                }
+            }
+        } else {
+            fragmentNavigator.to(LoginFragment())
+        }
     }
 
     fun login(email: String, password: String) {

@@ -4,8 +4,7 @@ import android.content.Context
 import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
-import com.progressor.progressor.view.EmailVerifyFragment
-import com.progressor.progressor.view.LoginFragment
+import com.progressor.progressor.view.*
 import javax.inject.Inject
 
 class EmailVerifyPresenter @Inject constructor(
@@ -25,7 +24,21 @@ class EmailVerifyPresenter @Inject constructor(
     }
 
     fun initialize() {
-        fragmentNavigator.manage(authenticationManager, userManager)
+        if (authenticationManager.isLoggedIn()) {
+            if (!authenticationManager.isVerified()) {
+                fragmentNavigator.to(EmailVerifyFragment())
+            } else {
+                if (userManager.user?.person == null) {
+                    fragmentNavigator.to(ProfileCreateFragment())
+                } else if (userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
+                    fragmentNavigator.to(EmptyDashboardFragment())
+                } else {
+                    fragmentNavigator.to(DashboardFragment())
+                }
+            }
+        } else {
+            fragmentNavigator.to(LoginFragment())
+        }
     }
 
     fun sendEmail() {

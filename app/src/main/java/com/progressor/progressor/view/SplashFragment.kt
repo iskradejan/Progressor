@@ -17,8 +17,6 @@ class SplashFragment : BaseFragment(), SplashPresenter.View {
     lateinit var sharedPreferences: SharedPreferences
 
     private fun initialize() {
-//        splashHeader.text = MainActivity.user.person?.firstName ?: "none"
-//        splashSubHeader.text = MainActivity.user.person?.lastName ?: "none"
 
         sharedPreferences.edit().putBoolean("firstTime", false).apply()
 
