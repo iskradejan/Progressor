@@ -25,8 +25,8 @@ class PasswordResetFragment : BaseFragment(), PasswordResetPresenter.View {
                         fragmentNavigator.to(LoginFragment())
                     }
                     false -> {
-                        it.getErrors()?.forEach {
-                            when (it) {
+                        it.getErrors()?.forEach { error ->
+                            when (error) {
                                 FirebaseConstant.ERROR_USER_NOT_FOUND -> {
                                     passwordResetEmailValueError.text = context?.getString(R.string.password_reset_error_email_not_found) ?: "--"
                                     passwordResetEmailValueError.visibility = View.VISIBLE

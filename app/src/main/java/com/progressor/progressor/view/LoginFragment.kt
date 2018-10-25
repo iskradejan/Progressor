@@ -9,7 +9,6 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.service.RxBus
 import com.progressor.progressor.presenter.LoginPresenter
-import com.progressor.progressor.service.interfaces.BackPressedHandler
 import kotlinx.android.synthetic.main.layout_login.*
 import javax.inject.Inject
 

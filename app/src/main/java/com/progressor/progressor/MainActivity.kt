@@ -11,7 +11,6 @@ import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.di.components.UtilComponent
 import com.progressor.progressor.di.modules.FragmentModule
 import com.progressor.progressor.service.FragmentNavigator
-import com.progressor.progressor.service.interfaces.BackPressedHandler
 import com.progressor.progressor.view.LoginFragment
 import com.progressor.progressor.view.SplashFragment
 

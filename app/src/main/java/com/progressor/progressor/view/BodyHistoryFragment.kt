@@ -10,7 +10,6 @@ import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.presenter.BodyHistoryPresenter
-import com.progressor.progressor.service.interfaces.BackPressedHandler
 import kotlinx.android.synthetic.main.layout_body_history.*
 import java.text.SimpleDateFormat
 import java.util.*
