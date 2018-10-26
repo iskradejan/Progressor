@@ -11,6 +11,9 @@
     <color name="baseYellow">#c4b94d</color>
     <color name="baseCursor">#737373</color>
     <color name="baseInactive">#bdbdbd</color>
+    <color name="baseFat">@color/baseYellow</color>
+    <color name="baseMuscle">@color/baseMaroon</color>
+    <color name="baseBone">@color/baseCyan</color>
 
     <!-- Login Screen -->
     <color name="loginPlaceholder">#ececec</color>

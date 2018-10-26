@@ -29,13 +29,13 @@ class PieChart @JvmOverloads constructor(context: Context, attrs: AttributeSet? 
         basePaint.color = context.resources.getColor(R.color.white, null)
         basePaint.style = Paint.Style.FILL
 
-        musclePaint.color = context.resources.getColor(R.color.baseCyan, null)
+        musclePaint.color = context.resources.getColor(R.color.baseMuscle, null)
         musclePaint.style = Paint.Style.FILL
 
-        fatPaint.color = context.resources.getColor(R.color.baseYellow, null)
+        fatPaint.color = context.resources.getColor(R.color.baseFat, null)
         fatPaint.style = Paint.Style.FILL
 
-        bonePaint.color = context.resources.getColor(R.color.baseMaroon, null)
+        bonePaint.color = context.resources.getColor(R.color.baseBone, null)
         bonePaint.style = Paint.Style.FILL
     }
 

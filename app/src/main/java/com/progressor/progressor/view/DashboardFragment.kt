@@ -19,9 +19,10 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
     private var currentHex = ""
 
     private fun initialize() {
-        pieContainer.setValues(60, 25, 15)
+        dashboardBodyPieChart.setValues(60, 25, 15)
+        dashboardBodyPieChartText.text = "60%"
 
-        pieContainer.setOnTouchListener { v, event ->
+        dashboardBodyPieChart.setOnTouchListener { v, event ->
             val bitmap = loadBitmapFromView(v)
             val canvas = Canvas(bitmap)
             v.draw(canvas)
@@ -31,13 +32,23 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
             if(!currentHex.equals(hexColor)) {
                 currentHex = hexColor
                 when(hexColor) {
-                    colorToHex(R.color.baseCyan) -> { pieText.text = "60%" }
-                    colorToHex(R.color.baseYellow) -> { pieText.text = "25%" }
-                    colorToHex(R.color.baseMaroon) -> { pieText.text = "15%" }
+                    colorToHex(R.color.baseMuscle) -> {
+                        dashboardBodyPieChartText.text = "60%"
+                    }
+                    colorToHex(R.color.baseFat) -> {
+                        dashboardBodyPieChartText.text = "25%"
+                    }
+                    colorToHex(R.color.baseBone) -> {
+                        dashboardBodyPieChartText.text = "15%"
+                    }
                 }
             }
             true
         }
+
+//        dashboardAdd.setOnClickListener {
+//            fragmentNavigator.to(NewBodyFragment())
+//        }
     }
 
     private fun rgbToHex(r: Int, g: Int, b: Int): String {

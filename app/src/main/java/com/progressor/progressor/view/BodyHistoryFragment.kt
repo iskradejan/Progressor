@@ -55,7 +55,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
                                 barKey.forEach { muscleMap, fatMap ->
                                     muscleMap.forEach { muscleContainer, muscleLabel ->
                                         if(active) {
-                                            muscleContainer.background = context.getDrawable(R.color.baseCyan)
+                                            muscleContainer.background = context.getDrawable(R.color.baseMuscle)
                                         }
                                         barWidth = muscleContainer.measuredWidth
                                         list.get(index).musclePercentage?.let { muscle ->
@@ -65,7 +65,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
 
                                     fatMap.forEach { fatContainer, fatLabel ->
                                         if(active) {
-                                            fatContainer.background = context.getDrawable(R.color.baseYellow)
+                                            fatContainer.background = context.getDrawable(R.color.baseFat)
                                         }
                                         barWidth += fatContainer.measuredWidth
                                         list.get(index).fatPercentage?.let { fat ->
