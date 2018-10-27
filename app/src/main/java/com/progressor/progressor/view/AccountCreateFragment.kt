@@ -47,7 +47,9 @@ class AccountCreateFragment : BaseFragment(), AccountCreatePresenter.View {
             presenter.register(accountCreateEmailValue.text.toString(), accountCreatePasswordValue.text.toString(), accountCreateDisplayNameValue.text.toString())
         }
         accountCreateLoginButton.setOnClickListener {
-            fragmentNavigator.to(LoginFragment())
+            if(!authenticationManager.isLoggedIn()) {
+                fragmentNavigator.to(LoginFragment())
+            }
         }
     }
 

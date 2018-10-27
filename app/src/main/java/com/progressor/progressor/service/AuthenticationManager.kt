@@ -83,6 +83,8 @@ class AuthenticationManager constructor(private val mainActivity: Activity) {
                     userManager.fetchUser(it)
                 }
             } else {
+                println("task exception: " + task.exception.toString())
+
                 val exception = task.exception as FirebaseAuthException
                 response.setSuccess(false)
                 val errors: MutableList<String> = ArrayList()

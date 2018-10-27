@@ -6,7 +6,6 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.BodyHistoryFragment
-import com.progressor.progressor.view.LoginFragment
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
@@ -34,10 +33,6 @@ class BodyHistoryPresenter @Inject constructor(
     }
 
     private fun initialize() {
-        if (!authenticationManager.isLoggedIn()) {
-            fragmentNavigator.to(LoginFragment())
-        }
-
         bodyList = user?.bodyHistory?.sortedWith(compareBy({ it.createDate }))?.toMutableList()
     }
 

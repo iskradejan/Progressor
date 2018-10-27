@@ -36,6 +36,10 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
                                     loginPasswordValueError.text = context?.getString(R.string.login_error_password_incorrect)?:"--"
                                     loginPasswordValueError.visibility = View.VISIBLE
                                 }
+                                else -> {
+                                    loginEmailValueError.text = "Generic Error"
+                                    loginEmailValueError.visibility = View.VISIBLE
+                                }
                             }
                         }
                     }
@@ -48,11 +52,15 @@ class LoginFragment : BaseFragment(), LoginPresenter.View {
         }
 
         loginRegisterButton.setOnClickListener {
-            fragmentNavigator.to(AccountCreateFragment())
+            if(!authenticationManager.isLoggedIn()) {
+                fragmentNavigator.to(AccountCreateFragment())
+            }
         }
 
         loginForgotPasswordButton.setOnClickListener {
-            fragmentNavigator.to(PasswordResetFragment())
+            if(!authenticationManager.isLoggedIn()) {
+                fragmentNavigator.to(PasswordResetFragment())
+            }
         }
     }
 

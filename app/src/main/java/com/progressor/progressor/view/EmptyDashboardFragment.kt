@@ -21,7 +21,6 @@ class EmptyDashboardFragment : BaseFragment(), EmptyDashboardPresenter.View {
             emptyDashboardBodyGfx.setImageResource(R.drawable.body_gfx_inactive)
             emptyDashboardExplainerTitle.text = getString(R.string.empty_dashboard_workout_title)
             emptyDashboardExplainerInfo.text = getString(R.string.empty_dashboard_workout_info)
-            isWorkout = true
         }
 
         emptyDashboardBodyGfx.setOnClickListener {

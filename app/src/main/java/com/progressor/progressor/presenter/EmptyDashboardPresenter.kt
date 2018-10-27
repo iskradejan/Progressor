@@ -15,8 +15,5 @@ class EmptyDashboardPresenter @Inject constructor(
 
     fun setPresenter(emptyDashboardFragment: EmptyDashboardFragment) {
         view = emptyDashboardFragment
-        initialize()
     }
-
-    fun initialize() {}
 }

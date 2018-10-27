@@ -11,6 +11,7 @@ import com.progressor.progressor.di.components.MainComponentInterface
 import kotlinx.android.synthetic.main.layout_dashboard.*
 import javax.inject.Inject
 import android.support.v4.content.ContextCompat
+import android.widget.Toast
 
 class DashboardFragment : BaseFragment(), DashboardPresenter.View {
     @Inject
@@ -19,8 +20,12 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
     private var currentHex = ""
 
     private fun initialize() {
-        dashboardBodyPieChart.setValues(60, 25, 15)
-        dashboardBodyPieChartText.text = "60%"
+        val body = presenter.latestBody()
+        dashboardBodyPieChart.setValues(body.musclePercentage ?: 0, body.fatPercentage ?: 0, resources.getInteger(R.integer.bonePercent))
+
+        body.musclePercentage?.let {
+            dashboardBodyPieChartText.text = String.format("%d%%", it)
+        }
 
         dashboardBodyPieChart.setOnTouchListener { v, event ->
             val bitmap = loadBitmapFromView(v)
@@ -33,23 +38,32 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
                 currentHex = hexColor
                 when(hexColor) {
                     colorToHex(R.color.baseMuscle) -> {
-                        dashboardBodyPieChartText.text = "60%"
+                        body.musclePercentage?.let {
+                            dashboardBodyPieChartText.text = String.format("%d%%", it)
+                        }
                     }
                     colorToHex(R.color.baseFat) -> {
-                        dashboardBodyPieChartText.text = "25%"
+                        body.fatPercentage?.let {
+                            dashboardBodyPieChartText.text = String.format("%d%%", it)
+                        }
                     }
                     colorToHex(R.color.baseBone) -> {
-                        dashboardBodyPieChartText.text = "15%"
+                        dashboardBodyPieChartText.text = String.format("%d%%", resources.getInteger(R.integer.bonePercent))
                     }
                 }
             }
             true
         }
 
-//        dashboardAdd.setOnClickListener {
-//            fragmentNavigator.to(NewBodyFragment())
-//        }
+        dashboardAdd.setOnClickListener {
+            if(presenter.isNewBodyEligible()) {
+                fragmentNavigator.to(NewBodyFragment())
+            } else {
+                Toast.makeText(context, "Give it some rest, record once a month", Toast.LENGTH_LONG).show()
+            }
+        }
     }
+
 
     private fun rgbToHex(r: Int, g: Int, b: Int): String {
         return String.format("#%02x%02x%02x", r, g, b)

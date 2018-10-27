@@ -23,25 +23,6 @@ class PasswordResetPresenter @Inject constructor(
     fun setPresenter(passwordResetFragment: PasswordResetFragment) {
         view = passwordResetFragment
         context = passwordResetFragment.context
-        initialize()
-    }
-
-    private fun initialize() {
-        if (authenticationManager.isLoggedIn()) {
-            if (!authenticationManager.isVerified()) {
-                fragmentNavigator.to(EmailVerifyFragment())
-            } else {
-                if (userManager.user?.person == null) {
-                    fragmentNavigator.to(ProfileCreateFragment())
-                } else if (userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
-                    fragmentNavigator.to(EmptyDashboardFragment())
-                } else {
-                    fragmentNavigator.to(DashboardFragment())
-                }
-            }
-        } else {
-            fragmentNavigator.to(LoginFragment())
-        }
     }
 
     fun resetPassword(email: String) {

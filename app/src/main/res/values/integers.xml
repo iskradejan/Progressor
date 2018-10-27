@@ -1,0 +1,5 @@
+<resources>
+    <integer name="newBodyLimit">1</integer>
+    <integer name="newWorkoutLimit">3</integer>
+    <integer name="bonePercent">15</integer>
+</resources>

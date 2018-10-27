@@ -23,11 +23,6 @@ class LoginPresenter @Inject constructor(
     fun setPresenter(loginFragment: LoginFragment) {
         view = loginFragment
         context = loginFragment.context
-        initialize()
-    }
-
-    private fun initialize() {
-        route()
     }
 
     fun route() {

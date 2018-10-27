@@ -23,25 +23,6 @@ class AccountCreatePresenter @Inject constructor(
     fun setPresenter(accountCreateFragment: AccountCreateFragment) {
         view = accountCreateFragment
         context = accountCreateFragment.context
-        initialize()
-    }
-
-    fun initialize() {
-        if (authenticationManager.isLoggedIn()) {
-            if (!authenticationManager.isVerified()) {
-                fragmentNavigator.to(EmailVerifyFragment())
-            } else {
-                if (userManager.user?.person == null) {
-                    fragmentNavigator.to(ProfileCreateFragment())
-                } else if (userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
-                    fragmentNavigator.to(EmptyDashboardFragment())
-                } else {
-                    fragmentNavigator.to(DashboardFragment())
-                }
-            }
-        } else {
-            fragmentNavigator.to(LoginFragment())
-        }
     }
 
     fun register(email: String, password: String, displayName: String) {

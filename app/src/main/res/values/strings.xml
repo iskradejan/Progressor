@@ -43,7 +43,6 @@
     <string name="password_reset_error_email_not_found">Email not found.</string>
     <string name="password_reset_error_email_invalid">Email invalid.</string>
 
-
     <!-- Profile Create Screen -->
     <string name="profile_create_birthday_value">&#160;&#160;&#8212;/&#8212;/&#8212;&#8212;&#160;&#160;</string>
     <string name="profile_create_continue">Continue</string>
@@ -52,7 +51,6 @@
     <string name="profile_create_gender_title">Gender</string>
     <string name="profile_create_birthday_title">Birthday</string>
 
-
     <!-- Empty Dashboard Screen -->
     <string name="empty_dashboard_header_title">Select your choice of progression</string>
     <string name="empty_dashboard_continue">Continue</string>
@@ -60,6 +58,16 @@
     <string name="empty_dashboard_workout_info">Choose from a variety of workout programs! You can choose based on your goal, difficulty, length, and review score. For each program you will have an individual progress chart showing your progress over time. It is extremely important to visually see your progression as it helps your state of mind.</string>
     <string name="empty_dashboard_body_title">Body</string>
     <string name="empty_dashboard_body_info">Start tracking your physique and see the incredible results! You can record things like weight, fat percentage, muscle percentage, water percentage, and mood. It is extremely important to visually see your progression as it helps your state of mind.</string>
+
+    <!-- New Body Screen -->
+    <string name="new_body_explainer_info">In order to derive to the most accurate results, please fill out the form below. The results have 3% margin of error.</string>
+    <string name="new_body_weight">Weight</string>
+    <string name="new_body_waist">Waist</string>
+    <string name="new_body_wrist">Wrist</string>
+    <string name="new_body_hip">Hip</string>
+    <string name="new_body_forearm">Forearm</string>
+    <string name="new_body_mood">How do you feel?</string>
+    <string name="new_body_continue">Continue</string>
 
     <!-- Body History Screen -->
     <string name="body_history_zero_percent">0%</string>
@@ -70,4 +78,9 @@
     <string name="body_history_ellipsis">&#8230;</string>
     <string name="body_history_legend_muscle">Muscle</string>
     <string name="body_history_legend_fat">Fat</string>
+
+    <!-- Dashboard Screen -->
+    <string name="dashboard_legend_muscle">Muscle</string>
+    <string name="dashboard_legend_fat">Fat</string>
+    <string name="dashboard_legend_bone">Bone</string>
 </resources>

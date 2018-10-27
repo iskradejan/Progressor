@@ -6,8 +6,6 @@ import com.progressor.progressor.model.dataobjects.account.User
 import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
-import com.progressor.progressor.view.EmailVerifyFragment
-import com.progressor.progressor.view.LoginFragment
 import com.progressor.progressor.view.ProfileCreateFragment
 import javax.inject.Inject
 
@@ -26,16 +24,6 @@ class ProfileCreatePresenter @Inject constructor(
     fun setPresenter(profileCreateFragment: ProfileCreateFragment) {
         view = profileCreateFragment
         context = profileCreateFragment.context
-        initialize()
-    }
-
-    fun initialize() {
-        if (!authenticationManager.isLoggedIn()) {
-            fragmentNavigator.to(LoginFragment())
-        }
-        if (!authenticationManager.isVerified()) {
-            fragmentNavigator.to(EmailVerifyFragment())
-        }
     }
 
     fun createProfile(gender: Int, height: Int, weight: Int, dob: String) {
