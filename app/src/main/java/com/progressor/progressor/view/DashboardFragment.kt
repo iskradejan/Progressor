@@ -55,12 +55,19 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
             true
         }
 
-        dashboardAdd.setOnClickListener {
-            if(presenter.isNewBodyEligible()) {
-                fragmentNavigator.to(NewBodyFragment())
-            } else {
-                Toast.makeText(context, "Give it some rest, record once a month", Toast.LENGTH_LONG).show()
+        dashboardAdd.setOnTouchListener { v, event ->
+            if(event.y <= -200) {
+                println("WORKOUT ----")
             }
+
+            if(event.y >= 200) {
+                if(presenter.isNewBodyEligible()) {
+                    fragmentNavigator.to(NewBodyFragment())
+                } else {
+                    Toast.makeText(context, "Give it some rest, record once a month", Toast.LENGTH_LONG).show()
+                }
+            }
+            true
         }
     }
 

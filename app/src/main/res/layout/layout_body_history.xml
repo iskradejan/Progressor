@@ -1147,7 +1147,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/bodyHistoryLegendMuscleTtitle"
+                        android:id="@+id/bodyHistoryLegendMuscleTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/body_history_legend_muscle"
