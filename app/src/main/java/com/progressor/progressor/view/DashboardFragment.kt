@@ -57,7 +57,7 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
 
         dashboardAdd.setOnTouchListener { v, event ->
             if(event.y <= -200) {
-                println("WORKOUT ----")
+                fragmentNavigator.to(NewWorkoutFragment())
             }
 
             if(event.y >= 200) {
