@@ -26,6 +26,7 @@ interface UtilComponent {
     fun inject(bodyHistoryFragment: BodyHistoryFragment)
     fun inject(dashboardFragment: DashboardFragment)
     fun inject(newWorkoutFragment: NewWorkoutFragment)
+    fun inject(dejanWorkoutFragment: DejanWorkoutFragment)
 
     // Services
     fun inject(apiRequestor: ApiRequestor)
