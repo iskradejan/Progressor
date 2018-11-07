@@ -1,291 +1,587 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/newDejanWorkoutImageContainer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/dejanWorkoutImage"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/lion"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/newDejanWorkoutDayButtonContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutImageContainer">
-
-        <TextView
-            android:id="@+id/newDejanWorkoutDayOne"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/newDejanWorkoutImageContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:padding="15dp"
-            android:text="Day 1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayTwo"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutDayTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:padding="15dp"
-            android:text="Day 2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayThree"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayOne"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutDayThree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:padding="15dp"
-            android:text="Day 3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFour"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayTwo"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutDayFour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:padding="15dp"
-            android:text="Day 4"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFive"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayThree"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutDayFive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:padding="15dp"
-            android:text="Day 5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayFour"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/newDejanWorkoutLabelsContainer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayButtonContainer">
-
-        <android.support.constraint.Guideline
-            android:id="@+id/newDejanWorkoutLabelsGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutExerciseLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Exercise"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutSetsLabel"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutSetsLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Sets"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutLabelsGuideline"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutRepsLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Reps"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutAmountLabel"
-            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutSetsLabel"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutAmountLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="8dp"
-            android:text="Amount"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/newDejanWorkoutDayOneContainer"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutLabelsContainer">
-
-        <android.support.constraint.Guideline
-            android:id="@+id/newDejanWorkoutDayOneGuideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <TextView
-            android:id="@+id/newDejanWorkoutInclineLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:text="Incline Bench Press"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/newDejanWorkoutInclineSets"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:text="3"
-            android:textAlignment="center"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutInclineLabel"
-            app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
-            app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutInclineLabel" />
-
-        <EditText
-            android:id="@+id/newDejanWorkoutInclineReps"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="20dp"
-            android:text="12"
-            android:textAlignment="center"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutInclineLabel"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutInclineAmount"
-            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutInclineSets"
-            app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutInclineLabel" />
-
-        <EditText
-            android:id="@+id/newDejanWorkoutInclineAmount"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="25dp"
-            android:text="120"
-            android:textAlignment="center"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutInclineLabel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutInclineLabel" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/newDejanWorkoutFlatLabel"
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/dejanWorkoutImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/lion"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/newDejanWorkoutDayButtonContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="35dp"
-            android:text="Flat Bench Press"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutInclineLabel" />
-
-        <EditText
-            android:id="@+id/newDejanWorkoutFlatSets"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:text="3"
-            android:textAlignment="center"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlatLabel"
-            app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
-            app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlatLabel" />
-
-        <EditText
-            android:id="@+id/newDejanWorkoutFlatReps"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="20dp"
-            android:text="12"
-            android:textAlignment="center"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlatLabel"
-            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutFlatAmount"
-            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutFlatSets"
-            app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlatLabel" />
-
-        <EditText
-            android:id="@+id/newDejanWorkoutFlatAmount"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="25dp"
-            android:text="150"
-            android:textAlignment="center"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlatLabel"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlatLabel" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutImageContainer">
 
+            <TextView
+                android:id="@+id/newDejanWorkoutDayOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="15dp"
+                android:text="Day 1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayTwo"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutDayTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="15dp"
+                android:text="Day 2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayThree"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayOne"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutDayThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="15dp"
+                android:text="Day 3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFour"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayTwo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutDayFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="15dp"
+                android:text="Day 4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFive"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayThree"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutDayFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="15dp"
+                android:text="Day 5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayFour"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/newDejanWorkoutLabelsContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayButtonContainer">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/newDejanWorkoutLabelsGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutExerciseLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Exercise"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutSetsLabel"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutSetsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Sets"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutLabelsGuideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutRepsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Reps"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutAmountLabel"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutSetsLabel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutAmountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Amount"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/newDejanWorkoutDayOneContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutLabelsContainer">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/newDejanWorkoutDayOneGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutInclineLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Incline Bench Press"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutInclineSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutInclineLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutInclineLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutInclineReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutInclineLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutInclineAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutInclineSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutInclineLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutInclineAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="120"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutInclineLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutInclineLabel" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutFlatLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:text="Flat Bench Press"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutInclineLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFlatSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlatLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlatLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFlatReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlatLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutFlatAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutFlatSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlatLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFlatAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="150"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlatLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlatLabel" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutFliesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Chest Flies"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutFlatLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFliesSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFliesLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFliesLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFliesReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFliesLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutFliesAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutFliesSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFliesLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFliesAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="150"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFliesLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFliesLabel" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutBicepCurlLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Bicep Curls"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutFliesLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutBicepCurlsSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutBicepCurlLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutBicepCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutBicepCurlsReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutBicepCurlLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutBicepCurlsAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutBicepCurlsSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutBicepCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutBicepCurlsAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="150"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutBicepCurlLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutBicepCurlLabel" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutHammerCurlLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Hammer Curls"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutBicepCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutHammerCurlsSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutHammerCurlLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutHammerCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutHammerCurlsReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutHammerCurlLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutHammerCurlsAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutHammerCurlsSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutHammerCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutHammerCurlsAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="150"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutHammerCurlLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutHammerCurlLabel" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutBarbellCurlLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Barbell Rollout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutHammerCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutBarbellCurlsSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutBarbellCurlLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutBarbellCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutBarbellCurlsReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutBarbellCurlLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutBarbellCurlsAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutBarbellCurlsSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutBarbellCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutBarbellCurlsAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="150"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutBarbellCurlLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutBarbellCurlLabel" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutFlutterLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Flutter Kick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutBarbellCurlLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFlutterSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlutterLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlutterLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFlutterReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlutterLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutFlutterAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutFlutterSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlutterLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutFlutterAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="150"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutFlutterLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutFlutterLabel" />
+
+            <TextView
+                android:id="@+id/newDejanWorkoutStarLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Star Plank"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutFlutterLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutStarSets"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutStarLabel"
+                app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutDayOneGuideline"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutStarLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutStarReps"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="20dp"
+                android:text="12"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutStarLabel"
+                app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutStarAmount"
+                app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutStarSets"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutStarLabel" />
+
+            <EditText
+                android:id="@+id/newDejanWorkoutStarAmount"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="25dp"
+                android:text="150"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutStarLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutStarLabel" />
+
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
-</android.support.constraint.ConstraintLayout>
+</ScrollView>
