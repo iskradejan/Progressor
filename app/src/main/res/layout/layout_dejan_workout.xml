@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dejanWorkoutImageContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/dejanWorkoutImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/lion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dejanWorkoutInfoContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImageContainer">
+
+        <TextView
+            android:id="@+id/dejanWorkoutInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bla bla blalb al bla bla bla blalbalblabmamb abma miabma bmai ebiamdb ama. bla bla blalb al bla bla bla blalbalblabmamb abma miabma bmai ebiamdb ama. bla bla blalb al bla bla bla blalbalblabmamb abma miabma bmai ebiamdb ama." />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dejanWorkoutScheduleContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutInfoContainer">
+
+        <TextView
+            android:id="@+id/dejanWorkoutScheduleHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:text="Schedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutScheduleHeader">
+
+            <TableRow>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Day 1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Day 2"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Day 3"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Day 4"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Day 5"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Day 6"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Day 7"
+                    android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Chest" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Cardio" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Back" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Cardio" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Legs" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Rest" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Rest" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Bicep" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Tricep" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Shoulder" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Abs" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Abs" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="12sp"
+                    android:text="Abs" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+
+                <TextView
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="" />
+            </TableRow>
+        </TableLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

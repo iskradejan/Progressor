@@ -5,6 +5,7 @@ import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.presenter.NewWorkoutPresenter
+import kotlinx.android.synthetic.main.layout_new_workout.*
 import javax.inject.Inject
 
 class NewWorkoutFragment : BaseFragment(), NewWorkoutPresenter.View {
@@ -14,7 +15,9 @@ class NewWorkoutFragment : BaseFragment(), NewWorkoutPresenter.View {
     lateinit var currentView: View
 
     private fun initialize() {
-
+        newWorkoutDejan.setOnClickListener {
+            fragmentNavigator.to(DejanWorkoutFragment())
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
