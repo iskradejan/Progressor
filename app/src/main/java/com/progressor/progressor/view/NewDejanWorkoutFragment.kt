@@ -83,6 +83,6 @@ class NewDejanWorkoutFragment : BaseFragment(), NewDejanWorkoutPresenter.View {
     }
 
     override fun getFragmentLayout(): Int {
-        return R.layout.layout_dejan_workout
+        return R.layout.layout_new_dejan_workout
     }
 }

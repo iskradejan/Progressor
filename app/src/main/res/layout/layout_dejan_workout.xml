@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/dejanWorkoutImageContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,7 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,8 +48,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/dejanWorkoutStartButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutInfoContainer">
@@ -61,6 +64,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="8dp"
             android:text="Schedule"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -87,37 +91,37 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Day 2"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Day 3"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Day 4"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Day 5"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Day 6"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Day 7"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </TableRow>
 
             <TableRow>
@@ -125,44 +129,44 @@
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Chest" />
+                    android:text="Chest"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Cardio" />
+                    android:text="Cardio"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Back" />
+                    android:text="Back"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Cardio" />
+                    android:text="Cardio"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Legs" />
+                    android:text="Legs"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Rest" />
+                    android:text="Rest"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Rest" />
+                    android:text="Rest"
+                    android:textSize="12sp" />
             </TableRow>
 
             <TableRow>
@@ -170,8 +174,8 @@
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Bicep" />
+                    android:text="Bicep"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
@@ -181,8 +185,8 @@
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Tricep" />
+                    android:text="Tricep"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
@@ -192,8 +196,8 @@
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Shoulder" />
+                    android:text="Shoulder"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
@@ -211,8 +215,8 @@
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Abs" />
+                    android:text="Abs"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
@@ -222,8 +226,8 @@
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Abs" />
+                    android:text="Abs"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
@@ -233,8 +237,8 @@
                 <TextView
                     android:gravity="center"
                     android:padding="5dp"
-                    android:textSize="12sp"
-                    android:text="Abs" />
+                    android:text="Abs"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:gravity="center"
@@ -254,9 +258,8 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/baseMaroon"
         android:ems="12"
         android:stateListAnimator="@null"
@@ -265,6 +268,5 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutScheduleContainer" />
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
