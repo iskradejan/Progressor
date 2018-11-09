@@ -55,7 +55,6 @@ class DejanCreator {
                 skullcrushers = skullcrushers,
                 legRaise = legRaise,
                 plank = plank,
-                sidePlank = sidePlank,
                 cableCrunch = cableCrunch
         )
     }

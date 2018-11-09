@@ -11,6 +11,5 @@ data class DayThree (
     val skullcrushers: LinkedHashMap<HashMap<Int, Int>, Int>,
     val legRaise: LinkedHashMap<Int, Int>,
     val plank: LinkedHashMap<Int, Int>,
-    val sidePlank: LinkedHashMap<Int, Int>,
     val cableCrunch: LinkedHashMap<HashMap<Int, Int>, Int>
 )
