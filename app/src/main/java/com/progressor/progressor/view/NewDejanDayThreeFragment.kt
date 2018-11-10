@@ -29,7 +29,7 @@ class NewDejanDayThreeFragment : BaseFragment(), NewDejanDayThreePresenter.View 
             fragmentNavigator.to(NewDejanDayFourFragment())
         }
         newDejanWorkoutDayFive.setOnClickListener {
-            fragmentNavigator.to(NewDejanDayThreeFragment())
+            fragmentNavigator.to(NewDejanDayFiveFragment())
         }
     }
 

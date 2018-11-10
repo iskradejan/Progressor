@@ -25,6 +25,12 @@ class NewDejanWorkoutFragment : BaseFragment(), NewDejanWorkoutPresenter.View {
         newDejanWorkoutDayThree.setOnClickListener {
             fragmentNavigator.to(NewDejanDayThreeFragment())
         }
+        newDejanWorkoutDayFour.setOnClickListener {
+            fragmentNavigator.to(NewDejanDayFourFragment())
+        }
+        newDejanWorkoutDayFive.setOnClickListener {
+            fragmentNavigator.to(NewDejanDayFiveFragment())
+        }
 
 //        val dejan = Dejan(
 //            dayOne = dejanCreator.createDayOne(
