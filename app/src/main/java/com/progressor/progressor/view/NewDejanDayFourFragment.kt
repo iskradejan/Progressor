@@ -16,7 +16,7 @@ class NewDejanDayFourFragment : BaseFragment(), NewDejanDayFourPresenter.View {
 
     private fun initialize() {
         newDejanWorkoutDayOne.setOnClickListener {
-            fragmentNavigator.to(NewDejanWorkoutFragment())
+            fragmentNavigator.to(NewDejanDayOneFragment())
         }
         newDejanWorkoutDayTwo.setOnClickListener {
             fragmentNavigator.to(NewDejanDayTwoFragment())

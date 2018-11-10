@@ -27,7 +27,7 @@ interface UtilComponent {
     fun inject(dashboardFragment: DashboardFragment)
     fun inject(newWorkoutFragment: NewWorkoutFragment)
     fun inject(dejanWorkoutFragment: DejanWorkoutFragment)
-    fun inject(newDejanWorkoutFragment: NewDejanWorkoutFragment)
+    fun inject(newDejanDayOneFragment: NewDejanDayOneFragment)
     fun inject(newDejanDayTwoFragment: NewDejanDayTwoFragment)
     fun inject(newDejanDayThreeFragment: NewDejanDayThreeFragment)
     fun inject(newDejanDayFourFragment: NewDejanDayFourFragment)

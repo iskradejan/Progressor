@@ -9,5 +9,7 @@ class UserConstant {
         const val PERSON_MOOD_NEUTRAL = 3
         const val PERSON_MOOD_BAD = 4
         const val PERSON_MOOD_TERRIBLE = 5
+
+        const val WORKOUT_DEJAN = 1
     }
 }

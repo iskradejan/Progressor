@@ -32,7 +32,7 @@ class LoginPresenter @Inject constructor(
             } else {
                 if (userManager.user?.person == null) {
                     fragmentNavigator.to(ProfileCreateFragment())
-                } else if (userManager.user?.bodyHistory?.size == 0 && userManager.user?.workouts?.size == 0) {
+                } else if (userManager.user?.bodyHistory?.size == 0 && userManager.user?.workout == null) {
                     fragmentNavigator.to(EmptyDashboardFragment())
                 } else {
                     fragmentNavigator.to(DashboardFragment())

@@ -6,13 +6,13 @@ import android.view.View
 import android.widget.EditText
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
-import com.progressor.progressor.presenter.NewDejanWorkoutPresenter
+import com.progressor.progressor.presenter.NewDejanDayOnePresenter
 import kotlinx.android.synthetic.main.layout_new_dejan_workout.*
 import javax.inject.Inject
 
-class NewDejanWorkoutFragment : BaseFragment(), NewDejanWorkoutPresenter.View {
+class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
     @Inject
-    lateinit var presenter: NewDejanWorkoutPresenter
+    lateinit var presenter: NewDejanDayOnePresenter
     lateinit var defaultLabelColor: ColorStateList
 
     lateinit var currentView: View
@@ -49,36 +49,36 @@ class NewDejanWorkoutFragment : BaseFragment(), NewDejanWorkoutPresenter.View {
         return arrayListOf<EditText>(newDejanWorkoutInclineAmount, newDejanWorkoutFlatAmount, newDejanWorkoutFliesAmount, newDejanWorkoutBicepCurlsAmount, newDejanWorkoutHammerCurlsAmount)
     }
 
-    override fun getInclineBenchPress(): Array<String> {
-        return arrayOf(newDejanWorkoutInclineSets.text.toString(), newDejanWorkoutInclineReps.text.toString(), newDejanWorkoutInclineAmount.text.toString())
+    override fun getInclineBenchPress(): List<String> {
+        return listOf(newDejanWorkoutInclineSets.text.toString(), newDejanWorkoutInclineReps.text.toString(), newDejanWorkoutInclineAmount.text.toString())
     }
 
-    override fun getFlatBenchPress(): Array<String> {
-        return arrayOf(newDejanWorkoutFlatSets.text.toString(), newDejanWorkoutFlatReps.text.toString(), newDejanWorkoutFlatAmount.text.toString())
+    override fun getFlatBenchPress(): List<String> {
+        return listOf(newDejanWorkoutFlatSets.text.toString(), newDejanWorkoutFlatReps.text.toString(), newDejanWorkoutFlatAmount.text.toString())
     }
 
-    override fun getChestFlies(): Array<String> {
-        return arrayOf(newDejanWorkoutFliesSets.text.toString(), newDejanWorkoutFliesReps.text.toString(), newDejanWorkoutFliesAmount.text.toString())
+    override fun getChestFlies(): List<String> {
+        return listOf(newDejanWorkoutFliesSets.text.toString(), newDejanWorkoutFliesReps.text.toString(), newDejanWorkoutFliesAmount.text.toString())
     }
 
-    override fun getBicepCurls(): Array<String> {
-        return arrayOf(newDejanWorkoutBicepCurlsSets.text.toString(), newDejanWorkoutBicepCurlsReps.text.toString(), newDejanWorkoutBicepCurlsAmount.text.toString())
+    override fun getBicepCurls(): List<String> {
+        return listOf(newDejanWorkoutBicepCurlsSets.text.toString(), newDejanWorkoutBicepCurlsReps.text.toString(), newDejanWorkoutBicepCurlsAmount.text.toString())
     }
 
-    override fun getHammerCurls(): Array<String> {
-        return arrayOf(newDejanWorkoutHammerCurlsSets.text.toString(), newDejanWorkoutHammerCurlsReps.text.toString(), newDejanWorkoutHammerCurlsAmount.text.toString())
+    override fun getHammerCurls(): List<String> {
+        return listOf(newDejanWorkoutHammerCurlsSets.text.toString(), newDejanWorkoutHammerCurlsReps.text.toString(), newDejanWorkoutHammerCurlsAmount.text.toString())
     }
 
-    override fun getBarbellRollout(): Array<String> {
-        return arrayOf(newDejanWorkoutBarbellCurlsSets.text.toString(), newDejanWorkoutBarbellCurlsReps.text.toString())
+    override fun getBarbellRollout(): List<String> {
+        return listOf(newDejanWorkoutBarbellCurlsSets.text.toString(), newDejanWorkoutBarbellCurlsReps.text.toString())
     }
 
-    override fun getFlutterKick(): Array<String> {
-        return arrayOf(newDejanWorkoutFlutterSets.text.toString(), newDejanWorkoutFlutterReps.text.toString())
+    override fun getFlutterKick(): List<String> {
+        return listOf(newDejanWorkoutFlutterSets.text.toString(), newDejanWorkoutFlutterReps.text.toString())
     }
 
-    override fun getStarPlank(): Array<String> {
-        return arrayOf(newDejanWorkoutStarSets.text.toString(), newDejanWorkoutStarReps.text.toString())
+    override fun getStarPlank(): List<String> {
+        return listOf(newDejanWorkoutStarSets.text.toString(), newDejanWorkoutStarReps.text.toString())
     }
 
     override fun isFormValid(): Boolean {
