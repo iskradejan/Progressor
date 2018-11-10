@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/dejanWorkoutImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/lion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 1"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayTwo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 2"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayThree"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayOne"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 3"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFour"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayTwo"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/baseMaroon"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 4"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFive"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayThree"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 5"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayFour"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/newDejanWorkoutLabelsGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/newDejanDayFourExerciseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Exercise"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayFourSetsLabel"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayOne" />
+
+        <TextView
+            android:id="@+id/newDejanDayFourSetsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="40dp"
+            android:text="Sets"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutLabelsGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayThree" />
+
+        <TextView
+            android:id="@+id/newDejanDayFourRepsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:text="Reps"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayFourAmountLabel"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayFourSetsLabel"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayFour" />
+
+        <TextView
+            android:id="@+id/newDejanDayFourAmountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:text="Amount"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayFive" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/newDejanDayFourGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/newDejanDayTwoGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/newDejanDayFourArcTrainerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Arc Trainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayFourExerciseLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayFourArcTrainerSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayFourArcTrainerLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayTwoGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayFourArcTrainerLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayFourArcTrainerReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayFourArcTrainerLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayFourArcTrainerAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayFourArcTrainerSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayFourArcTrainerLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayFourArcTrainerAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayFourArcTrainerLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayFourArcTrainerLabel" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/newDejanDayFourSave"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/baseMaroon"
+            android:ems="12"
+            android:stateListAnimator="@null"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

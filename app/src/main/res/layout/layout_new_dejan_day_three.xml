@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/dejanWorkoutImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/lion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 1"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayTwo"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 2"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayThree"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayOne"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/baseMaroon"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 3"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFour"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayTwo"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 4"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanWorkoutDayFive"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayThree"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <TextView
+            android:id="@+id/newDejanWorkoutDayFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="8dp"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:text="Day 5"
+            android:textColor="@color/baseGrey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newDejanWorkoutDayFour"
+            app:layout_constraintTop_toBottomOf="@+id/dejanWorkoutImage" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/newDejanWorkoutLabelsGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeExerciseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Exercise"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeSetsLabel"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayOne" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeSetsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="40dp"
+            android:text="Sets"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/newDejanWorkoutLabelsGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayThree" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeRepsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:text="Reps"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeAmountLabel"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeSetsLabel"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayFour" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeAmountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:text="Amount"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanWorkoutDayFive" />
+        
+        <android.support.constraint.Guideline
+            android:id="@+id/newDejanDayThreeGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeDeadliftLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="Deadlift"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeExerciseLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDeadliftSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDeadliftLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDeadliftLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDeadliftReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDeadliftLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeDeadliftAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeDeadliftSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDeadliftLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDeadliftAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDeadliftLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDeadliftLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeWideGripPullDownLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Wide Grip Pull Down"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeDeadliftLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeWideGripPullDownSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeWideGripPullDownLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeWideGripPullDownLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeWideGripPullDownReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeWideGripPullDownLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeWideGripPullDownAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeWideGripPullDownSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeWideGripPullDownLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeWideGripPullDownAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeWideGripPullDownLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeWideGripPullDownLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeSeatedCableRowLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Seated Cable Row"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeWideGripPullDownLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeSeatedCableRowSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeSeatedCableRowLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeSeatedCableRowLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeSeatedCableRowReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeSeatedCableRowLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeSeatedCableRowAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeSeatedCableRowSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeSeatedCableRowLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeSeatedCableRowAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeSeatedCableRowLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeSeatedCableRowLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeHyperExtensionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Hyper Extension"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeSeatedCableRowLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeHyperExtensionSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeHyperExtensionLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeHyperExtensionLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeHyperExtensionReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeHyperExtensionLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeHyperExtensionAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeHyperExtensionSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeHyperExtensionLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeHyperExtensionAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeHyperExtensionLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeHyperExtensionLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeTricepExtensionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Tricep Extension"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeHyperExtensionLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeTricepExtensionSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeTricepExtensionLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeTricepExtensionLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeTricepExtensionReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeTricepExtensionLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeTricepExtensionAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeTricepExtensionSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeTricepExtensionLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeTricepExtensionAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeTricepExtensionLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeTricepExtensionLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeDipsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Dips"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeTricepExtensionLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDipsSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDipsLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDipsLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDipsReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDipsLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeDipsAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeDipsSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDipsLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDipsAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDipsLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDipsLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeDumbbellKickbackLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Dumbbell Kickback"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeDipsLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDumbbellKickbackSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDumbbellKickbackLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDumbbellKickbackLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDumbbellKickbackReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDumbbellKickbackLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeDumbbellKickbackAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeDumbbellKickbackSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDumbbellKickbackLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeDumbbellKickbackAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeDumbbellKickbackLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeDumbbellKickbackLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeSkullcrushersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Skull Crushers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeDumbbellKickbackLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeSkullcrushersSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeSkullcrushersLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeSkullcrushersLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeSkullcrushersReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeSkullcrushersLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeSkullcrushersAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeSkullcrushersSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeSkullcrushersLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeSkullcrushersAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeSkullcrushersLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeSkullcrushersLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeLegRaiseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Leg Raise"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeSkullcrushersLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeLegRaiseSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeLegRaiseLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeLegRaiseLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeLegRaiseReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeLegRaiseLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeLegRaiseAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeLegRaiseSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeLegRaiseLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeLegRaiseAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeLegRaiseLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeLegRaiseLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreePlankLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Plank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeLegRaiseLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreePlankSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreePlankLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreePlankLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreePlankReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreePlankLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreePlankAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreePlankSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreePlankLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreePlankAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreePlankLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreePlankLabel" />
+
+        <TextView
+            android:id="@+id/newDejanDayThreeCableCrunchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Cable Crunch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreePlankLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeCableCrunchSets"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeCableCrunchLabel"
+            app:layout_constraintStart_toStartOf="@+id/newDejanDayThreeGuideline"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeCableCrunchLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeCableCrunchReps"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeCableCrunchLabel"
+            app:layout_constraintEnd_toStartOf="@+id/newDejanDayThreeCableCrunchAmount"
+            app:layout_constraintStart_toEndOf="@+id/newDejanDayThreeCableCrunchSets"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeCableCrunchLabel" />
+
+        <EditText
+            android:id="@+id/newDejanDayThreeCableCrunchAmount"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="25dp"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeCableCrunchLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeCableCrunchLabel" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/newDejanDayThreeSave"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/baseMaroon"
+            android:ems="12"
+            android:stateListAnimator="@null"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newDejanDayThreeCableCrunchLabel" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

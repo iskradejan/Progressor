@@ -59,8 +59,8 @@ class DejanCreator {
         )
     }
 
-    fun createDayFour(arcMaster: Int): DayFour {
-        return DayFour(arcMaster = arcMaster)
+    fun createDayFour(arcTrainer: Int): DayFour {
+        return DayFour(arcTrainer = arcTrainer)
     }
 
     fun createDayFive(
