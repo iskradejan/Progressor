@@ -1,24 +1,25 @@
 package com.progressor.progressor.view
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.presenter.NewDejanWorkoutPresenter
-import com.progressor.progressor.service.DejanCreator
-import com.progressor.progressor.service.ExerciseCreator
 import kotlinx.android.synthetic.main.layout_new_dejan_workout.*
 import javax.inject.Inject
 
 class NewDejanWorkoutFragment : BaseFragment(), NewDejanWorkoutPresenter.View {
     @Inject
     lateinit var presenter: NewDejanWorkoutPresenter
-    private var exerciseCreator = ExerciseCreator()
-    private var dejanCreator = DejanCreator()
+    lateinit var defaultLabelColor: ColorStateList
 
     lateinit var currentView: View
 
     private fun initialize() {
+        defaultLabelColor = newDejanWorkoutInclineLabel.textColors
+
         newDejanWorkoutDayTwo.setOnClickListener {
             fragmentNavigator.to(NewDejanDayTwoFragment())
         }
@@ -31,50 +32,98 @@ class NewDejanWorkoutFragment : BaseFragment(), NewDejanWorkoutPresenter.View {
         newDejanWorkoutDayFive.setOnClickListener {
             fragmentNavigator.to(NewDejanDayFiveFragment())
         }
+        newDejanWorkoutSaveButton.setOnClickListener {
+            presenter.save()
+        }
+    }
 
-//        val dejan = Dejan(
-//            dayOne = dejanCreator.createDayOne(
-//                    inclineChestPress = exerciseCreator.createWeightExercise(3, 12, 135),
-//                    flatChestPress = exerciseCreator.createWeightExercise(3, 12, 140),
-//                    chestFlies = exerciseCreator.createWeightExercise(3, 12, 155),
-//                    bicepCurls = exerciseCreator.createWeightExercise(3, 15, 10),
-//                    hammerCurls = exerciseCreator.createWeightExercise(3, 12, 10),
-//                    barbellRollout = exerciseCreator.createBodyExercise(3, 20),
-//                    flutterKick = exerciseCreator.createBodyExercise(3, 20),
-//                    starPlank = exerciseCreator.createBodyExercise(3, 60)
-//            ),
-//            dayTwo = dejanCreator.createDayTwo(
-//                    elliptical = 60
-//            ),
-//            dayThree = dejanCreator.createDayThree(
-//                    deadlift = exerciseCreator.createWeightExercise(3, 10, 320),
-//                    wideGripPullDown = exerciseCreator.createWeightExercise(3, 12, 120),
-//                    seatedCableRow = exerciseCreator.createWeightExercise(3, 12, 140),
-//                    hyperExtension = exerciseCreator.createWeightExercise(3, 10, 185),
-//                    tricepExtension = exerciseCreator.createWeightExercise(3, 12, 140),
-//                    dips = exerciseCreator.createWeightExercise(3, 12, 160),
-//                    dumbbellKickback = exerciseCreator.createWeightExercise(3, 10, 100),
-//                    skullcrushers = exerciseCreator.createWeightExercise(3, 10, 100),
-//                    legRaise = exerciseCreator.createBodyExercise(3, 20),
-//                    plank = exerciseCreator.createBodyExercise(3, 60),
-//                    cableCrunch = exerciseCreator.createWeightExercise(3, 15, 90)
-//            ),
-//            dayFour = dejanCreator.createDayFour(
-//                    arcTrainer = 60
-//            ),
-//            dayFive = dejanCreator.createDayFive(
-//                    squats = exerciseCreator.createWeightExercise(3, 12, 390),
-//                    romanianDeadlift = exerciseCreator.createWeightExercise(3, 12, 300),
-//                    pistolSquats = exerciseCreator.createWeightExercise(3, 10, 250),
-//                    lunges = exerciseCreator.createWeightExercise(3, 12, 180),
-//                    cableFrontRaise = exerciseCreator.createWeightExercise(3, 12, 60),
-//                    pushPress = exerciseCreator.createWeightExercise(3, 12, 100),
-//                    dumbbellLateralRaise = exerciseCreator.createWeightExercise(3, 12, 100),
-//                    hangingLegRaise = exerciseCreator.createBodyExercise(3, 20),
-//                    bicycles = exerciseCreator.createBodyExercise(3, 20),
-//                    russianTwists = exerciseCreator.createBodyExercise(3, 20)
-//            )
-//        )
+    private fun getSets(): ArrayList<EditText> {
+        return arrayListOf<EditText>(newDejanWorkoutInclineSets, newDejanWorkoutFlatSets, newDejanWorkoutFliesSets, newDejanWorkoutBicepCurlsSets, newDejanWorkoutHammerCurlsSets, newDejanWorkoutBarbellCurlsSets, newDejanWorkoutFlutterSets, newDejanWorkoutStarSets)
+    }
+
+    private fun getReps(): ArrayList<EditText> {
+        return arrayListOf<EditText>(newDejanWorkoutInclineReps, newDejanWorkoutFlatReps, newDejanWorkoutFliesReps, newDejanWorkoutBicepCurlsReps, newDejanWorkoutHammerCurlsReps, newDejanWorkoutBarbellCurlsReps, newDejanWorkoutFlutterReps, newDejanWorkoutStarReps)
+    }
+
+    private fun getAmounts(): ArrayList<EditText> {
+        return arrayListOf<EditText>(newDejanWorkoutInclineAmount, newDejanWorkoutFlatAmount, newDejanWorkoutFliesAmount, newDejanWorkoutBicepCurlsAmount, newDejanWorkoutHammerCurlsAmount)
+    }
+
+    override fun getInclineBenchPress(): Array<String> {
+        return arrayOf(newDejanWorkoutInclineSets.text.toString(), newDejanWorkoutInclineReps.text.toString(), newDejanWorkoutInclineAmount.text.toString())
+    }
+
+    override fun getFlatBenchPress(): Array<String> {
+        return arrayOf(newDejanWorkoutFlatSets.text.toString(), newDejanWorkoutFlatReps.text.toString(), newDejanWorkoutFlatAmount.text.toString())
+    }
+
+    override fun getChestFlies(): Array<String> {
+        return arrayOf(newDejanWorkoutFliesSets.text.toString(), newDejanWorkoutFliesReps.text.toString(), newDejanWorkoutFliesAmount.text.toString())
+    }
+
+    override fun getBicepCurls(): Array<String> {
+        return arrayOf(newDejanWorkoutBicepCurlsSets.text.toString(), newDejanWorkoutBicepCurlsReps.text.toString(), newDejanWorkoutBicepCurlsAmount.text.toString())
+    }
+
+    override fun getHammerCurls(): Array<String> {
+        return arrayOf(newDejanWorkoutHammerCurlsSets.text.toString(), newDejanWorkoutHammerCurlsReps.text.toString(), newDejanWorkoutHammerCurlsAmount.text.toString())
+    }
+
+    override fun getBarbellRollout(): Array<String> {
+        return arrayOf(newDejanWorkoutBarbellCurlsSets.text.toString(), newDejanWorkoutBarbellCurlsReps.text.toString())
+    }
+
+    override fun getFlutterKick(): Array<String> {
+        return arrayOf(newDejanWorkoutFlutterSets.text.toString(), newDejanWorkoutFlutterReps.text.toString())
+    }
+
+    override fun getStarPlank(): Array<String> {
+        return arrayOf(newDejanWorkoutStarSets.text.toString(), newDejanWorkoutStarReps.text.toString())
+    }
+
+    override fun isFormValid(): Boolean {
+        var invalid = 0
+
+        for(set in getSets()) {
+            context?.let { context ->
+                context.resources?.let { resources ->
+                    if(set.text.isEmpty() || set.text.length > 2) {
+                        set.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.baseMaroon, null))
+                        invalid++
+                    } else {
+                        set.backgroundTintList = defaultLabelColor
+                    }
+                }
+            }
+        }
+
+        for(rep in getReps()) {
+            context?.let { context ->
+                context.resources?.let { resources ->
+                    if(rep.text.isEmpty() || rep.text.length > 2) {
+                        rep.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.baseMaroon, null))
+                        invalid++
+                    } else {
+                        rep.backgroundTintList = defaultLabelColor
+                    }
+                }
+            }
+        }
+
+        for(amount in getAmounts()) {
+            context?.let { context ->
+                context.resources?.let { resources ->
+                    if(amount.text.isEmpty() || amount.text.length > 3) {
+                        amount.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.baseMaroon, null))
+                        invalid++
+                    } else {
+                        amount.backgroundTintList = defaultLabelColor
+                    }
+                }
+            }
+        }
+
+        return invalid == 0
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

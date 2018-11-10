@@ -448,6 +448,7 @@
             android:inputType="number"
             android:textAlignment="center"
             android:textSize="14sp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/newDejanWorkoutBarbellCurlLabel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/newDejanWorkoutBarbellCurlLabel" />

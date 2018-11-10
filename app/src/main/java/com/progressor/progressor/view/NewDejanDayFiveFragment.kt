@@ -5,16 +5,12 @@ import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.presenter.NewDejanDayFivePresenter
-import com.progressor.progressor.service.DejanCreator
-import com.progressor.progressor.service.ExerciseCreator
 import kotlinx.android.synthetic.main.layout_new_dejan_day_five.*
 import javax.inject.Inject
 
 class NewDejanDayFiveFragment : BaseFragment(), NewDejanDayFivePresenter.View {
     @Inject
     lateinit var presenter: NewDejanDayFivePresenter
-    private var exerciseCreator = ExerciseCreator()
-    private var dejanCreator = DejanCreator()
 
     lateinit var currentView: View
 
