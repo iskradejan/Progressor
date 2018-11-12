@@ -14,6 +14,11 @@ class FirebaseConstant {
         const val TYPE_PASSWORD_RESET = "TYPE_PASSWORD_RESET"
         const val TYPE_EMAIL_VERIFICATION = "TYPE_EMAIL_VERIFICATION"
         const val TYPE_NEW_BODY = "TYPE_NEW_BODY"
+
         const val TYPE_DEJAN_DAY_ONE = "TYPE_DEJAN_DAY_ONE"
+        const val TYPE_DEJAN_DAY_TWO = "TYPE_DEJAN_DAY_TWO"
+        const val TYPE_DEJAN_DAY_THREE = "TYPE_DEJAN_DAY_THREE"
+        const val TYPE_DEJAN_DAY_FOUR = "TYPE_DEJAN_DAY_FOUR"
+        const val TYPE_DEJAN_DAY_FIVE = "TYPE_DEJAN_DAY_FIVE"
     }
 }

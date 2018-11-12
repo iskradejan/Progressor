@@ -232,11 +232,10 @@
             app:layout_constraintTop_toTopOf="@+id/newDejanDayTwoEllipticalLabel" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/newDejanDayTwoSave"
+            android:id="@+id/newDejanDayTwoSaveButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="40dp"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="20dp"
             android:background="@color/baseMaroon"

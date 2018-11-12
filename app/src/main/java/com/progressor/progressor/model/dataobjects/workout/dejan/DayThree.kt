@@ -1,15 +1,15 @@
 package com.progressor.progressor.model.dataobjects.workout.dejan
 
 data class DayThree (
-    val deadlift: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val wideGripPullDown: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val seatedCableRow: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val hyperExtension: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val tricepExtension: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val dips: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val dumbbellKickback: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val skullcrushers: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val legRaise: LinkedHashMap<Int, Int>,
-    val plank: LinkedHashMap<Int, Int>,
-    val cableCrunch: LinkedHashMap<HashMap<Int, Int>, Int>
+    val deadlift: LinkedHashMap<HashMap<String, String>, String>,
+    val wideGripPullDown: LinkedHashMap<HashMap<String, String>, String>,
+    val seatedCableRow: LinkedHashMap<HashMap<String, String>, String>,
+    val hyperExtension: LinkedHashMap<HashMap<String, String>, String>,
+    val tricepExtension: LinkedHashMap<HashMap<String, String>, String>,
+    val dips: LinkedHashMap<HashMap<String, String>, String>,
+    val dumbbellKickback: LinkedHashMap<HashMap<String, String>, String>,
+    val skullcrushers: LinkedHashMap<HashMap<String, String>, String>,
+    val legRaise: LinkedHashMap<String, String>,
+    val plank: LinkedHashMap<String, String>,
+    val cableCrunch: LinkedHashMap<HashMap<String, String>, String>
 )

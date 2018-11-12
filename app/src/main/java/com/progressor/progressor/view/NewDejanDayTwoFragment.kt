@@ -27,6 +27,17 @@ class NewDejanDayTwoFragment : BaseFragment(), NewDejanDayTwoPresenter.View {
         newDejanWorkoutDayFive.setOnClickListener {
             fragmentNavigator.to(NewDejanDayFiveFragment())
         }
+        newDejanDayTwoSaveButton.setOnClickListener {
+            presenter.save()
+        }
+    }
+
+    override fun getElliptical(): String {
+        return newDejanDayTwoEllipticalAmount.text.toString()
+    }
+
+    override fun isFormValid(): Boolean {
+        return newDejanDayTwoEllipticalAmount.text.toString().isNotEmpty() && newDejanDayTwoEllipticalAmount.text.toString().length < 4
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

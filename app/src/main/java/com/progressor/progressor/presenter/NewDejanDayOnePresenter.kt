@@ -8,6 +8,7 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.NewDejanDayOneFragment
+import java.time.LocalDateTime
 import javax.inject.Inject
 
 class NewDejanDayOnePresenter @Inject constructor(
@@ -35,8 +36,6 @@ class NewDejanDayOnePresenter @Inject constructor(
 
     fun save() {
         if (view.isFormValid()) {
-            println("valid valid valid")
-
             val dayOne = DayOne(
                     inclineChestPress = view.getInclineBenchPress(),
                     flatChestPress = view.getFlatBenchPress(),
@@ -46,7 +45,7 @@ class NewDejanDayOnePresenter @Inject constructor(
                     barbellRollout = view.getBarbellRollout(),
                     flutterKick = view.getFlutterKick(),
                     starPlank = view.getStarPlank(),
-                    createDate = "date"
+                    createDate = LocalDateTime.now().toString()
             )
 
             userManager.user?.workout?.dejan?.dayOneList?.let {
@@ -62,7 +61,6 @@ class NewDejanDayOnePresenter @Inject constructor(
                     userManager.addUser(uid, user, FirebaseConstant.TYPE_DEJAN_DAY_ONE)
                 }
             }
-            println("valid valid valid")
         }
     }
 }

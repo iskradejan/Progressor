@@ -1,14 +1,14 @@
 package com.progressor.progressor.model.dataobjects.workout.dejan
 
 data class DayFive (
-    val squats: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val romanianDeadlift: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val pistolSquats: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val lunges: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val cableFrontRaise: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val pushPress: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val dumbbellLateralRaise: LinkedHashMap<HashMap<Int, Int>, Int>,
-    val hangingLegRaise: LinkedHashMap<Int, Int>,
-    val bicycles: LinkedHashMap<Int, Int>,
-    val russianTwists: LinkedHashMap<Int, Int>
+    val squats: LinkedHashMap<HashMap<String, String>, String>,
+    val romanianDeadlift: LinkedHashMap<HashMap<String, String>, String>,
+    val pistolSquats: LinkedHashMap<HashMap<String, String>, String>,
+    val lunges: LinkedHashMap<HashMap<String, String>, String>,
+    val cableFrontRaise: LinkedHashMap<HashMap<String, String>, String>,
+    val pushPress: LinkedHashMap<HashMap<String, String>, String>,
+    val dumbbellLateralRaise: LinkedHashMap<HashMap<String, String>, String>,
+    val hangingLegRaise: LinkedHashMap<String, String>,
+    val bicycles: LinkedHashMap<String, String>,
+    val russianTwists: LinkedHashMap<String, String>
 )

@@ -7,7 +7,7 @@ import android.widget.EditText
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.presenter.NewDejanDayOnePresenter
-import kotlinx.android.synthetic.main.layout_new_dejan_workout.*
+import kotlinx.android.synthetic.main.layout_new_dejan_day_one.*
 import javax.inject.Inject
 
 class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
@@ -144,6 +144,6 @@ class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
     }
 
     override fun getFragmentLayout(): Int {
-        return R.layout.layout_new_dejan_workout
+        return R.layout.layout_new_dejan_day_one
     }
 }
