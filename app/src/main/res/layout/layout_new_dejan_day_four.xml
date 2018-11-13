@@ -232,7 +232,7 @@
             app:layout_constraintTop_toTopOf="@+id/newDejanDayFourArcTrainerLabel" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/newDejanDayFourSave"
+            android:id="@+id/newDejanDayFourSaveButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="50dp"
