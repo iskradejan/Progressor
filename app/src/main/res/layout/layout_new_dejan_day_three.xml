@@ -681,13 +681,13 @@
             android:inputType="number"
             android:textAlignment="center"
             android:textSize="14sp"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/newDejanDayThreeCableCrunchLabel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/newDejanDayThreeCableCrunchLabel" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/newDejanDayThreeSave"
+            android:id="@+id/newDejanDayThreeSaveButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginStart="50dp"

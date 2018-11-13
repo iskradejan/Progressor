@@ -1,15 +1,15 @@
 package com.progressor.progressor.model.dataobjects.workout.dejan
 
 data class DayThree (
-    val deadlift: LinkedHashMap<HashMap<String, String>, String>,
-    val wideGripPullDown: LinkedHashMap<HashMap<String, String>, String>,
-    val seatedCableRow: LinkedHashMap<HashMap<String, String>, String>,
-    val hyperExtension: LinkedHashMap<HashMap<String, String>, String>,
-    val tricepExtension: LinkedHashMap<HashMap<String, String>, String>,
-    val dips: LinkedHashMap<HashMap<String, String>, String>,
-    val dumbbellKickback: LinkedHashMap<HashMap<String, String>, String>,
-    val skullcrushers: LinkedHashMap<HashMap<String, String>, String>,
-    val legRaise: LinkedHashMap<String, String>,
-    val plank: LinkedHashMap<String, String>,
-    val cableCrunch: LinkedHashMap<HashMap<String, String>, String>
+    val deadlift: List<String>,
+    val wideGripPullDown: List<String>,
+    val seatedCableRow: List<String>,
+    val hyperExtension: List<String>,
+    val tricepExtension: List<String>,
+    val dips: List<String>,
+    val dumbbellKickback: List<String>,
+    val skullcrushers: List<String>,
+    val legRaise: List<String>,
+    val plank: List<String>,
+    val cableCrunch: List<String>
 )

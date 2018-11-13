@@ -1,5 +1,6 @@
 package com.progressor.progressor.view
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import com.progressor.progressor.R
@@ -11,7 +12,7 @@ import javax.inject.Inject
 class NewDejanDayTwoFragment : BaseFragment(), NewDejanDayTwoPresenter.View {
     @Inject
     lateinit var presenter: NewDejanDayTwoPresenter
-
+    lateinit var defaultLabelColor: ColorStateList
     lateinit var currentView: View
 
     private fun initialize() {
@@ -37,7 +38,17 @@ class NewDejanDayTwoFragment : BaseFragment(), NewDejanDayTwoPresenter.View {
     }
 
     override fun isFormValid(): Boolean {
-        return newDejanDayTwoEllipticalAmount.text.toString().isNotEmpty() && newDejanDayTwoEllipticalAmount.text.toString().length < 4
+        var valid = true
+
+        if (newDejanDayTwoEllipticalAmount.text.toString().isEmpty() && newDejanDayTwoEllipticalAmount.text.toString().length > 4) {
+            newDejanDayTwoEllipticalAmount.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.baseMaroon, null))
+            valid = false
+        } else {
+            newDejanDayTwoEllipticalAmount.backgroundTintList = defaultLabelColor
+            valid = true
+        }
+
+        return valid
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
