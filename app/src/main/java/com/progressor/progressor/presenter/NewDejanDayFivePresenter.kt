@@ -7,6 +7,7 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.NewDejanDayFiveFragment
+import java.time.LocalDateTime
 import javax.inject.Inject
 
 class NewDejanDayFivePresenter @Inject constructor(
@@ -48,7 +49,8 @@ class NewDejanDayFivePresenter @Inject constructor(
                     cableFrontRaise = view.getCableFrontRaise(),
                     lunges = view.getLunges(),
                     pistolSquats = view.getPistolSquats(),
-                    romanianDeadlift = view.getRomanianDeadlifts()
+                    romanianDeadlift = view.getRomanianDeadlifts(),
+                    createDate = LocalDateTime.now().toString()
             )
 
             userManager.user?.workout?.dejan?.dayFiveList?.let {

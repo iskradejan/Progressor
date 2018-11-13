@@ -4,9 +4,6 @@ import android.os.Bundle
 import android.view.View
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
-import com.progressor.progressor.model.constant.UserConstant
-import com.progressor.progressor.model.dataobjects.workout.dejan.Dejan
-import com.progressor.progressor.model.dataobjects.workout.dejan.Workout
 import com.progressor.progressor.presenter.DejanWorkoutPresenter
 import kotlinx.android.synthetic.main.layout_dejan_workout.*
 import javax.inject.Inject
@@ -19,12 +16,7 @@ class DejanWorkoutFragment : BaseFragment(), DejanWorkoutPresenter.View {
 
     private fun initialize() {
         dejanWorkoutStartButton.setOnClickListener {
-            if (userManager.user?.workout == null) {
-                userManager.user?.workout = Workout(Dejan())
-            } else if(userManager.user?.workout?.dejan == null) {
-                userManager.user?.workout?.dejan = Dejan()
-            }
-
+            presenter.manageWorkout()
             fragmentNavigator.to(NewDejanDayOneFragment())
         }
     }

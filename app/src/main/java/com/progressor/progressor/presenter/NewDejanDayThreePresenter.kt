@@ -7,6 +7,7 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.NewDejanDayThreeFragment
+import java.time.LocalDateTime
 import javax.inject.Inject
 
 class NewDejanDayThreePresenter @Inject constructor(
@@ -50,7 +51,8 @@ class NewDejanDayThreePresenter @Inject constructor(
                     legRaise = view.getLegRaise(),
                     hyperExtension = view.getHyperExtension(),
                     seatedCableRow = view.getSeatedCableRow(),
-                    wideGripPullDown = view.getWideGripPullDown()
+                    wideGripPullDown = view.getWideGripPullDown(),
+                    createDate = LocalDateTime.now().toString()
             )
 
             userManager.user?.workout?.dejan?.dayThreeList?.let {

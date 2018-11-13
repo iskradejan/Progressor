@@ -8,6 +8,7 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.NewDejanDayTwoFragment
+import java.time.LocalDateTime
 import javax.inject.Inject
 
 class NewDejanDayTwoPresenter @Inject constructor(
@@ -30,7 +31,10 @@ class NewDejanDayTwoPresenter @Inject constructor(
 
     fun save() {
         if (view.isFormValid()) {
-            val dayTwo = DayTwo(elliptical = view.getElliptical())
+            val dayTwo = DayTwo(
+                    elliptical = view.getElliptical(),
+                    createDate = LocalDateTime.now().toString()
+            )
 
             userManager.user?.workout?.dejan?.dayTwoList?.let {
                 it.add(dayTwo)

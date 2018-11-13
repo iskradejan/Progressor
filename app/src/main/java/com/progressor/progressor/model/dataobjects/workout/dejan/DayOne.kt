@@ -9,5 +9,5 @@ data class DayOne (
     val barbellRollout: List<String>,
     val flutterKick: List<String>,
     val starPlank: List<String>,
-    val createDate: String = ""
+    val createDate: String
 )

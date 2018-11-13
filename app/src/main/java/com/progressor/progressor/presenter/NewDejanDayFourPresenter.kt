@@ -7,6 +7,7 @@ import com.progressor.progressor.service.AuthenticationManager
 import com.progressor.progressor.service.FragmentNavigator
 import com.progressor.progressor.service.UserManager
 import com.progressor.progressor.view.NewDejanDayFourFragment
+import java.time.LocalDateTime
 import javax.inject.Inject
 
 class NewDejanDayFourPresenter @Inject constructor(
@@ -29,7 +30,10 @@ class NewDejanDayFourPresenter @Inject constructor(
 
     fun save() {
         if (view.isFormValid()) {
-            val dayFour = DayFour(arcTrainer = view.getArcTrainer())
+            val dayFour = DayFour(
+                    arcTrainer = view.getArcTrainer(),
+                    createDate = LocalDateTime.now().toString()
+            )
 
             userManager.user?.workout?.dejan?.dayFourList?.let {
                 it.add(dayFour)

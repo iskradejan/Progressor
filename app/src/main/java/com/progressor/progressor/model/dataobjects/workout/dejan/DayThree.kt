@@ -11,5 +11,6 @@ data class DayThree (
     val skullcrushers: List<String>,
     val legRaise: List<String>,
     val plank: List<String>,
-    val cableCrunch: List<String>
+    val cableCrunch: List<String>,
+    val createDate: String
 )

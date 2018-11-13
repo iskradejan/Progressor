@@ -155,6 +155,11 @@ class ProfileCreateFragment : BaseFragment(), ProfileCreatePresenter.View {
         return valid
     }
 
+    override fun onStop() {
+        super.onStop()
+        RxBus.unsubscribe(this)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         injectDependencies()

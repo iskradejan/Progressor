@@ -10,5 +10,6 @@ data class DayFive (
     val dumbbellLateralRaise: List<String>,
     val hangingLegRaise: List<String>,
     val bicycles: List<String>,
-    val russianTwists: List<String>
+    val russianTwists: List<String>,
+    val createDate: String
 )
