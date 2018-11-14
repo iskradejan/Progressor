@@ -1,0 +1,463 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:theme="@android:style/Theme.Dialog">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <TextView
+        android:id="@+id/dayOneHistoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Day One History"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBenchPress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:text="Incline Bench Press"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBenchPressAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryBenchPressReps"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBenchPressReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBenchPressSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Flat Bench Press"
+        app:layout_constraintStart_toStartOf="@+id/dejanOneHistoryBenchPress"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBenchPress" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlatSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBenchPressSets" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlatReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x2"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBenchPressReps" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlatAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBenchPressAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Chest Flies"
+        app:layout_constraintStart_toStartOf="@+id/dejanOneHistoryFlat"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlat" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFliesSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlatSets" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFliesReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x3"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlatReps" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFliesAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlatAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBicepCurls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Bicep Curls"
+        app:layout_constraintStart_toStartOf="@+id/dejanOneHistoryFlat"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlies" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBicepCurlsSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFliesSets" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBicepCurlsReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x4"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFliesReps" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBicepCurlsAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFliesAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanOneHistoryHammerCurls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hammer Curls"
+        app:layout_constraintStart_toStartOf="@+id/dejanOneHistoryFlat"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBicepCurls" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryHammerCurlsSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBicepCurlsSets" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryHammerCurlsReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x5"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBicepCurlsReps" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryHammerCurlsAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBicepCurlsAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBarbellRollout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Barbell Rollout"
+        app:layout_constraintStart_toStartOf="@+id/dejanOneHistoryFlat"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryHammerCurls" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBarbellRolloutSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryHammerCurlsSets" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBarbellRolloutReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x6"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryHammerCurlsReps" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryBarbellRolloutAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryHammerCurlsAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlutterKick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Flutter Kick"
+        app:layout_constraintStart_toStartOf="@+id/dejanOneHistoryFlat"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBarbellRollout" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlutterKickSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBarbellRolloutSets" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlutterKickReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBarbellRolloutReps" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryFlutterKickAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryBarbellRolloutAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanOneHistoryStarPlank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Star Plank"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/dejanOneHistoryFlat"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlutterKick" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryStarPlankSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlutterKickSets" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryStarPlankReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x8"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlutterKickReps" />
+
+    <TextView
+        android:id="@+id/dejanOneHistoryStarPlankAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryFlutterKickAmount" />
+
+    <TextView
+        android:id="@+id/x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryBenchPressReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryBenchPressSets" />
+
+    <TextView
+        android:id="@+id/x2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryFlatReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlatSets" />
+
+    <TextView
+        android:id="@+id/x3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryFliesReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFliesSets" />
+
+    <TextView
+        android:id="@+id/x4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryBicepCurlsReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryBicepCurlsSets" />
+
+    <TextView
+        android:id="@+id/x5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryHammerCurlsReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryHammerCurlsSets" />
+
+    <TextView
+        android:id="@+id/x6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryBarbellRolloutReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryBarbellRolloutSets" />
+
+    <TextView
+        android:id="@+id/x7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryFlutterKickReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryFlutterKickSets" />
+
+    <TextView
+        android:id="@+id/x8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanOneHistoryStarPlankReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryStarPlankSets" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="2019-05-05"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/dayOneHistoryTitle"
+        app:layout_constraintStart_toStartOf="@+id/dayOneHistoryTitle"
+        app:layout_constraintTop_toBottomOf="@+id/dayOneHistoryTitle" />
+</android.support.constraint.ConstraintLayout>

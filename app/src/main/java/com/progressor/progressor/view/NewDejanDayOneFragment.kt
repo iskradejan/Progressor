@@ -1,5 +1,6 @@
 package com.progressor.progressor.view
 
+import android.app.Dialog
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
@@ -35,6 +36,17 @@ class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
                             Toast.makeText(context, "Trouble saving. Try again", Toast.LENGTH_SHORT).show()
                         }
                     }
+                }
+            }
+        }
+
+        if(presenter.hasHistory()) {
+            newDejanOneHistory.visibility = View.VISIBLE
+            newDejanOneHistory.setOnClickListener {
+                context?.let {
+                    val dialog = Dialog(it);
+                    dialog.setContentView(R.layout.layout_day_one_history);
+                    dialog.show()
                 }
             }
         }

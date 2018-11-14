@@ -1,5 +1,6 @@
 package com.progressor.progressor.presenter
 
+import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.model.dataobjects.workout.dejan.Dejan
 import com.progressor.progressor.model.dataobjects.workout.dejan.Workout
 import com.progressor.progressor.service.AuthenticationManager
@@ -23,7 +24,7 @@ class DejanWorkoutPresenter @Inject constructor(
 
     fun manageWorkout() {
         if (userManager.user?.workout == null) {
-            userManager.user?.workout = Workout(Dejan())
+            userManager.user?.workout = Workout(Dejan(), active = UserConstant.WORKOUT_DEJAN)
         } else if(userManager.user?.workout?.dejan == null) {
             userManager.user?.workout?.dejan = Dejan()
         }
