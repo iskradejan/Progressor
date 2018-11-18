@@ -21,11 +21,12 @@
             android:id="@+id/dashboardWorkoutImage"
             android:layout_width="225dp"
             android:layout_height="225dp"
-            android:background="@drawable/lion"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></android.support.constraint.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout

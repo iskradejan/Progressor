@@ -48,6 +48,10 @@ class DashboardPresenter @Inject constructor(
         return false
     }
 
+    fun currentWorkout(): Int {
+        return userManager.user?.workout?.active ?: 0
+    }
+
     private fun isEligible(localDateTime: String, months: Long): Boolean {
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
         val formatDateTime = LocalDateTime.parse(localDateTime, formatter)

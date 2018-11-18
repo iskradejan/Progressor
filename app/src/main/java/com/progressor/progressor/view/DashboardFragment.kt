@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.view.View
 import com.progressor.progressor.presenter.DashboardPresenter
 import com.progressor.progressor.R
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.layout_dashboard.*
 import javax.inject.Inject
 import android.support.v4.content.ContextCompat
 import android.widget.Toast
+import com.progressor.progressor.model.constant.UserConstant
 
 class DashboardFragment : BaseFragment(), DashboardPresenter.View {
     @Inject
@@ -20,9 +22,23 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
     private var currentHex = ""
 
     private fun initialize() {
+        var workoutFragment : Fragment? = null;
+
+        when(presenter.currentWorkout()) {
+            UserConstant.WORKOUT_DEJAN -> {
+                dashboardWorkoutImage.background = context?.getDrawable(R.drawable.lion)
+                workoutFragment = NewDejanDayOneFragment()
+            }
+        }
+
+        dashboardWorkoutContainer.setOnClickListener {
+            workoutFragment?.let {
+                fragmentNavigator.to(it)
+            }
+        }
+
         val body = presenter.latestBody()
-        dashboardBodyPieChart.setValues(body.musclePercentage ?: 0, body.fatPercentage
-                ?: 0, resources.getInteger(R.integer.bonePercent))
+        dashboardBodyPieChart.setValues(body.musclePercentage ?: 0, body.fatPercentage ?: 0, resources.getInteger(R.integer.bonePercent))
 
         body.musclePercentage?.let {
             dashboardBodyPieChartText.text = String.format("%d%%", it)
