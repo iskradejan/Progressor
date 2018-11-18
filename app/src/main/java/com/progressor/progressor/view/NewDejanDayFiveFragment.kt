@@ -1,5 +1,6 @@
 package com.progressor.progressor.view
 
+import android.app.AlertDialog
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,8 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.presenter.NewDejanDayFivePresenter
 import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.service.dateTimeStampToDisplay
+import kotlinx.android.synthetic.main.layout_day_five_history.*
 import kotlinx.android.synthetic.main.layout_new_dejan_day_five.*
 import javax.inject.Inject
 
@@ -27,12 +30,70 @@ class NewDejanDayFiveFragment : BaseFragment(), NewDejanDayFivePresenter.View {
                     true -> {
                         context.let { context ->
                             Toast.makeText(context, "Saved!", Toast.LENGTH_SHORT).show()
+                            resetForm()
                         }
                     }
                     false -> {
                         context.let { context ->
                             Toast.makeText(context, "Trouble saving. Try again", Toast.LENGTH_SHORT).show()
                         }
+                    }
+                }
+            }
+        }
+
+        if(presenter.hasHistory()) {
+            newDejanFiveHistory.visibility = View.VISIBLE
+            newDejanFiveHistory.setOnClickListener {
+                context?.let {
+                    val inflater = layoutInflater
+                    val alertLayout = inflater.inflate(R.layout.layout_day_five_history, null)
+                    val lastEntry = userManager.user?.workout?.dejan?.dayFiveList?.last()
+                    val alert = AlertDialog.Builder(context)
+                    alert.setView(alertLayout)
+                    val dialog = alert.create()
+
+                    dialog.show()
+
+                    dialog.dejanFiveHistorySquatSets.text = lastEntry?.squats?.get(0) ?: "--"
+                    dialog.dejanFiveHistorySquatReps.text = lastEntry?.squats?.get(1) ?: "--"
+                    dialog.dejanFiveHistorySquatAmount.text = lastEntry?.squats?.get(2) ?: "--"
+
+                    dialog.dejanFiveHistoryRomanianDeadliftSets.text = lastEntry?.romanianDeadlift?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryRomanianDeadliftReps.text = lastEntry?.romanianDeadlift?.get(1) ?: "--"
+                    dialog.dejanFiveHistoryRomanianDeadliftAmount.text = lastEntry?.romanianDeadlift?.get(2) ?: "--"
+
+                    dialog.dejanFiveHistoryPistolSquatSets.text = lastEntry?.pistolSquats?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryPistolSquatReps.text = lastEntry?.pistolSquats?.get(1) ?: "--"
+                    dialog.dejanFiveHistoryPistolSquatAmount.text = lastEntry?.pistolSquats?.get(2) ?: "--"
+
+                    dialog.dejanFiveHistoryLungesSets.text = lastEntry?.lunges?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryLungesReps.text = lastEntry?.lunges?.get(1) ?: "--"
+                    dialog.dejanFiveHistoryLungesAmount.text = lastEntry?.lunges?.get(2) ?: "--"
+
+                    dialog.dejanFiveHistoryCableFrontRaiseSets.text = lastEntry?.cableFrontRaise?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryCableFrontRaiseReps.text = lastEntry?.cableFrontRaise?.get(1) ?: "--"
+                    dialog.dejanFiveHistoryCableFrontRaiseAmount.text = lastEntry?.cableFrontRaise?.get(2) ?: "--"
+
+                    dialog.dejanFiveHistoryPushPressSets.text = lastEntry?.pushPress?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryPushPressReps.text = lastEntry?.pushPress?.get(1) ?: "--"
+                    dialog.dejanFiveHistoryPushPressAmount.text = lastEntry?.pushPress?.get(2) ?: "--"
+
+                    dialog.dejanFiveHistoryDumbbellLateralRaiseSets.text = lastEntry?.dumbbellLateralRaise?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryDumbbellLateralRaiseReps.text = lastEntry?.dumbbellLateralRaise?.get(1) ?: "--"
+                    dialog.dejanFiveHistoryDumbbellLateralRaiseAmount.text = lastEntry?.dumbbellLateralRaise?.get(2) ?: "--"
+
+                    dialog.dejanFiveHistoryHangingLegRaiseSets.text = lastEntry?.hangingLegRaise?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryHangingLegRaiseReps.text = lastEntry?.hangingLegRaise?.get(1) ?: "--"
+
+                    dialog.dejanFiveHistoryBicyclesSets.text = lastEntry?.bicycles?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryBicyclesReps.text = lastEntry?.bicycles?.get(1) ?: "--"
+
+                    dialog.dejanFiveHistoryRussianTwistSets.text = lastEntry?.russianTwists?.get(0) ?: "--"
+                    dialog.dejanFiveHistoryRussianTwistReps.text = lastEntry?.russianTwists?.get(1) ?: "--"
+
+                    lastEntry?.let {
+                        dialog.dejanFiveHistoryDate.text = dateTimeStampToDisplay(it.createDate)
                     }
                 }
             }
@@ -54,6 +115,20 @@ class NewDejanDayFiveFragment : BaseFragment(), NewDejanDayFivePresenter.View {
         }
         newDejanDayFiveSaveButton.setOnClickListener {
             presenter.save()
+        }
+    }
+
+    private fun resetForm() {
+        for(set in getSets()) {
+            set.setText("")
+        }
+
+        for(rep in getReps()) {
+            rep.setText("")
+        }
+
+        for(amount in getAmounts()) {
+            amount.setText("")
         }
     }
 

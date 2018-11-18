@@ -70,4 +70,16 @@ class NewDejanDayThreePresenter @Inject constructor(
             }
         }
     }
+
+    fun hasHistory(): Boolean {
+        if(userManager.user?.workout?.dejan?.dayThreeList == null) {
+            return false
+        }
+
+        userManager.user?.workout?.dejan?.dayThreeList?.let {
+            return it.isNotEmpty()
+        }
+
+        return true
+    }
 }

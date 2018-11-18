@@ -10,6 +10,7 @@ import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.UserConstant
 import com.progressor.progressor.presenter.BodyHistoryPresenter
+import com.progressor.progressor.service.dateTimeStampToDisplay
 import kotlinx.android.synthetic.main.layout_body_history.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -48,7 +49,7 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
                                 active = false
                             }
 
-                            dateLabels[index].text = reformatDate(list.get(index).createDate)
+                            dateLabels[index].text = dateTimeStampToDisplay(list.get(index).createDate)
 
                             baseValue.forEach { barKey, barMood ->
                                 var barWidth = 0
@@ -206,13 +207,6 @@ class BodyHistoryFragment : BaseFragment(), BodyHistoryPresenter.View {
         barContainerMap.put(bodyHistoryBodyContainer8, bodyContainerMap8)
 
         return barContainerMap
-    }
-
-    private fun reformatDate(localDateTime: String): String {
-        val fromFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", Locale.US)
-        val toFormat = SimpleDateFormat("MM-dd-yyyy", Locale.US)
-        val date = fromFormat.parse(localDateTime)
-        return toFormat.format(date)
     }
 
     override fun totalBars(): Int {

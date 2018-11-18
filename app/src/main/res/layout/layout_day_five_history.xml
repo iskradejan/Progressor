@@ -1,0 +1,567 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:theme="@android:style/Theme.Dialog">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <TextView
+        android:id="@+id/dayFiveHistoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Day Five History"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistorySquat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Squat"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistorySquatAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistorySquatReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistorySquatReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistorySquatSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRomanianDeadlift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Romanian Deadlift"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryDumbbellLateralRaise"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistorySquat" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRomanianDeadliftSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistorySquatSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x2"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistorySquatReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRomanianDeadliftAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistorySquatAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPistolSquat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Pistol Squat"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryRomanianDeadlift" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPistolSquatSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryRomanianDeadliftSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPistolSquatReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x3"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryRomanianDeadliftReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPistolSquatAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryRomanianDeadliftAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryLunges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Lunges"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPistolSquat" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryLungesSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPistolSquatSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryLungesReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x4"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPistolSquatReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryLungesAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPistolSquatAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryCableFrontRaise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Cable Front Raise"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryLunges" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryCableFrontRaiseSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryLungesSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryCableFrontRaiseReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x5"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryLungesReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryCableFrontRaiseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryLungesAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPushPress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Push Press"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryCableFrontRaise" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPushPressSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryCableFrontRaiseSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPushPressReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x6"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryCableFrontRaiseReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryPushPressAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryCableFrontRaiseAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryDumbbellLateralRaise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Dumbbell Lateral Raise"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPushPress" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryDumbbellLateralRaiseSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPushPressSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryDumbbellLateralRaiseReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPushPressReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryDumbbellLateralRaiseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryPushPressAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryHangingLegRaise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hanging Leg Raise"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDumbbellLateralRaise" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryHangingLegRaiseSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDumbbellLateralRaiseSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryHangingLegRaiseReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x8"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDumbbellLateralRaiseReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryHangingLegRaiseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryDumbbellLateralRaiseAmount" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryBicycles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Bicycles"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryHangingLegRaise" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryBicyclesSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryHangingLegRaiseSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryBicyclesReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryHangingLegRaiseReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryBicyclesAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryHangingLegRaiseAmount" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRussianTwist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Russian Twist"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/dejanFiveHistoryRomanianDeadlift"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryBicycles" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRussianTwistSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryBicyclesSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRussianTwistReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryBicyclesReps" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryRussianTwistAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanFiveHistoryBicyclesAmount" />
+
+    <TextView
+        android:id="@+id/x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistorySquatReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistorySquatSets" />
+
+    <TextView
+        android:id="@+id/x2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryRomanianDeadliftReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRomanianDeadliftSets" />
+
+    <TextView
+        android:id="@+id/x3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryPistolSquatReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryPistolSquatSets" />
+
+    <TextView
+        android:id="@+id/x4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryLungesReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryLungesSets" />
+
+    <TextView
+        android:id="@+id/x5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryCableFrontRaiseReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryCableFrontRaiseSets" />
+
+    <TextView
+        android:id="@+id/x6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryPushPressReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryPushPressSets" />
+
+    <TextView
+        android:id="@+id/x7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryDumbbellLateralRaiseReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryDumbbellLateralRaiseSets" />
+
+    <TextView
+        android:id="@+id/x8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryHangingLegRaiseReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryHangingLegRaiseSets" />
+
+    <TextView
+        android:id="@+id/x9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryBicyclesReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryBicyclesSets" />
+
+    <TextView
+        android:id="@+id/x10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanFiveHistoryRussianTwistReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanFiveHistoryRussianTwistSets" />
+
+    <TextView
+        android:id="@+id/dejanFiveHistoryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="2019-05-05"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/dayFiveHistoryTitle"
+        app:layout_constraintStart_toStartOf="@+id/dayFiveHistoryTitle"
+        app:layout_constraintTop_toBottomOf="@+id/dayFiveHistoryTitle" />
+</android.support.constraint.ConstraintLayout>

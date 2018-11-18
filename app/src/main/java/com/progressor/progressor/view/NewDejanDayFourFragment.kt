@@ -1,5 +1,6 @@
 package com.progressor.progressor.view
 
+import android.app.AlertDialog
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,8 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.presenter.NewDejanDayFourPresenter
 import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.service.dateTimeStampToDisplay
+import kotlinx.android.synthetic.main.layout_day_four_history.*
 import kotlinx.android.synthetic.main.layout_new_dejan_day_four.*
 import javax.inject.Inject
 
@@ -26,12 +29,35 @@ class NewDejanDayFourFragment : BaseFragment(), NewDejanDayFourPresenter.View {
                     true -> {
                         context.let { context ->
                             Toast.makeText(context, "Saved!", Toast.LENGTH_SHORT).show()
+                            resetForm()
                         }
                     }
                     false -> {
                         context.let { context ->
                             Toast.makeText(context, "Trouble saving. Try again", Toast.LENGTH_SHORT).show()
                         }
+                    }
+                }
+            }
+        }
+
+        if(presenter.hasHistory()) {
+            newDejanFourHistory.visibility = View.VISIBLE
+            newDejanFourHistory.setOnClickListener {
+                context?.let {
+                    val inflater = layoutInflater
+                    val alertLayout = inflater.inflate(R.layout.layout_day_four_history, null)
+                    val lastEntry = userManager.user?.workout?.dejan?.dayFourList?.last()
+                    val alert = AlertDialog.Builder(context)
+                    alert.setView(alertLayout)
+                    val dialog = alert.create()
+
+                    dialog.show()
+
+                    dialog.dejanFourHistoryArcTrainerAmount.text = lastEntry?.arcTrainer
+
+                    lastEntry?.let {
+                        dialog.dejanFourHistoryDate.text = dateTimeStampToDisplay(it.createDate)
                     }
                 }
             }
@@ -54,6 +80,10 @@ class NewDejanDayFourFragment : BaseFragment(), NewDejanDayFourPresenter.View {
         newDejanDayFourSaveButton.setOnClickListener {
             presenter.save()
         }
+    }
+
+    private fun resetForm() {
+        newDejanDayFourArcTrainerAmount.setText("")
     }
 
     override fun getArcTrainer(): String {

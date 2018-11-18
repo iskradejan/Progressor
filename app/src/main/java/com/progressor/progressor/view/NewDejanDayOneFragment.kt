@@ -1,6 +1,6 @@
 package com.progressor.progressor.view
 
-import android.app.Dialog
+import android.app.AlertDialog
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
@@ -12,8 +12,12 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.presenter.NewDejanDayOnePresenter
 import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.service.dateTimeStampToDisplay
+import kotlinx.android.synthetic.main.layout_day_one_history.*
 import kotlinx.android.synthetic.main.layout_new_dejan_day_one.*
 import javax.inject.Inject
+import java.util.*
+
 
 class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
     @Inject
@@ -29,6 +33,7 @@ class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
                     true -> {
                         context.let { context ->
                             Toast.makeText(context, "Saved!", Toast.LENGTH_SHORT).show()
+                            resetForm()
                         }
                     }
                     false -> {
@@ -44,9 +49,47 @@ class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
             newDejanOneHistory.visibility = View.VISIBLE
             newDejanOneHistory.setOnClickListener {
                 context?.let {
-                    val dialog = Dialog(it);
-                    dialog.setContentView(R.layout.layout_day_one_history);
+                    val inflater = layoutInflater
+                    val alertLayout = inflater.inflate(R.layout.layout_day_one_history, null)
+                    val lastEntry = userManager.user?.workout?.dejan?.dayOneList?.last()
+                    val alert = AlertDialog.Builder(context)
+                    alert.setView(alertLayout)
+                    val dialog = alert.create()
+
                     dialog.show()
+
+                    dialog.dejanOneHistoryBenchPressSets.text = lastEntry?.inclineChestPress?.get(0) ?: "--"
+                    dialog.dejanOneHistoryBenchPressReps.text = lastEntry?.inclineChestPress?.get(1) ?: "--"
+                    dialog.dejanOneHistoryBenchPressAmount.text = lastEntry?.inclineChestPress?.get(2) ?: "--"
+
+                    dialog.dejanOneHistoryFlatSets.text = lastEntry?.flatChestPress?.get(0) ?: "--"
+                    dialog.dejanOneHistoryFlatReps.text = lastEntry?.flatChestPress?.get(1) ?: "--"
+                    dialog.dejanOneHistoryFlatAmount.text = lastEntry?.flatChestPress?.get(2) ?: "--"
+
+                    dialog.dejanOneHistoryFliesSets.text = lastEntry?.chestFlies?.get(0) ?: "--"
+                    dialog.dejanOneHistoryFliesReps.text = lastEntry?.chestFlies?.get(1) ?: "--"
+                    dialog.dejanOneHistoryFliesAmount.text = lastEntry?.chestFlies?.get(2) ?: "--"
+
+                    dialog.dejanOneHistoryBicepCurlsSets.text = lastEntry?.bicepCurls?.get(0) ?: "--"
+                    dialog.dejanOneHistoryBicepCurlsReps.text = lastEntry?.bicepCurls?.get(1) ?: "--"
+                    dialog.dejanOneHistoryBicepCurlsAmount.text = lastEntry?.bicepCurls?.get(2) ?: "--"
+
+                    dialog.dejanOneHistoryHammerCurlsSets.text = lastEntry?.hammerCurls?.get(0) ?: "--"
+                    dialog.dejanOneHistoryHammerCurlsReps.text = lastEntry?.hammerCurls?.get(1) ?: "--"
+                    dialog.dejanOneHistoryHammerCurlsAmount.text = lastEntry?.hammerCurls?.get(2) ?: "--"
+
+                    dialog.dejanOneHistoryBarbellRolloutSets.text = lastEntry?.barbellRollout?.get(0) ?: "--"
+                    dialog.dejanOneHistoryBarbellRolloutReps.text = lastEntry?.barbellRollout?.get(1) ?: "--"
+
+                    dialog.dejanOneHistoryFlutterKickSets.text = lastEntry?.flutterKick?.get(0) ?: "--"
+                    dialog.dejanOneHistoryFlutterKickReps.text = lastEntry?.flutterKick?.get(1) ?: "--"
+
+                    dialog.dejanOneHistoryStarPlankSets.text = lastEntry?.starPlank?.get(0) ?: "--"
+                    dialog.dejanOneHistoryStarPlankReps.text = lastEntry?.starPlank?.get(1) ?: "--"
+
+                    lastEntry?.let {
+                        dialog.dejanOneHistoryDate.text = dateTimeStampToDisplay(it.createDate)
+                    }
                 }
             }
         }
@@ -67,6 +110,20 @@ class NewDejanDayOneFragment : BaseFragment(), NewDejanDayOnePresenter.View {
         }
         newDejanWorkoutSaveButton.setOnClickListener {
             presenter.save()
+        }
+    }
+
+    private fun resetForm() {
+        for(set in getSets()) {
+            set.setText("")
+        }
+
+        for(rep in getReps()) {
+            rep.setText("")
+        }
+
+        for(amount in getAmounts()) {
+            amount.setText("")
         }
     }
 

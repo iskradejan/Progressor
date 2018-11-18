@@ -38,7 +38,7 @@
         android:text="Incline Bench Press"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryDate" />
 
     <TextView
         android:id="@+id/dejanOneHistoryBenchPressAmount"
@@ -50,7 +50,7 @@
         android:text="200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryBenchPressReps"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryDate" />
 
     <TextView
         android:id="@+id/dejanOneHistoryBenchPressReps"
@@ -60,7 +60,7 @@
         android:layout_marginTop="30dp"
         android:text="15"
         app:layout_constraintStart_toEndOf="@+id/x"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryDate" />
 
     <TextView
         android:id="@+id/dejanOneHistoryBenchPressSets"
@@ -70,7 +70,7 @@
         android:layout_marginTop="30dp"
         android:text="3"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintTop_toBottomOf="@+id/dejanOneHistoryDate" />
 
     <TextView
         android:id="@+id/dejanOneHistoryFlat"
@@ -451,7 +451,7 @@
         app:layout_constraintStart_toEndOf="@+id/dejanOneHistoryStarPlankSets" />
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/dejanOneHistoryDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

@@ -68,4 +68,16 @@ class NewDejanDayFivePresenter @Inject constructor(
             }
         }
     }
+
+    fun hasHistory(): Boolean {
+        if(userManager.user?.workout?.dejan?.dayFiveList == null) {
+            return false
+        }
+
+        userManager.user?.workout?.dejan?.dayFiveList?.let {
+            return it.isNotEmpty()
+        }
+
+        return true
+    }
 }

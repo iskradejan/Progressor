@@ -1,0 +1,620 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:theme="@android:style/Theme.Dialog">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <TextView
+        android:id="@+id/dayThreeHistoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Day Three History"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDeadlift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Deadlift"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDeadliftAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryDeadliftReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDeadliftReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDeadliftSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDate" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryWideGripPullDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Wide Grip Pull Down"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDeadlift" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryWideGripPullDownSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDeadliftSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryWideGripPullDownReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x2"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDeadliftReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryWideGripPullDownAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDeadliftAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySeatedCableRows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Seated Cable Row"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryWideGripPullDown" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySeatedCableRowsSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryWideGripPullDownSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySeatedCableRowsReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x3"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryWideGripPullDownReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySeatedCableRowsAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryWideGripPullDownAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryHyperExtension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hyper Extension"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySeatedCableRows" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryHyperExtensionSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySeatedCableRowsSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryHyperExtensionReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x4"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySeatedCableRowsReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryHyperExtensionAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySeatedCableRowsAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryTricepExtension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Tricep Extension"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryHyperExtension" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryTricepExtensionSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryHyperExtensionSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryTricepExtensionReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x5"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryHyperExtensionReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryTricepExtensionAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryHyperExtensionAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Dip"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryTricepExtension" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDipSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryTricepExtensionSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDipReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x6"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryTricepExtensionReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryTricepExtensionAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDumbbellKickback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Dumbbell Kickback"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDip" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDumbbellKickbackSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDipSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDumbbellKickbackReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDipReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDumbbellKickbackAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDipAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySkullCrushers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Skull Crushers"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDumbbellKickback" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySkullCrushersSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDumbbellKickbackSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySkullCrushersReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x8"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDumbbellKickbackReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistorySkullCrushersAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryDumbbellKickbackAmount" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryLegRaise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Leg Raise"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySkullCrushers" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryLegRaiseSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySkullCrushersSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryLegRaiseReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySkullCrushersReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryLegRaiseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistorySkullCrushersAmount" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryPlank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Plank"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryLegRaise" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryPlankSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryLegRaiseSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryPlankReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryLegRaiseReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryPlankAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryLegRaiseAmount" />
+
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryCableCrunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Cable Crunch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/dejanThreeHistoryWideGripPullDown"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryPlank" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryCableCrunchSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryPlankSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryCableCrunchReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        app:layout_constraintStart_toEndOf="@+id/x7"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryPlankReps" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryCableCrunchAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintTop_toBottomOf="@+id/dejanThreeHistoryPlankAmount" />
+
+
+    <TextView
+        android:id="@+id/x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryDeadliftReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryDeadliftSets" />
+
+    <TextView
+        android:id="@+id/x2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryWideGripPullDownReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryWideGripPullDownSets" />
+
+    <TextView
+        android:id="@+id/x3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistorySeatedCableRowsReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistorySeatedCableRowsSets" />
+
+    <TextView
+        android:id="@+id/x4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryHyperExtensionReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryHyperExtensionSets" />
+
+    <TextView
+        android:id="@+id/x5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryTricepExtensionReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryTricepExtensionSets" />
+
+    <TextView
+        android:id="@+id/x6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryDipReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryDipSets" />
+
+    <TextView
+        android:id="@+id/x7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryDumbbellKickbackReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryDumbbellKickbackSets" />
+
+    <TextView
+        android:id="@+id/x8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistorySkullCrushersReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistorySkullCrushersSets" />
+
+    <TextView
+        android:id="@+id/x9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryLegRaiseReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryLegRaiseSets" />
+
+    <TextView
+        android:id="@+id/x10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryPlankReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryPlankSets" />
+
+    <TextView
+        android:id="@+id/x11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="x"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dejanThreeHistoryCableCrunchReps"
+        app:layout_constraintStart_toEndOf="@+id/dejanThreeHistoryCableCrunchSets" />
+
+    <TextView
+        android:id="@+id/dejanThreeHistoryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="2019-05-05"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/dayThreeHistoryTitle"
+        app:layout_constraintStart_toStartOf="@+id/dayThreeHistoryTitle"
+        app:layout_constraintTop_toBottomOf="@+id/dayThreeHistoryTitle" />
+</android.support.constraint.ConstraintLayout>

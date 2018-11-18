@@ -1,5 +1,6 @@
 package com.progressor.progressor.view
 
+import android.app.AlertDialog
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,8 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.presenter.NewDejanDayTwoPresenter
 import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.service.dateTimeStampToDisplay
+import kotlinx.android.synthetic.main.layout_day_two_history.*
 import kotlinx.android.synthetic.main.layout_new_dejan_day_two.*
 import javax.inject.Inject
 
@@ -26,12 +29,35 @@ class NewDejanDayTwoFragment : BaseFragment(), NewDejanDayTwoPresenter.View {
                     true -> {
                         context.let { context ->
                             Toast.makeText(context, "Saved!", Toast.LENGTH_SHORT).show()
+                            resetForm()
                         }
                     }
                     false -> {
                         context.let { context ->
                             Toast.makeText(context, "Trouble saving. Try again", Toast.LENGTH_SHORT).show()
                         }
+                    }
+                }
+            }
+        }
+
+        if(presenter.hasHistory()) {
+            newDejanTwoHistory.visibility = View.VISIBLE
+            newDejanTwoHistory.setOnClickListener {
+                context?.let {
+                    val inflater = layoutInflater
+                    val alertLayout = inflater.inflate(R.layout.layout_day_two_history, null)
+                    val lastEntry = userManager.user?.workout?.dejan?.dayTwoList?.last()
+                    val alert = AlertDialog.Builder(context)
+                    alert.setView(alertLayout)
+                    val dialog = alert.create()
+
+                    dialog.show()
+
+                    dialog.dejanTwoHistoryEllipticalAmount.text = lastEntry?.elliptical
+
+                    lastEntry?.let {
+                        dialog.dejanTwoHistoryDate.text = dateTimeStampToDisplay(it.createDate)
                     }
                 }
             }
@@ -56,22 +82,23 @@ class NewDejanDayTwoFragment : BaseFragment(), NewDejanDayTwoPresenter.View {
         }
     }
 
+    private fun resetForm() {
+        newDejanDayTwoEllipticalAmount.setText("")
+    }
+
     override fun getElliptical(): String {
         return newDejanDayTwoEllipticalAmount.text.toString()
     }
 
     override fun isFormValid(): Boolean {
-        var valid = true
 
         if (newDejanDayTwoEllipticalAmount.text.toString().isEmpty() || newDejanDayTwoEllipticalAmount.text.toString().length > 4) {
             newDejanDayTwoEllipticalAmount.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.baseMaroon, null))
-            valid = false
+            return false
         } else {
             newDejanDayTwoEllipticalAmount.backgroundTintList = defaultLabelColor
-            valid = true
+            return true
         }
-
-        return valid
     }
 
     override fun onStop() {

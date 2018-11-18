@@ -1,5 +1,6 @@
 package com.progressor.progressor.view
 
+import android.app.AlertDialog
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
@@ -11,7 +12,10 @@ import com.progressor.progressor.model.constant.FirebaseConstant
 import com.progressor.progressor.model.dataobjects.helper.FirebaseResponse
 import com.progressor.progressor.presenter.NewDejanDayThreePresenter
 import com.progressor.progressor.service.RxBus
+import com.progressor.progressor.service.dateTimeStampToDisplay
+import kotlinx.android.synthetic.main.layout_day_three_history.*
 import kotlinx.android.synthetic.main.layout_new_dejan_day_three.*
+import java.util.*
 import javax.inject.Inject
 
 class NewDejanDayThreeFragment : BaseFragment(), NewDejanDayThreePresenter.View {
@@ -27,12 +31,75 @@ class NewDejanDayThreeFragment : BaseFragment(), NewDejanDayThreePresenter.View 
                     true -> {
                         context.let { context ->
                             Toast.makeText(context, "Saved!", Toast.LENGTH_SHORT).show()
+                            resetForm()
                         }
                     }
                     false -> {
                         context.let { context ->
                             Toast.makeText(context, "Trouble saving. Try again", Toast.LENGTH_SHORT).show()
                         }
+                    }
+                }
+            }
+        }
+
+        if(presenter.hasHistory()) {
+            newDejanThreeHistory.visibility = View.VISIBLE
+            newDejanThreeHistory.setOnClickListener {
+                context?.let {
+                    val inflater = layoutInflater
+                    val alertLayout = inflater.inflate(R.layout.layout_day_three_history, null)
+                    val lastEntry = userManager.user?.workout?.dejan?.dayThreeList?.last()
+                    val alert = AlertDialog.Builder(context)
+                    alert.setView(alertLayout)
+                    val dialog = alert.create()
+
+                    dialog.show()
+
+                    dialog.dejanThreeHistoryDeadliftSets.text = lastEntry?.deadlift?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryDeadliftReps.text = lastEntry?.deadlift?.get(1) ?: "--"
+                    dialog.dejanThreeHistoryDeadliftAmount.text = lastEntry?.deadlift?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistoryWideGripPullDownSets.text = lastEntry?.wideGripPullDown?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryWideGripPullDownReps.text = lastEntry?.wideGripPullDown?.get(1) ?: "--"
+                    dialog.dejanThreeHistoryWideGripPullDownAmount.text = lastEntry?.wideGripPullDown?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistorySeatedCableRowsSets.text = lastEntry?.seatedCableRow?.get(0) ?: "--"
+                    dialog.dejanThreeHistorySeatedCableRowsReps.text = lastEntry?.seatedCableRow?.get(1) ?: "--"
+                    dialog.dejanThreeHistorySeatedCableRowsAmount.text = lastEntry?.seatedCableRow?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistoryHyperExtensionSets.text = lastEntry?.hyperExtension?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryHyperExtensionReps.text = lastEntry?.hyperExtension?.get(1) ?: "--"
+                    dialog.dejanThreeHistoryHyperExtensionAmount.text = lastEntry?.hyperExtension?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistoryTricepExtensionSets.text = lastEntry?.tricepExtension?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryTricepExtensionReps.text = lastEntry?.tricepExtension?.get(1) ?: "--"
+                    dialog.dejanThreeHistoryTricepExtensionAmount.text = lastEntry?.tricepExtension?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistoryDipSets.text = lastEntry?.dips?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryDipReps.text = lastEntry?.dips?.get(1) ?: "--"
+                    dialog.dejanThreeHistoryDipAmount.text = lastEntry?.dips?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistoryDumbbellKickbackSets.text = lastEntry?.dumbbellKickback?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryDumbbellKickbackReps.text = lastEntry?.dumbbellKickback?.get(1) ?: "--"
+                    dialog.dejanThreeHistoryDumbbellKickbackAmount.text = lastEntry?.dumbbellKickback?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistorySkullCrushersSets.text = lastEntry?.skullcrushers?.get(0) ?: "--"
+                    dialog.dejanThreeHistorySkullCrushersReps.text = lastEntry?.skullcrushers?.get(1) ?: "--"
+                    dialog.dejanThreeHistorySkullCrushersAmount.text = lastEntry?.skullcrushers?.get(2) ?: "--"
+
+                    dialog.dejanThreeHistoryLegRaiseSets.text = lastEntry?.legRaise?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryLegRaiseReps.text = lastEntry?.legRaise?.get(1) ?: "--"
+
+                    dialog.dejanThreeHistoryPlankSets.text = lastEntry?.plank?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryPlankReps.text = lastEntry?.plank?.get(1) ?: "--"
+
+                    dialog.dejanThreeHistoryCableCrunchSets.text = lastEntry?.cableCrunch?.get(0) ?: "--"
+                    dialog.dejanThreeHistoryCableCrunchReps.text = lastEntry?.cableCrunch?.get(1) ?: "--"
+                    dialog.dejanThreeHistoryCableCrunchAmount.text = lastEntry?.cableCrunch?.get(2) ?: "--"
+
+                    lastEntry?.let {
+                        dialog.dejanThreeHistoryDate.text = dateTimeStampToDisplay(it.createDate)
                     }
                 }
             }
@@ -54,6 +121,20 @@ class NewDejanDayThreeFragment : BaseFragment(), NewDejanDayThreePresenter.View 
         }
         newDejanDayThreeSaveButton.setOnClickListener {
             presenter.save()
+        }
+    }
+
+    private fun resetForm() {
+        for(set in getSets()) {
+            set.setText("")
+        }
+
+        for(rep in getReps()) {
+            rep.setText("")
+        }
+
+        for(amount in getAmounts()) {
+            amount.setText("")
         }
     }
 
