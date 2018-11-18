@@ -21,47 +21,56 @@ class DashboardFragment : BaseFragment(), DashboardPresenter.View {
 
     private fun initialize() {
         val body = presenter.latestBody()
-        dashboardBodyPieChart.setValues(body.musclePercentage ?: 0, body.fatPercentage ?: 0, resources.getInteger(R.integer.bonePercent))
+        dashboardBodyPieChart.setValues(body.musclePercentage ?: 0, body.fatPercentage
+                ?: 0, resources.getInteger(R.integer.bonePercent))
 
         body.musclePercentage?.let {
             dashboardBodyPieChartText.text = String.format("%d%%", it)
         }
 
-        dashboardBodyPieChart.setOnTouchListener { v, event ->
-            val bitmap = loadBitmapFromView(v)
-            val canvas = Canvas(bitmap)
-            v.draw(canvas)
-            val pixel = bitmap.getPixel(event.x.toInt(), event.y.toInt())
-            val hexColor = rgbToHex(Color.red(pixel), Color.green(pixel), Color.blue(pixel))
+        dashboardBodyPieChartText.setOnClickListener {
+            fragmentNavigator.to(BodyHistoryFragment())
+        }
 
-            if(!currentHex.equals(hexColor)) {
-                currentHex = hexColor
-                when(hexColor) {
-                    colorToHex(R.color.baseMuscle) -> {
-                        body.musclePercentage?.let {
-                            dashboardBodyPieChartText.text = String.format("%d%%", it)
+        dashboardBodyPieChart.setOnTouchListener { v, event ->
+            try {
+                val bitmap = loadBitmapFromView(v)
+                val canvas = Canvas(bitmap)
+                v.draw(canvas)
+                val pixel = bitmap.getPixel(event.x.toInt(), event.y.toInt())
+                val hexColor = rgbToHex(Color.red(pixel), Color.green(pixel), Color.blue(pixel))
+
+                if (!currentHex.equals(hexColor)) {
+                    currentHex = hexColor
+                    when (hexColor) {
+                        colorToHex(R.color.baseMuscle) -> {
+                            body.musclePercentage?.let {
+                                dashboardBodyPieChartText.text = String.format("%d%%", it)
+                            }
                         }
-                    }
-                    colorToHex(R.color.baseFat) -> {
-                        body.fatPercentage?.let {
-                            dashboardBodyPieChartText.text = String.format("%d%%", it)
+                        colorToHex(R.color.baseFat) -> {
+                            body.fatPercentage?.let {
+                                dashboardBodyPieChartText.text = String.format("%d%%", it)
+                            }
                         }
-                    }
-                    colorToHex(R.color.baseBone) -> {
-                        dashboardBodyPieChartText.text = String.format("%d%%", resources.getInteger(R.integer.bonePercent))
+                        colorToHex(R.color.baseBone) -> {
+                            dashboardBodyPieChartText.text = String.format("%d%%", resources.getInteger(R.integer.bonePercent))
+                        }
                     }
                 }
+            } catch (exception: Exception) {
+                // TODO: Handle exception
             }
             true
         }
 
         dashboardAdd.setOnTouchListener { v, event ->
-            if(event.y <= -200) {
+            if (event.y <= -200) {
                 fragmentNavigator.to(NewWorkoutFragment())
             }
 
-            if(event.y >= 200) {
-                if(presenter.isNewBodyEligible()) {
+            if (event.y >= 200) {
+                if (presenter.isNewBodyEligible()) {
                     fragmentNavigator.to(NewBodyFragment())
                 } else {
                     Toast.makeText(context, "Give it some rest, record once a month", Toast.LENGTH_LONG).show()
