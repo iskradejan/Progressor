@@ -5,6 +5,7 @@ import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.progressor.progressor.MainActivity
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
@@ -23,6 +24,8 @@ class NewDejanDayFourFragment : BaseFragment(), NewDejanDayFourPresenter.View {
     lateinit var currentView: View
 
     private fun initialize() {
+        (activity as MainActivity).setBackFragment(DashboardFragment())
+
         RxBus.subscribe<FirebaseResponse>(this) {
             if (it.getType().equals(FirebaseConstant.TYPE_DEJAN_DAY_FOUR)) {
                 when (it.getSuccess()) {

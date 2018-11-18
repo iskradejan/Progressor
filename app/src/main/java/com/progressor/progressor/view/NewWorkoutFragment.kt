@@ -2,6 +2,7 @@ package com.progressor.progressor.view
 
 import android.os.Bundle
 import android.view.View
+import com.progressor.progressor.MainActivity
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.presenter.NewWorkoutPresenter
@@ -15,6 +16,8 @@ class NewWorkoutFragment : BaseFragment(), NewWorkoutPresenter.View {
     lateinit var currentView: View
 
     private fun initialize() {
+        (activity as MainActivity).setBackFragment(DashboardFragment())
+
         newWorkoutDejan.setOnClickListener {
             fragmentNavigator.to(DejanWorkoutFragment())
         }

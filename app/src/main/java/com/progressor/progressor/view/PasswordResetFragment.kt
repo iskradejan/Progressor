@@ -3,6 +3,7 @@ package com.progressor.progressor.view
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import com.progressor.progressor.MainActivity
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.model.constant.FirebaseConstant
@@ -18,6 +19,8 @@ class PasswordResetFragment : BaseFragment(), PasswordResetPresenter.View {
     lateinit var presenter: PasswordResetPresenter
 
     private fun initialize() {
+        (activity as MainActivity).setBackFragment(LoginFragment())
+
         RxBus.subscribe<FirebaseResponse>(this) {
             if (it.getType().equals(FirebaseConstant.TYPE_PASSWORD_RESET)) {
                 when (it.getSuccess()) {

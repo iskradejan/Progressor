@@ -2,6 +2,7 @@ package com.progressor.progressor.view
 
 import android.os.Bundle
 import android.view.View
+import com.progressor.progressor.MainActivity
 import com.progressor.progressor.R
 import com.progressor.progressor.di.components.MainComponentInterface
 import com.progressor.progressor.presenter.EmailVerifyPresenter
@@ -13,6 +14,8 @@ class EmailVerifyFragment : BaseFragment(), EmailVerifyPresenter.View {
     lateinit var presenter : EmailVerifyPresenter
 
     fun initialize() {
+        (activity as MainActivity).setBackFragment(LoginFragment())
+
         emailVerifyButton.setOnClickListener {
             presenter.sendEmail()
         }
