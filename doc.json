@@ -208,7 +208,7 @@
         }
       }
     },
-    "/api/v1/locations/web-name/{state_code}/{web_name}.json": {
+    "/api/v1/locations/web-name/{state_code}/{web_name}": {
       "get": {
         "description": "Get Location by state and web-name",
         "tags": [
