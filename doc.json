@@ -250,6 +250,24 @@
             "required": true
           },
           {
+            "name": "paging[listings.size]",
+            "description": "Set the page size listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "paging[listings.from]",
+            "description": "Set the page number for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
             "name": "expand[listings]",
             "description": "Expand Listings.",
             "schema": {
@@ -439,8 +457,8 @@
             "required": false
           },
           {
-            "name": "filter[circle]",
-            "description": "When searching for listings within a radius of a single coordinate",
+            "name": "filter[shape_type]",
+            "description": "When searching for listings within a radius of a single coordinate. Example: circle",
             "schema": {
               "type": "string"
             },
@@ -601,6 +619,660 @@
           },
           "404": {
             "description": "Location not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/listings": {
+      "get": {
+        "description": "Get listings for a location and/or nearby locations",
+        "tags": [
+          "Listings"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "description": "Bearer token provided by our security team.",
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "x-api-key",
+            "description": "This is the AWS API Gateway key provided by our security team.",
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "filter[min_list_price]",
+            "description": "Set the minimum list price for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_list_price]",
+            "description": "Set the maximum list price for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_monthly_list_price]",
+            "description": "Set the minimum monthly list price for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_monthly_list_price]",
+            "description": "Set the maximum monthly list price for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_bedrooms]",
+            "description": "Set the minimum bedrooms for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_bedrooms]",
+            "description": "Set the maximum bedrooms for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_bathrooms]",
+            "description": "Set the minimum bathroom for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_bathrooms]",
+            "description": "Set the maximum bathroom for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_year_built]",
+            "description": "Set the minimum year built for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_year_built]",
+            "description": "Set the maximum year built for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_lot_size_acres]",
+            "description": "Set the minimum lot size (in acres) for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_lot_size_acres]",
+            "description": "Set the maximum lot size (in acres) for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_home_size_square_feet]",
+            "description": "Set the minimum home size (in sq ft) for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_home_size_square_feet]",
+            "description": "Set the maximum home size (in sq ft) for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_list_date]",
+            "description": "Set the minimum list date for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_list_date]",
+            "description": "Set the maximum list date for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[min_sold_date]",
+            "description": "Set the minimum sold date for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[max_sold_date]",
+            "description": "Set the maximum sold date for listings within the given location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[property_types]",
+            "description": "Set the types of listings within the given location. Example:  condo,house",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listing_statuses]",
+            "description": "Set the statuses of listings within the given location. Example:  active,sold",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[shape_type]",
+            "description": "When searching for listings within a radius of a single coordinate. Example: circle",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[circle_radius]",
+            "description": "Radius of set filter from above. Example: 5mi",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[shape_coordinates]",
+            "description": "The coordinates from which to originate the circle radius. Example: 103.34343,-34.32334",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Locations found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_meta": {
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "number"
+                        },
+                        "filter": {
+                          "type": "object",
+                          "properties": {
+                            "location_id": {
+                              "type": "string"
+                            },
+                            "listing_statuses": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "paging": {
+                          "type": "object",
+                          "properties": {
+                            "from": {
+                              "type": "number"
+                            },
+                            "size": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "sort": {
+                          "type": "object",
+                          "properties": {
+                            "on_rocket_since": {
+                              "type": "desc"
+                            }
+                          }
+                        },
+                        "options": {
+                          "type": "object",
+                          "properties": {
+
+                          }
+                        }
+                      }
+                    },
+                    "_links": {
+                      "type": "object",
+                      "properties": {
+                        "self": {
+                          "type": "object",
+                          "properties": {
+                            "href": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "web": {
+                          "type": "object",
+                          "properties": {
+                            "href": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "_meta": {
+                          "type": "object",
+                          "properties": {
+                            "resource_type": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "_links": {
+                          "type": "object",
+                          "properties": {
+                            "self": {
+                              "type": "object",
+                              "properties": {
+                                "href": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "property_web_url": {
+                              "type": "object",
+                              "properties": {
+                                "href": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "listing_web_url": {
+                              "type": "object",
+                              "properties": {
+                                "href": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "_expandable": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "id": {
+                          "type": "string"
+                        },
+                        "web_name": {
+                          "type": "string"
+                        },
+                        "property_id": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "city": {
+                          "type": "string"
+                        },
+                        "state_code": {
+                          "type": "string"
+                        },
+                        "zip_code": {
+                          "type": "string"
+                        },
+                        "geo_point": {
+                          "type": "object",
+                          "properties": {
+                            "lon": {
+                              "type": "number"
+                            },
+                            "lat": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "property_type": {
+                          "type": "string"
+                        },
+                        "property_type_description": {
+                          "type": "string"
+                        },
+                        "square_feet": {
+                          "type": "number"
+                        },
+                        "square_feet_range": {
+                          "type": "string"
+                        },
+                        "lot_size_acres": {
+                          "type": "number"
+                        },
+                        "listing_status": {
+                          "type": "string"
+                        },
+                        "listing_status_description": {
+                          "type": "string"
+                        },
+                        "list_price": {
+                          "type": "number"
+                        },
+                        "list_price_per_square_feet_range": {
+                          "type": "string"
+                        },
+                        "on_rocket_since": {
+                          "type": "string"
+                        },
+                        "list_date": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "string"
+                        },
+                        "mls_number": {
+                          "type": "number"
+                        },
+                        "bedrooms_total": {
+                          "type": "number"
+                        },
+                        "bathrooms_total": {
+                          "type": "number"
+                        },
+                        "year_built": {
+                          "type": "number"
+                        },
+                        "photos_sample": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "url_640": {
+                                "type": "string"
+                              },
+                              "url_full": {
+                                "type": "string"
+                              },
+                              "display_order": {
+                                "type": "number"
+                              },
+                              "is_stub": {
+                                "type": "boolean"
+                              }
+                            }
+                          }
+                        },
+                        "monthly_cost": {
+                          "type": "number"
+                        },
+                        "compliance": {
+                          "type": "object",
+                          "properties": {
+                            "is_from_blacklisted_mls" : {
+                              "type": "boolean"
+                            },
+                            "idx_logo": {
+                              "type": "string"
+                            },
+                            "advertising_limits": {
+                              "type": "string"
+                            },
+                            "show_listing_agent_name": {
+                              "type": "boolean"
+                            },
+                            "show_listing_agent_phone": {
+                              "type": "boolean"
+                            },
+                            "show_mls_number": {
+                              "type": "boolean"
+                            },
+                            "hide_badges": {
+                              "type": "boolean"
+                            },
+                            "hide_sqft": {
+                              "type": "boolean"
+                            },
+                            "show_sqft_range": {
+                              "type": "boolean"
+                            },
+                            "show_primary_photo_only": {
+                              "type": "boolean"
+                            },
+                            "hide_avm": {
+                              "type": "boolean"
+                            },
+                            "show_sold_price_only": {
+                              "type": "boolean"
+                            },
+                            "show_agent_office_near_photo": {
+                              "type": "boolean"
+                            },
+                            "show_agent_office_phone": {
+                              "type": "boolean"
+                            },
+                            "hide_history_listing_status": {
+                              "type": "boolean"
+                            },
+                            "hide_history_price": {
+                              "type": "boolean"
+                            },
+                            "show_full_disclaimer": {
+                              "type": "boolean"
+                            },
+                            "show_listing_photo_watermark": {
+                              "type": "boolean"
+                            },
+                            "brokerage": {
+                              "type": "object",
+                              "properties": {
+                                "hide_co_brand": {
+                                  "type": "boolean"
+                                },
+                                "logo": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "bre_number": {
+                                  "type": "string"
+                                },
+                                "subdomain": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "city_location_id": {
+                          "type": "string"
+                        },
+                        "county_location_id": {
+                          "type": "string"
+                        },
+                        "zip_location_id": {
+                          "type": "string"
+                        },
+                        "neighborhood_location_id": {
+                          "type": "string"
+                        },
+                        "list_agent_name": {
+                          "type": "string"
+                        },
+                        "list_office_name": {
+                          "type": "string"
+                        },
+                        "list_office_phone": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "compliance": {
+                      "type": "object",
+                      "properties": {
+                        "majority": {
+                          "type": "string"
+                        },
+                        "excluded_mls": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "mls_sources": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "last_update": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "advertising_limits": {
+                          "type": "string"
+                        },
+                        "page_size": {
+                          "type": "string"
+                        },
+                        "disclaimer_position": {
+                          "type": "string"
+                        },
+                        "show_full_disclaimer": {
+                          "type": "string"
+                        },
+                        "hide_sqft": {
+                          "type": "boolean"
+                        },
+                        "show_sqft_range": {
+                          "type": "boolean"
+                        },
+                        "brokerage": {
+                          "type": "object",
+                          "properties": {
+                            "hide_co_brand": {
+                              "type": "boolean"
+                            },
+                            "logo": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "bre_number": {
+                              "type": "string"
+                            },
+                            "subdomain": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "disclaimers": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Listings not found",
             "content": {
               "application/json": {
                 "schema": {
