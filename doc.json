@@ -218,24 +218,54 @@
           {
             "name": "Authorization",
             "description": "Bearer token provided by our security team.",
+            "schema": {
+              "type": "string"
+            },
             "in": "header",
             "required": true
           },
           {
             "name": "X-Api-Key",
             "description": "This is the AWS API Gateway key provided by our security team.",
+            "schema": {
+              "type": "string"
+            },
             "in": "header",
             "required": true
           },
           {
             "name": "state_code",
+            "schema": {
+              "type": "string"
+            },
             "in": "path",
             "required": true
           },
           {
             "name": "web_name",
+            "schema": {
+              "type": "string"
+            },
             "in": "path",
             "required": true
+          },
+          {
+            "name": "expand[listings]",
+            "description": "Expand Listings.",
+            "schema": {
+              "type": "boolean"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_list_price]",
+            "description": "Set the minimum list price for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
           }
         ],
         "responses": {
