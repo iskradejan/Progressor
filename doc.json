@@ -216,6 +216,18 @@
         ],
         "parameters": [
           {
+            "name": "Authorization",
+            "description": "Bearer token provided by our security team.",
+            "in": "header",
+            "required": true
+          },
+          {
+            "name": "X-Api-Key",
+            "description": "This is the AWS API Gateway key provided by our security team.",
+            "in": "header",
+            "required": true
+          },
+          {
             "name": "state_code",
             "in": "path",
             "required": true
