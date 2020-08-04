@@ -225,7 +225,7 @@
             "required": true
           },
           {
-            "name": "X-Api-Key",
+            "name": "x-api-key",
             "description": "This is the AWS API Gateway key provided by our security team.",
             "schema": {
               "type": "string"
@@ -263,6 +263,204 @@
             "description": "Set the minimum list price for listings within the found location.",
             "schema": {
               "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_list_price]",
+            "description": "Set the maximum list price for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_monthly_list_price]",
+            "description": "Set the minimum monthly list price for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_monthly_list_price]",
+            "description": "Set the maximum monthly list price for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_bedrooms]",
+            "description": "Set the minimum bedrooms for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_bedrooms]",
+            "description": "Set the maximum bedrooms for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_bathrooms]",
+            "description": "Set the minimum bathroom for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_bathrooms]",
+            "description": "Set the maximum bathroom for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_year_built]",
+            "description": "Set the minimum year built for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_year_built]",
+            "description": "Set the maximum year built for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_lot_size_acres]",
+            "description": "Set the minimum lot size (in acres) for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_lot_size_acres]",
+            "description": "Set the maximum lot size (in acres) for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_home_size_square_feet]",
+            "description": "Set the minimum home size (in sq ft) for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_home_size_square_feet]",
+            "description": "Set the maximum home size (in sq ft) for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_list_date]",
+            "description": "Set the minimum list date for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_list_date]",
+            "description": "Set the maximum list date for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.min_sold_date]",
+            "description": "Set the minimum sold date for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.max_sold_date]",
+            "description": "Set the maximum sold date for listings within the found location.",
+            "schema": {
+              "type": "number"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.property_types]",
+            "description": "Set the types of listings within the found location. Example:  condo,house",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[listings.listing_statuses]",
+            "description": "Set the statuses of listings within the found location. Example:  active,sold",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[circle]",
+            "description": "When searching for listings within a radius of a single coordinate",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[circle_radius]",
+            "description": "Radius of set filter from above. Example: 5mi",
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "filter[shape_coordinates]",
+            "description": "The coordinates from which to originate the circle radius. Example: 103.34343,-34.32334",
+            "schema": {
+              "type": "string"
             },
             "in": "query",
             "required": false
