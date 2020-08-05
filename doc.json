@@ -165,10 +165,10 @@
                             "type": "object",
                             "properties": {
                               "lon": {
-                                "type": "number"
+                                "type": "decimal"
                               },
                               "lat": {
-                                "type": "number"
+                                "type": "decimal"
                               }
                             }
                           },
@@ -179,10 +179,10 @@
                             "type": "object",
                             "properties": {
                               "lat": {
-                                "type": "number"
+                                "type": "decimal"
                               },
                               "lon": {
-                                "type": "number"
+                                "type": "decimal"
                               }
                             }
                           },
@@ -190,10 +190,10 @@
                             "type": "object",
                             "properties": {
                               "lat": {
-                                "type": "number"
+                                "type": "decimal"
                               },
                               "lon": {
-                                "type": "number"
+                                "type": "decimal"
                               }
                             }
                           }
@@ -581,10 +581,10 @@
                       "type": "object",
                       "properties": {
                         "lon": {
-                          "type": "number"
+                          "type": "decimal"
                         },
                         "lat": {
-                          "type": "number"
+                          "type": "decimal"
                         }
                       }
                     },
@@ -595,10 +595,10 @@
                       "type": "object",
                       "properties": {
                         "lat": {
-                          "type": "number"
+                          "type": "decimal"
                         },
                         "lon": {
-                          "type": "number"
+                          "type": "decimal"
                         }
                       }
                     },
@@ -606,10 +606,10 @@
                       "type": "object",
                       "properties": {
                         "lat": {
-                          "type": "number"
+                          "type": "decimal"
                         },
                         "lon": {
-                          "type": "number"
+                          "type": "decimal"
                         }
                       }
                     }
@@ -1012,10 +1012,10 @@
                           "type": "object",
                           "properties": {
                             "lon": {
-                              "type": "number"
+                              "type": "decimal"
                             },
                             "lat": {
-                              "type": "number"
+                              "type": "decimal"
                             }
                           }
                         },
