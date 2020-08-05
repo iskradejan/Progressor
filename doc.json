@@ -165,10 +165,12 @@
                             "type": "object",
                             "properties": {
                               "lon": {
-                                "type": "decimal"
+                                "type": "decimal",
+                                "format": "double"
                               },
                               "lat": {
-                                "type": "decimal"
+                                "type": "decimal",
+                                "format": "double"
                               }
                             }
                           },
@@ -179,10 +181,12 @@
                             "type": "object",
                             "properties": {
                               "lat": {
-                                "type": "decimal"
+                                "type": "decimal",
+                                "format": "double"
                               },
                               "lon": {
-                                "type": "decimal"
+                                "type": "decimal",
+                                "format": "double"
                               }
                             }
                           },
@@ -190,10 +194,12 @@
                             "type": "object",
                             "properties": {
                               "lat": {
-                                "type": "decimal"
+                                "type": "decimal",
+                                "format": "double"
                               },
                               "lon": {
-                                "type": "decimal"
+                                "type": "decimal",
+                                "format": "double"
                               }
                             }
                           }
@@ -581,10 +587,12 @@
                       "type": "object",
                       "properties": {
                         "lon": {
-                          "type": "decimal"
+                          "type": "decimal",
+                          "format": "double"
                         },
                         "lat": {
-                          "type": "decimal"
+                          "type": "decimal",
+                          "format": "double"
                         }
                       }
                     },
@@ -595,10 +603,12 @@
                       "type": "object",
                       "properties": {
                         "lat": {
-                          "type": "decimal"
+                          "type": "decimal",
+                          "format": "double"
                         },
                         "lon": {
-                          "type": "decimal"
+                          "type": "decimal",
+                          "format": "double"
                         }
                       }
                     },
@@ -606,10 +616,12 @@
                       "type": "object",
                       "properties": {
                         "lat": {
-                          "type": "decimal"
+                          "type": "decimal",
+                          "format": "double"
                         },
                         "lon": {
-                          "type": "decimal"
+                          "type": "decimal",
+                          "format": "double"
                         }
                       }
                     }
@@ -1012,10 +1024,12 @@
                           "type": "object",
                           "properties": {
                             "lon": {
-                              "type": "decimal"
+                              "type": "decimal",
+                              "format": "double"
                             },
                             "lat": {
-                              "type": "decimal"
+                              "type": "decimal",
+                              "format": "double"
                             }
                           }
                         },
