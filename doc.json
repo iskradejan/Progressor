@@ -165,11 +165,11 @@
                             "type": "object",
                             "properties": {
                               "lon": {
-                                "type": "decimal",
+                                "type": "number",
                                 "format": "double"
                               },
                               "lat": {
-                                "type": "decimal",
+                                "type": "number",
                                 "format": "double"
                               }
                             }
@@ -181,11 +181,11 @@
                             "type": "object",
                             "properties": {
                               "lat": {
-                                "type": "decimal",
+                                "type": "number",
                                 "format": "double"
                               },
                               "lon": {
-                                "type": "decimal",
+                                "type": "number",
                                 "format": "double"
                               }
                             }
@@ -194,11 +194,11 @@
                             "type": "object",
                             "properties": {
                               "lat": {
-                                "type": "decimal",
+                                "type": "number",
                                 "format": "double"
                               },
                               "lon": {
-                                "type": "decimal",
+                                "type": "number",
                                 "format": "double"
                               }
                             }
@@ -587,11 +587,11 @@
                       "type": "object",
                       "properties": {
                         "lon": {
-                          "type": "decimal",
+                          "type": "number",
                           "format": "double"
                         },
                         "lat": {
-                          "type": "decimal",
+                          "type": "number",
                           "format": "double"
                         }
                       }
@@ -603,11 +603,11 @@
                       "type": "object",
                       "properties": {
                         "lat": {
-                          "type": "decimal",
+                          "type": "number",
                           "format": "double"
                         },
                         "lon": {
-                          "type": "decimal",
+                          "type": "number",
                           "format": "double"
                         }
                       }
@@ -616,11 +616,11 @@
                       "type": "object",
                       "properties": {
                         "lat": {
-                          "type": "decimal",
+                          "type": "number",
                           "format": "double"
                         },
                         "lon": {
-                          "type": "decimal",
+                          "type": "number",
                           "format": "double"
                         }
                       }
@@ -1024,11 +1024,11 @@
                           "type": "object",
                           "properties": {
                             "lon": {
-                              "type": "decimal",
+                              "type": "number",
                               "format": "double"
                             },
                             "lat": {
-                              "type": "decimal",
+                              "type": "number",
                               "format": "double"
                             }
                           }
